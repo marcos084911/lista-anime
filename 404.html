@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Classificação de Animes — Toddy</title>
+</head>
+<body>
+<div class="section">
+
+    <h1>📺 Classificação de Animes</h1>
+    <p class="subtitle">Gêneros · Tipos · Demografia · Temas &nbsp;—&nbsp; Toddy</p>
+
+    <!-- NAV -->
+    <div class="nav-tabs">
+        <div class="nav-tab active" onclick="showTab('generos')">🎭 Gêneros</div>
+        <div class="nav-tab" onclick="showTab('tipos')">📀 Tipos</div>
+        <div class="nav-tab" onclick="showTab('demografia')">👥 Demografia</div>
+        <div class="nav-tab" onclick="showTab('temas')">🏷️ Temas</div>
+    </div>
+
+    <!-- ══════════════════════════
+         GÊNEROS
+    ══════════════════════════ -->
+    <div class="chapter active" id="tab-generos">
+
+        <h2>🎭 Drama</h2>
+        <div class="anime-grid">
+            <div class="anime-card">
+                <img src="https://cdn.myanimelist.net/images/anime/10/22061.jpg" alt="Angel Beats!">
+                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Angel Beats!</h3></div>
+            </div>
+            <div class="anime-card">
+                <img src="https://media.fstatic.com/Mw25F8CpC59SFxaNANhW3zzCHDw=/350x525/smart/filters:format(webp)/media/movies/covers/2014/11/shigatsu-wa-kimi-no-uso_t106389.jpg" alt="Your Lie in April">
+                <div class="info"><p class="label-melhor">Melhor</p><h3>Your Lie in April</h3></div>
+            </div>
+        </div>
+
+        <h2>💖 Romance</h2>
+        <div class="anime-grid">
+            <div class="anime-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs_e86rUwLopnUJd5v8Ab8yGWjPEvYngqXoQ&s" alt="Yamada-kun">
+                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Yamada-kun and the Seven Witches</h3></div>
+            </div>
+            <div class="anime-card">
+                <img src="https://m.media-amazon.com/images/I/81R8HeREVwL._AC_UF894,1000_QL80_.jpg" alt="Clannad After Story">
+                <div class="info"><p class="label-melhor">Melhor</p><h3>Clannad: After Story</h3></div>
+            </div>
+        </div>
+
+        <h2>🔥 Ação</h2>
+        <div class="anime-grid">
+            <div class="anime-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh0d6nrqTELJlLk7NW_0QIp-y2OBmHcx86sQ&sg" alt="Dragon Ball">
+                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Dragon Ball</h3></div>
+            </div>
+            <div class="anime-card">
+                <img src="https://upload.wikimedia.org/wikipedia/en/7/7c/Fate-stay_night_Heaven%27s_Feel_Trilogy_Poster.jpg" alt="Fate Heaven's Feel">
+                <div class="info"><p class="label-melhor">Melhor</p><h3>Fate/Stay Night: Heaven's Feel</h3></div>
+            </div>
+        </div>
+
+        <h2>😂 Comédia</h2>
+        <div class="anime-grid">
+            <div class="anime-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BNWEyODg4ZDQtYmEzYS00ZmU2LWJhY2QtMmI3M2U3Y2EwOGU0XkEyXkFqcGc@._V1_.jpg" alt="Mikakunin de Shinkoukei">
+                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Mikakunin de Shinkoukei</h3></div>
+            </div>
+            <div class="anime-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BY2NmYjk1Y2EtMjNhZi00ZDVjLTg4YzAtZDA5MGY1NGYxMDIxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Seto no Hanayome">
+                <div class="info"><p class="label-melhor">Melhor</p><h3>Seto no Hanayome</h3></div>
+            </div>
+        </div>
+
+        <h2>🌿 Slice of Life</h2>
+        <div class="anime-grid">
+            <div class="anime-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BNGQwZmI4YjAtYWEzZC00ZmQxLTliNTktMzFmNDJiM2Q3ZDU5XkEyXkFqcGc@._V1_.jpg" alt="Senko-san">
+                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Sewayaki Kitsune no Senko-san</h3></div>
+            </div>
+            <div class="anime-card">
+                <img src="https://m.media-amazon.com/images/I/91zAQQYsRGL._AC_UF894,1000_QL80_.jpg" alt="Wolf Children">
+                <div class="info"><p class="label-melhor">Melhor</p><h3>Wolf Children</h3></div>
+            </div>
+        </div>
+
+        <h2>🌀 Isekai</h2>
+        <div class="anime-grid">
+            <div class="anime-card">
+                <img src="https://cdn.myanimelist.net/images/anime/1074/111944.jpg" alt="No Game No Life">
+                <div class="info"><p class="label-primeiro">Primeiro</p><h3>No Game No Life</h3></div>
+            </div>
+            <div class="anime-card">
+                <img src="https://cdn.myanimelist.net/images/anime/11/79410.jpg" alt="Re:Zero">
+                <div class="info"><p class="label-melhor">Melhor</p><h3>Re:Zero</h3></div>
+            </div>
+        </div>
+
+        <h2>👁️ Terror</h2>
+        <div class="anime-grid">
+            <div class="anime-card">
+                <img src="https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=1200,height=675/catalog/crunchyroll/8bf177dc47226ba416fc7b963dde40f4.jpg" alt="Corpse Party">
+                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Corpse Party</h3></div>
+            </div>
+            <div class="anime-card">
+                <img src="https://cdn.myanimelist.net/images/anime/12/19634.jpg" alt="Higurashi">
+                <div class="info"><p class="label-melhor">Melhor</p><h3>Higurashi no Naku Koro ni</h3></div>
+            </div>
+        </div>
+
+        <h2>🧠 Psicológico</h2>
+        <div class="anime-grid">
+            <div class="anime-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BYTgyZDhmMTEtZDFhNi00MTc4LTg3NjUtYWJlNGE5Mzk2NzMxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Death Note">
+                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Death Note</h3></div>
+            </div>
+            <div class="anime-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BZGJiMmEyMDMtMTJlZi00YTgwLWI1ODgtZDA1YjEyM2Q5MjI3XkEyXkFqcGc@._V1_.jpg" alt="Serial Experiments Lain">
+                <div class="info"><p class="label-melhor">Melhor</p><h3>Serial Experiments Lain</h3></div>
+            </div>
+        </div>
+
+        <h2>⚡ Cyberpunk</h2>
+        <div class="anime-grid">
+            <div class="anime-card">
+                <img src="https://static.wikia.nocookie.net/fandubpediabrasil/images/8/8e/Alita.jpg/revision/latest/scale-to-width-down/1200?cb=20241222194102&path-prefix=pt-br" alt="Battle Angel Alita">
+                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Battle Angel Alita</h3></div>
+            </div>
+            <div class="anime-card">
+                <img src="https://upload.wikimedia.org/wikipedia/pt/thumb/6/68/Cyberpunk_mercenarios.jpg/250px-Cyberpunk_mercenarios.jpg" alt="Cyberpunk Edgerunners">
+                <div class="info"><p class="label-melhor">Melhor</p><h3>Cyberpunk: Edgerunners</h3></div>
+            </div>
+        </div>
+
+        <h2>🪖 Militar</h2>
+        <div class="anime-grid">
+            <div class="anime-card">
+                <img src="https://cdn.myanimelist.net/images/anime/10/47347.jpg" alt="Attack on Titan">
+                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Attack on Titan</h3></div>
+            </div>
+            <div class="anime-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BOWNmY2IzOGItMmQyNy00ZTM0LThiNjItODM3YzdkYjRlNWU1XkEyXkFqcGc@._V1_.jpg" alt="86 Eighty-Six">
+                <div class="info"><p class="label-melhor">Melhor</p><h3>86 -Eighty Six-</h3></div>
+            </div>
+        </div>
+
+        <h2>🗺️ Aventura</h2>
+        <div class="anime-grid">
+            <div class="anime-card">
+                <img src="https://cdn.myanimelist.net/images/anime/6/86733.jpg" alt="Made in Abyss">
+                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Made in Abyss</h3></div>
+            </div>
+            <div class="anime-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BYzYxOTlkYzctNGY2MC00MjNjLWIxOWMtY2QwYjcxZWIwMmEwXkEyXkFqcGc@._V1_QL75_UY281_CR4,0,190,281_.jpg" alt="Hunter x Hunter">
+                <div class="info"><p class="label-melhor">Melhor</p><h3>Hunter x Hunter</h3></div>
+            </div>
+        </div>
+
+        <h2>🪄 Fantasia</h2>
+        <div class="anime-grid">
+            <div class="anime-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh0d6nrqTELJlLk7NW_0QIp-y2OBmHcx86sQ&sg" alt="Dragon Ball">
+                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Dragon Ball</h3></div>
+            </div>
+            <div class="anime-card">
+                <img src="https://cdn.myanimelist.net/images/anime/1223/96541.jpg" alt="Fullmetal Alchemist Brotherhood">
+                <div class="info"><p class="label-melhor">Melhor</p><h3>Fullmetal Alchemist: Brotherhood</h3></div>
+            </div>
+        </div>
+
+        <h2>🚀 Sci-Fi</h2>
+        <div class="anime-grid">
+            <div class="anime-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BM2I5OGRiZWMtYjk1NS00ZGZiLWJiYTktMGJjMGRiNDhlNzI3XkEyXkFqcGc@._V1_.jpg" alt="Date A Live">
+                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Date A Live</h3></div>
+            </div>
+            <div class="anime-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BZjI1YjZiMDUtZTI3MC00YTA5LWIzMmMtZmQ0NTZiYWM4NTYwXkEyXkFqcGc@._V1_QL75_UX190_CR0,2,190,281_.jpg" alt="Steins;Gate">
+                <div class="info"><p class="label-melhor">Melhor</p><h3>Steins;Gate</h3></div>
+            </div>
+        </div>
+
+        <h2>🔍 Mistério</h2>
+        <div class="anime-grid">
+            <div class="anime-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BYTkyYWViY2UtYTgzOS00MWM0LTg2NzUtZmQ5ODQzMDJkNjZkXkEyXkFqcGc@._V1_.jpg" alt="Kakegurui">
+                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Kakegurui</h3></div>
+            </div>
+            <div class="anime-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BNjhmN2RmYjgtN2ZlNC00YTdkLWFlMTYtMTdkNzkxMDA0ZjJmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Summertime Rendering">
+                <div class="info"><p class="label-melhor">Melhor</p><h3>Summertime Rendering</h3></div>
+            </div>
+        </div>
+
+        <h2>⚽ Esporte</h2>
+        <div class="anime-grid">
+            <div class="anime-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BZTAwNDJjMGMtZGExNy00ZDZlLTlmYTMtZWNlNDc5MDRlZGVhXkEyXkFqcGc@._V1_.jpg" alt="Ao Ashi">
+                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Ao Ashi</h3></div>
+            </div>
+            <div class="anime-card">
+                <img src="https://cdn.myanimelist.net/images/anime/7/76014.jpg" alt="Haikyuu!!">
+                <div class="info"><p class="label-melhor">Melhor</p><h3>Haikyuu!!</h3></div>
+            </div>
+        </div>
+
+        <h2>🎎 Harem</h2>
+        <div class="anime-grid">
+            <div class="anime-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7P6Nq_1t_ivdnCoguh1RP6DuFFNSLzZMAOw&s" alt="To LOVE-Ru">
+                <div class="info"><p class="label-primeiro">Primeiro</p><h3>To LOVE-Ru</h3></div>
+            </div>
+            <div class="anime-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BM2I5OGRiZWMtYjk1NS00ZGZiLWJiYTktMGJjMGRiNDhlNzI3XkEyXkFqcGc@._V1_.jpg" alt="Date A Live">
+                <div class="info"><p class="label-melhor">Melhor</p><h3>Date A Live</h3></div>
+            </div>
+        </div>
+
+        <h2>🤖 Mecha</h2>
+        <div class="anime-grid">
+            <div class="anime-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BYWNlYzk1NGQtNTZkNi00YzJiLWJkMWUtZTYzNjI3YTc5ZDRhXkEyXkFqcGc@._V1_QL75_UX190_CR0,2,190,281_.jpg" alt="Darling in the FranXX">
+                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Darling in the FranXX</h3></div>
+            </div>
+            <div class="anime-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BMGJlODA2ZmItOTRiZS00NWM5LWJlNTQtYzI5MTNiZjA2MGFjXkEyXkFqcGc@._V1_.jpg" alt="Gurren Lagann">
+                <div class="info"><p class="label-melhor">Melhor</p><h3>Tengen Toppa Gurren Lagann</h3></div>
+            </div>
+        </div>
+
+        <h2>👻 Sobrenatural</h2>
+        <div class="anime-grid">
+            <div class="anime-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BYTgyZDhmMTEtZDFhNi00MTc4LTg3NjUtYWJlNGE5Mzk2NzMxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Death Note">
+                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Death Note</h3></div>
+            </div>
+            <div class="anime-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BYzU3NDM4ZjgtY2UyMi00YTczLTgyNDEtMjBiMDJlOGUxNjcxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Mob Psycho 100">
+                <div class="info"><p class="label-melhor">Melhor</p><h3>Mob Psycho 100</h3></div>
+            </div>
+        </div>
+
+        <h2>🎸 Musical</h2>
+        <div class="anime-grid">
+            <div class="anime-card">
+                <img src="https://cdn.myanimelist.net/images/anime/10/22061.jpg" alt="Angel Beats!">
+                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Angel Beats!</h3></div>
+            </div>
+            <div class="anime-card">
+                <img src="https://m.media-amazon.com/images/I/81ScRXWN6DL._AC_UF1000,1000_QL80_.jpg" alt="Bocchi the Rock!">
+                <div class="info"><p class="label-melhor">Melhor</p><h3>Bocchi the Rock!</h3></div>
+            </div>
+        </div>
+
+        <h2>🏫 Escolar</h2>
+        <div class="anime-grid">
+            <div class="anime-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BMDg3MGVhNWUtYTQ2NS00ZDdiLTg5MTMtZmM5MjUzN2IxN2I4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Classroom of the Elite">
+                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Classroom of the Elite</h3></div>
+            </div>
+            <div class="anime-card">
+                <img src="https://static.wikia.nocookie.net/dublagem/images/9/90/Assassination_Classroom.jpg/revision/latest/scale-to-width-down/1200?cb=20201224044556&path-prefix=pt-br" alt="Assassination Classroom">
+                <div class="info"><p class="label-melhor">Melhor</p><h3>Assassination Classroom</h3></div>
+            </div>
+        </div>
+
+        <h2>🔞 Ecchi</h2>
+        <div class="anime-grid">
+            <div class="anime-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BNzNmMjA5YjctZDRmZi00ZTNiLTlhOTUtMzE2ZjdmNTU3OTI2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Peter Grill">
+                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Peter Grill and the Philosopher's Time</h3></div>
+            </div>
+            <div class="anime-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrXXfQhbhCD54y662apvfkkbWpTBN5MxiniA&s" alt="Kill la Kill">
+                <div class="info"><p class="label-melhor">Melhor</p><h3>Kill la Kill</h3></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ══════════════════════════
+         TIPOS
+    ══════════════════════════ -->
+    <div class="chapter" id="tab-tipos">
+        <h2>📀 Tipos de Anime</h2>
+        <p style="color:#888; margin-bottom: 20px;">Formato de distribuição e exibição de cada obra.</p>
+        <div class="pill-grid">
+            <div class="pill">📺 TV — Série exibida na televisão, geralmente 12–26 eps por temporada</div>
+            <div class="pill">🌐 ONA — Lançado originalmente em plataformas online</div>
+            <div class="pill">💿 OVA — Lançado direto em formato físico/digital, sem exibição TV</div>
+            <div class="pill">🎬 Filme — Longa-metragem animado</div>
+            <div class="pill">⭐ Especial — Episódio extra ou especial de temporada</div>
+            <div class="pill">⚡ Curta — Episódios muito curtos, geralmente 2–5 min</div>
+            <div class="pill">📣 PV / CM — Vídeo promocional ou comercial publicitário</div>
+            <div class="pill">🎵 Music Video — Clipe musical animado</div>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════
+         DEMOGRAFIA
+    ══════════════════════════ -->
+    <div class="chapter" id="tab-demografia">
+        <h2>👥 Demografia</h2>
+        <p style="color:#888; margin-bottom: 20px;">Público-alvo original de cada obra segundo a publicação japonesa.</p>
+        <div class="demo-grid">
+            <div class="demo-card">
+                <span class="demo-emoji">🧸</span>
+                <h4>Kodomo</h4>
+                <p>Crianças até ~12 anos. Histórias simples e educativas.</p>
+            </div>
+            <div class="demo-card">
+                <span class="demo-emoji">👊</span>
+                <h4>Shounen</h4>
+                <p>Jovens do sexo masculino. Ação, amizade e superação.</p>
+            </div>
+            <div class="demo-card">
+                <span class="demo-emoji">🌸</span>
+                <h4>Shoujo</h4>
+                <p>Jovens do sexo feminino. Romance, emoções e relacionamentos.</p>
+            </div>
+            <div class="demo-card">
+                <span class="demo-emoji">🍷</span>
+                <h4>Seinen</h4>
+                <p>Homens adultos. Temas complexos, violência, filosofia.</p>
+            </div>
+            <div class="demo-card">
+                <span class="demo-emoji">🌹</span>
+                <h4>Josei</h4>
+                <p>Mulheres adultas. Romances realistas e drama cotidiano.</p>
+            </div>
+        </div>
+
+        <h2 style="margin-top:50px;">🏆 Melhores por Demografia</h2>
+
+        <h3 class="sub">🧸 Kodomo</h3>
+        <div class="anime-grid">
+            <div class="anime-card">
+                <img src="https://upload.wikimedia.org/wikipedia/pt/e/e2/Ponyo_p%C3%B4ster.png" alt="Ponyo">
+                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Ponyo</h3></div>
+            </div>
+            <div class="anime-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BNTg4NjM5NDMtZTRiNi00YzQ4LWI1NTgtNjk4ZGZkNjYzYTI2XkEyXkFqcGc@._V1_.jpg" alt="Doraemon">
+                <div class="info"><p class="label-melhor">Melhor</p><h3>Doraemon</h3></div>
+            </div>
+        </div>
+
+        <h3 class="sub">👊 Shounen</h3>
+        <div class="anime-grid">
+            <div class="anime-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh0d6nrqTELJlLk7NW_0QIp-y2OBmHcx86sQ&sg" alt="Dragon Ball">
+                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Dragon Ball</h3></div>
+            </div>
+            <div class="anime-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BYzk2ODAyZjctNjExNS00ZDk0LWE1ZDMtZmIyNzI2NjNjNjllXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Dororo">
+                <div class="info"><p class="label-melhor">Melhor</p><h3>Dororo</h3></div>
+            </div>
+        </div>
+
+        <h3 class="sub">🌸 Shoujo</h3>
+        <div class="anime-grid">
+            <div class="anime-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs_e86rUwLopnUJd5v8Ab8yGWjPEvYngqXoQ&s" alt="Yamada-kun">
+                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Yamada-kun and the Seven Witches</h3></div>
+            </div>
+            <div class="anime-card">
+                <img src="https://m.media-amazon.com/images/I/81R8HeREVwL._AC_UF894,1000_QL80_.jpg" alt="Clannad After Story">
+                <div class="info"><p class="label-melhor">Melhor</p><h3>Clannad: After Story</h3></div>
+            </div>
+        </div>
+
+        <h3 class="sub">🍷 Seinen</h3>
+        <div class="anime-grid">
+            <div class="anime-card">
+                <img src="https://cdn.myanimelist.net/images/anime/12/76049.jpg" alt="One Punch Man">
+                <div class="info"><p class="label-primeiro">Primeiro</p><h3>One Punch Man</h3></div>
+            </div>
+            <div class="anime-card">
+                <img src="https://cdn.myanimelist.net/images/anime/1500/103005.jpg" alt="Vinland Saga">
+                <div class="info"><p class="label-melhor">Melhor</p><h3>Vinland Saga</h3></div>
+            </div>
+        </div>
+
+        <h3 class="sub">🌹 Josei</h3>
+        <div class="anime-grid">
+            <div class="anime-card">
+                <img src="https://cdn.myanimelist.net/images/anime/10/22061.jpg" alt="Angel Beats!">
+                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Angel Beats!</h3></div>
+            </div>
+            <div class="anime-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BYzU3NDM4ZjgtY2UyMi00YTczLTgyNDEtMjBiMDJlOGUxNjcxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Mob Psycho 100">
+                <div class="info"><p class="label-melhor">Melhor</p><h3>Mob Psycho 100</h3></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════
+         TEMAS
+    ══════════════════════════ -->
+    <div class="chapter" id="tab-temas">
+
+        <h2>🌋 Apocalipse / Pós-apocalipse</h2>
+        <div class="anime-grid">
+            <div class="anime-card">
+                <img src="https://cdn.myanimelist.net/images/anime/10/47347.jpg" alt="Attack on Titan">
+                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Attack on Titan</h3></div>
+            </div>
+            <div class="anime-card">
+                <img src="https://cdn.myanimelist.net/images/anime/6/86733.jpg" alt="Made in Abyss">
+                <div class="info"><p class="label-melhor">Melhor</p><h3>Made in Abyss</h3></div>
+            </div>
+        </div>
+
+        <h2>🏚️ Distopia</h2>
+        <div class="anime-grid">
+            <div class="anime-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BOWNmY2IzOGItMmQyNy00ZGZiLWJiYTktMGJjMGRiNDhlNzI3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="86 Eighty-Six">
+                <div class="info"><p class="label-primeiro">Primeiro</p><h3>86 -Eighty Six-</h3></div>
+            </div>
+            <div class="anime-card">
+                <img src="https://upload.wikimedia.org/wikipedia/pt/thumb/6/68/Cyberpunk_mercenarios.jpg/250px-Cyberpunk_mercenarios.jpg" alt="Cyberpunk Edgerunners">
+                <div class="info"><p class="label-melhor">Melhor</p><h3>Cyberpunk: Edgerunners</h3></div>
+            </div>
+        </div>
+
+        <h2>⏳ Viagem no Tempo</h2>
+        <div class="anime-grid">
+            <div class="anime-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BZjI1YjZiMDUtZTI3MC00YTA5LWIzMmMtZmQ0NTZiYWM4NTYwXkEyXkFqcGc@._V1_QL75_UX190_CR0,2,190,281_.jpg" alt="Steins;Gate">
+                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Steins;Gate</h3></div>
+            </div>
+            <div class="anime-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BNjhmN2RmYjgtN2ZlNC00YTdkLWFlMTYtMTdkNzkxMDA0ZjJmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Summertime Rendering">
+                <div class="info"><p class="label-melhor">Melhor</p><h3>Summertime Rendering</h3></div>
+            </div>
+        </div>
+
+        <h2>🔄 Reencarnação</h2>
+        <div class="anime-grid">
+            <div class="anime-card">
+                <img src="https://cdn.myanimelist.net/images/anime/1074/111944.jpg" alt="No Game No Life">
+                <div class="info"><p class="label-primeiro">Primeiro</p><h3>No Game No Life</h3></div>
+            </div>
+            <div class="anime-card">
+                <img src="https://cdn.myanimelist.net/images/anime/11/79410.jpg" alt="Re:Zero">
+                <div class="info"><p class="label-melhor">Melhor</p><h3>Re:Zero</h3></div>
+            </div>
+        </div>
+
+        <h2>🗡️ Vingança</h2>
+        <div class="anime-grid">
+            <div class="anime-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BYTgyZDhmMTEtZDFhNi00MTc4LTg3NjUtYWJlNGE5Mzk2NzMxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Death Note">
+                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Death Note</h3></div>
+            </div>
+            <div class="anime-card">
+                <img src="https://cdn.myanimelist.net/images/anime/1500/103005.jpg" alt="Vinland Saga">
+                <div class="info"><p class="label-melhor">Melhor</p><h3>Vinland Saga</h3></div>
+            </div>
+        </div>
+
+        <h2>😈 Anti-herói</h2>
+        <div class="anime-grid">
+            <div class="anime-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BYTgyZDhmMTEtZDFhNi00MTc4LTg3NjUtYWJlNGE5Mzk2NzMxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Death Note">
+                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Death Note</h3></div>
+            </div>
+            <div class="anime-card">
+                <img src="https://cdn.myanimelist.net/images/anime/1223/96541.jpg" alt="Fullmetal Alchemist Brotherhood">
+                <div class="info"><p class="label-melhor">Melhor</p><h3>Fullmetal Alchemist: Brotherhood</h3></div>
+            </div>
+        </div>
+
+        <h2>🤝 Amizade</h2>
+        <div class="anime-grid">
+            <div class="anime-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh0d6nrqTELJlLk7NW_0QIp-y2OBmHcx86sQ&sg" alt="Dragon Ball">
+                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Dragon Ball</h3></div>
+            </div>
+            <div class="anime-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BYzYxOTlkYzctNGY2MC00MjNjLWIxOWMtY2QwYjcxZWIwMmEwXkEyXkFqcGc@._V1_QL75_UY281_CR4,0,190,281_.jpg" alt="Hunter x Hunter">
+                <div class="info"><p class="label-melhor">Melhor</p><h3>Hunter x Hunter</h3></div>
+            </div>
+        </div>
+
+        <h2>👨‍👩‍👧 Família</h2>
+        <div class="anime-grid">
+            <div class="anime-card">
+                <img src="https://upload.wikimedia.org/wikipedia/pt/e/e2/Ponyo_p%C3%B4ster.png" alt="Ponyo">
+                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Ponyo</h3></div>
+            </div>
+            <div class="anime-card">
+                <img src="https://m.media-amazon.com/images/I/91zAQQYsRGL._AC_UF894,1000_QL80_.jpg" alt="Wolf Children">
+                <div class="info"><p class="label-melhor">Melhor</p><h3>Wolf Children</h3></div>
+            </div>
+        </div>
+
+        <h2>🌱 Coming of Age</h2>
+        <div class="anime-grid">
+            <div class="anime-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BNGQwZmI4YjAtYWEzZC00ZmQxLTliNTktMzFmNDJiM2Q3ZDU5XkEyXkFqcGc@._V1_.jpg" alt="Senko-san">
+                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Sewayaki Kitsune no Senko-san</h3></div>
+            </div>
+            <div class="anime-card">
+                <img src="https://media.fstatic.com/Mw25F8CpC59SFxaNANhW3zzCHDw=/350x525/smart/filters:format(webp)/media/movies/covers/2014/11/shigatsu-wa-kimi-no-uso_t106389.jpg" alt="Your Lie in April">
+                <div class="info"><p class="label-melhor">Melhor</p><h3>Your Lie in April</h3></div>
+            </div>
+        </div>
+
+        <h2>🕶️ Realidade Virtual / Jogos</h2>
+        <div class="anime-grid">
+            <div class="anime-card">
+                <img src="https://cdn.myanimelist.net/images/anime/1074/111944.jpg" alt="No Game No Life">
+                <div class="info"><p class="label-primeiro">Primeiro</p><h3>No Game No Life</h3></div>
+            </div>
+            <div class="anime-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BZjI1YjZiMDUtZTI3MC00YTA5LWIzMmMtZmQ0NTZiYWM4NTYwXkEyXkFqcGc@._V1_QL75_UX190_CR0,2,190,281_.jpg" alt="Steins;Gate">
+                <div class="info"><p class="label-melhor">Melhor</p><h3>Steins;Gate</h3></div>
+            </div>
+        </div>
+
+        <h2>🏛️ Político / Histórico</h2>
+        <div class="anime-grid">
+            <div class="anime-card">
+                <img src="https://cdn.myanimelist.net/images/anime/10/47347.jpg" alt="Attack on Titan">
+                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Attack on Titan</h3></div>
+            </div>
+            <div class="anime-card">
+                <img src="https://cdn.myanimelist.net/images/anime/1500/103005.jpg" alt="Vinland Saga">
+                <div class="info"><p class="label-melhor">Melhor</p><h3>Vinland Saga</h3></div>
+            </div>
+        </div>
+
+    </div>
+    <!-- end temas -->
+
+</div><!-- end section -->
+
+<footer>
+    <p>Classificação de Animes &nbsp;|&nbsp; <span>Toddy</span></p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
