@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classificação de Animes — Toddy</title>
     <link rel="stylesheet" href="style.css">
-
+    <title>Classificação de Animes — Toddy</title>
 </head>
 <body>
 <div class="section">
 
     <h1>📺 Classificação de Animes</h1>
-    <p class="subtitle">Gêneros · Tipos · Demografia · Temas · Melhores · Favoritos · Estúdios &nbsp;—&nbsp; Toddy</p>
+    <p class="subtitle">Gêneros · Tipos · Demografia · Melhores · Favoritos · Marcos · Estúdios &nbsp;—&nbsp; Toddy</p>
 
     <div class="nav-tabs">
         <div class="nav-tab active" onclick="showTab('generos',this)">🎭 Gêneros</div>
@@ -19,6 +18,7 @@
         <div class="nav-tab" onclick="showTab('demografia',this)">👥 Demografia</div>
         <div class="nav-tab" onclick="showTab('melhores',this)">🌟 Melhores</div>
         <div class="nav-tab" onclick="showTab('favoritos',this)">❤️ Favoritos</div>
+        <div class="nav-tab" onclick="showTab('marcos',this)">🏆 Marcos</div>
         <div class="nav-tab" onclick="showTab('estudios',this)">🏢 Estúdios</div>
     </div>
 
@@ -27,254 +27,128 @@
 
         <h2>🎭 Drama</h2>
         <div class="anime-grid">
-            <div class="anime-card">
-                <img src="https://cdn.myanimelist.net/images/anime/10/22061.jpg" alt="Angel Beats!">
-                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Angel Beats!</h3></div>
-            </div>
-            <div class="anime-card">
-                <img src="https://media.fstatic.com/Mw25F8CpC59SFxaNANhW3zzCHDw=/350x525/smart/filters:format(webp)/media/movies/covers/2014/11/shigatsu-wa-kimi-no-uso_t106389.jpg" alt="Your Lie in April">
-                <div class="info"><p class="label-melhor">Melhor</p><h3>Your Lie in April</h3></div>
-            </div>
+            <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/10/22061.jpg" alt="Angel Beats!"><div class="info"><p class="label-primeiro">Primeiro</p><h3>Angel Beats!</h3></div></div>
+            <div class="anime-card"><img src="https://media.fstatic.com/Mw25F8CpC59SFxaNANhW3zzCHDw=/350x525/smart/filters:format(webp)/media/movies/covers/2014/11/shigatsu-wa-kimi-no-uso_t106389.jpg" alt="Your Lie in April"><div class="info"><p class="label-melhor">Melhor</p><h3>Your Lie in April</h3></div></div>
         </div>
 
         <h2>💖 Romance</h2>
         <div class="anime-grid">
-            <div class="anime-card">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs_e86rUwLopnUJd5v8Ab8yGWjPEvYngqXoQ&s" alt="Yamada-kun">
-                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Yamada-kun and the Seven Witches</h3></div>
-            </div>
-            <div class="anime-card">
-                <img src="https://m.media-amazon.com/images/I/81R8HeREVwL._AC_UF894,1000_QL80_.jpg" alt="Clannad After Story">
-                <div class="info"><p class="label-melhor">Melhor</p><h3>Clannad: After Story</h3></div>
-            </div>
+            <div class="anime-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs_e86rUwLopnUJd5v8Ab8yGWjPEvYngqXoQ&s" alt="Yamada-kun"><div class="info"><p class="label-primeiro">Primeiro</p><h3>Yamada-kun and the Seven Witches</h3></div></div>
+            <div class="anime-card"><img src="https://m.media-amazon.com/images/I/81R8HeREVwL._AC_UF894,1000_QL80_.jpg" alt="Clannad After Story"><div class="info"><p class="label-melhor">Melhor</p><h3>Clannad: After Story</h3></div></div>
         </div>
 
         <h2>🔥 Ação</h2>
         <div class="anime-grid">
-            <div class="anime-card">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh0d6nrqTELJlLk7NW_0QIp-y2OBmHcx86sQ&sg" alt="Dragon Ball">
-                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Dragon Ball</h3></div>
-            </div>
-            <div class="anime-card">
-                <img src="https://upload.wikimedia.org/wikipedia/en/7/7c/Fate-stay_night_Heaven%27s_Feel_Trilogy_Poster.jpg" alt="Fate Heaven's Feel">
-                <div class="info"><p class="label-melhor">Melhor</p><h3>Fate/Stay Night: Heaven's Feel</h3></div>
-            </div>
+            <div class="anime-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh0d6nrqTELJlLk7NW_0QIp-y2OBmHcx86sQ&sg" alt="Dragon Ball"><div class="info"><p class="label-primeiro">Primeiro</p><h3>Dragon Ball</h3></div></div>
+            <div class="anime-card"><img src="https://upload.wikimedia.org/wikipedia/en/7/7c/Fate-stay_night_Heaven%27s_Feel_Trilogy_Poster.jpg" alt="Fate Heaven's Feel"><div class="info"><p class="label-melhor">Melhor</p><h3>Fate/Stay Night: Heaven's Feel</h3></div></div>
         </div>
 
         <h2>😂 Comédia</h2>
         <div class="anime-grid">
-            <div class="anime-card">
-                <img src="https://m.media-amazon.com/images/M/MV5BNWEyODg4ZDQtYmEzYS00ZmU2LWJhY2QtMmI3M2U3Y2EwOGU0XkEyXkFqcGc@._V1_.jpg" alt="Mikakunin de Shinkoukei">
-                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Mikakunin de Shinkoukei</h3></div>
-            </div>
-            <div class="anime-card">
-                <img src="https://m.media-amazon.com/images/M/MV5BY2NmYjk1Y2EtMjNhZi00ZDVjLTg4YzAtZDA5MGY1NGYxMDIxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Seto no Hanayome">
-                <div class="info"><p class="label-melhor">Melhor</p><h3>Seto no Hanayome</h3></div>
-            </div>
+            <div class="anime-card"><img src="https://m.media-amazon.com/images/M/MV5BNWEyODg4ZDQtYmEzYS00ZmU2LWJhY2QtMmI3M2U3Y2EwOGU0XkEyXkFqcGc@._V1_.jpg" alt="Mikakunin de Shinkoukei"><div class="info"><p class="label-primeiro">Primeiro</p><h3>Mikakunin de Shinkoukei</h3></div></div>
+            <div class="anime-card"><img src="https://m.media-amazon.com/images/M/MV5BY2NmYjk1Y2EtMjNhZi00ZDVjLTg4YzAtZDA5MGY1NGYxMDIxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Seto no Hanayome"><div class="info"><p class="label-melhor">Melhor</p><h3>Seto no Hanayome</h3></div></div>
         </div>
 
         <h2>🌿 Slice of Life</h2>
         <div class="anime-grid">
-            <div class="anime-card">
-                <img src="https://m.media-amazon.com/images/M/MV5BNGQwZmI4YjAtYWEzZC00ZmQxLTliNTktMzFmNDJiM2Q3ZDU5XkEyXkFqcGc@._V1_.jpg" alt="Senko-san">
-                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Sewayaki Kitsune no Senko-san</h3></div>
-            </div>
-            <div class="anime-card">
-                <img src="https://m.media-amazon.com/images/I/91zAQQYsRGL._AC_UF894,1000_QL80_.jpg" alt="Wolf Children">
-                <div class="info"><p class="label-melhor">Melhor</p><h3>Wolf Children</h3></div>
-            </div>
+            <div class="anime-card"><img src="https://m.media-amazon.com/images/M/MV5BNGQwZmI4YjAtYWEzZC00ZmQxLTliNTktMzFmNDJiM2Q3ZDU5XkEyXkFqcGc@._V1_.jpg" alt="Senko-san"><div class="info"><p class="label-primeiro">Primeiro</p><h3>Sewayaki Kitsune no Senko-san</h3></div></div>
+            <div class="anime-card"><img src="https://m.media-amazon.com/images/I/91zAQQYsRGL._AC_UF894,1000_QL80_.jpg" alt="Wolf Children"><div class="info"><p class="label-melhor">Melhor</p><h3>Wolf Children</h3></div></div>
         </div>
 
         <h2>🌀 Isekai</h2>
         <div class="anime-grid">
-            <div class="anime-card">
-                <img src="https://cdn.myanimelist.net/images/anime/1074/111944.jpg" alt="No Game No Life">
-                <div class="info"><p class="label-primeiro">Primeiro</p><h3>No Game No Life</h3></div>
-            </div>
-            <div class="anime-card">
-                <img src="https://cdn.myanimelist.net/images/anime/11/79410.jpg" alt="Re:Zero">
-                <div class="info"><p class="label-melhor">Melhor</p><h3>Re:Zero</h3></div>
-            </div>
+            <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/1074/111944.jpg" alt="No Game No Life"><div class="info"><p class="label-primeiro">Primeiro</p><h3>No Game No Life</h3></div></div>
+            <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/11/79410.jpg" alt="Re:Zero"><div class="info"><p class="label-melhor">Melhor</p><h3>Re:Zero</h3></div></div>
         </div>
 
         <h2>👁️ Terror</h2>
         <div class="anime-grid">
-            <div class="anime-card">
-                <img src="https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=1200,height=675/catalog/crunchyroll/8bf177dc47226ba416fc7b963dde40f4.jpg" alt="Corpse Party">
-                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Corpse Party</h3></div>
-            </div>
-            <div class="anime-card">
-                <img src="https://cdn.myanimelist.net/images/anime/12/19634.jpg" alt="Higurashi">
-                <div class="info"><p class="label-melhor">Melhor</p><h3>Higurashi no Naku Koro ni</h3></div>
-            </div>
+            <div class="anime-card"><img src="https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=1200,height=675/catalog/crunchyroll/8bf177dc47226ba416fc7b963dde40f4.jpg" alt="Corpse Party"><div class="info"><p class="label-primeiro">Primeiro</p><h3>Corpse Party</h3></div></div>
+            <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/12/19634.jpg" alt="Higurashi"><div class="info"><p class="label-melhor">Melhor</p><h3>Higurashi no Naku Koro ni</h3></div></div>
         </div>
 
         <h2>🧠 Psicológico</h2>
         <div class="anime-grid">
-            <div class="anime-card">
-                <img src="https://m.media-amazon.com/images/M/MV5BYTgyZDhmMTEtZDFhNi00MTc4LTg3NjUtYWJlNGE5Mzk2NzMxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Death Note">
-                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Death Note</h3></div>
-            </div>
-            <div class="anime-card">
-                <img src="https://m.media-amazon.com/images/M/MV5BZGJiMmEyMDMtMTJlZi00YTgwLWI1ODgtZDA1YjEyM2Q5MjI3XkEyXkFqcGc@._V1_.jpg" alt="Serial Experiments Lain">
-                <div class="info"><p class="label-melhor">Melhor</p><h3>Serial Experiments Lain</h3></div>
-            </div>
+            <div class="anime-card"><img src="https://m.media-amazon.com/images/M/MV5BYTgyZDhmMTEtZDFhNi00MTc4LTg3NjUtYWJlNGE5Mzk2NzMxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Death Note"><div class="info"><p class="label-primeiro">Primeiro</p><h3>Death Note</h3></div></div>
+            <div class="anime-card"><img src="https://m.media-amazon.com/images/M/MV5BZGJiMmEyMDMtMTJlZi00YTgwLWI1ODgtZDA1YjEyM2Q5MjI3XkEyXkFqcGc@._V1_.jpg" alt="Serial Experiments Lain"><div class="info"><p class="label-melhor">Melhor</p><h3>Serial Experiments Lain</h3></div></div>
         </div>
 
         <h2>⚡ Cyberpunk</h2>
         <div class="anime-grid">
-            <div class="anime-card">
-                <img src="https://static.wikia.nocookie.net/fandubpediabrasil/images/8/8e/Alita.jpg/revision/latest/scale-to-width-down/1200?cb=20241222194102&path-prefix=pt-br" alt="Battle Angel Alita">
-                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Battle Angel Alita</h3></div>
-            </div>
-            <div class="anime-card">
-                <img src="https://upload.wikimedia.org/wikipedia/pt/thumb/6/68/Cyberpunk_mercenarios.jpg/250px-Cyberpunk_mercenarios.jpg" alt="Cyberpunk Edgerunners">
-                <div class="info"><p class="label-melhor">Melhor</p><h3>Cyberpunk: Edgerunners</h3></div>
-            </div>
+            <div class="anime-card"><img src="https://static.wikia.nocookie.net/fandubpediabrasil/images/8/8e/Alita.jpg/revision/latest/scale-to-width-down/1200?cb=20241222194102&path-prefix=pt-br" alt="Battle Angel Alita"><div class="info"><p class="label-primeiro">Primeiro</p><h3>Battle Angel Alita</h3></div></div>
+            <div class="anime-card"><img src="https://upload.wikimedia.org/wikipedia/pt/thumb/6/68/Cyberpunk_mercenarios.jpg/250px-Cyberpunk_mercenarios.jpg" alt="Cyberpunk Edgerunners"><div class="info"><p class="label-melhor">Melhor</p><h3>Cyberpunk: Edgerunners</h3></div></div>
         </div>
 
         <h2>🪖 Militar</h2>
         <div class="anime-grid">
-            <div class="anime-card">
-                <img src="https://cdn.myanimelist.net/images/anime/10/47347.jpg" alt="Attack on Titan">
-                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Attack on Titan</h3></div>
-            </div>
-            <div class="anime-card">
-                <img src="https://m.media-amazon.com/images/M/MV5BOWNmY2IzOGItMmQyNy00ZTM0LThiNjItODM3YzdkYjRlNWU1XkEyXkFqcGc@._V1_.jpg" alt="86 Eighty-Six">
-                <div class="info"><p class="label-melhor">Melhor</p><h3>86 -Eighty Six-</h3></div>
-            </div>
+            <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/10/47347.jpg" alt="Attack on Titan"><div class="info"><p class="label-primeiro">Primeiro</p><h3>Attack on Titan</h3></div></div>
+            <div class="anime-card"><img src="https://m.media-amazon.com/images/M/MV5BOWNmY2IzOGItMmQyNy00ZTM0LThiNjItODM3YzdkYjRlNWU1XkEyXkFqcGc@._V1_.jpg" alt="86 Eighty-Six"><div class="info"><p class="label-melhor">Melhor</p><h3>86 -Eighty Six-</h3></div></div>
         </div>
 
         <h2>🗺️ Aventura</h2>
         <div class="anime-grid">
-            <div class="anime-card">
-                <img src="https://cdn.myanimelist.net/images/anime/6/86733.jpg" alt="Made in Abyss">
-                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Made in Abyss</h3></div>
-            </div>
-            <div class="anime-card">
-                <img src="https://m.media-amazon.com/images/M/MV5BYzYxOTlkYzctNGY2MC00MjNjLWIxOWMtY2QwYjcxZWIwMmEwXkEyXkFqcGc@._V1_QL75_UY281_CR4,0,190,281_.jpg" alt="Hunter x Hunter">
-                <div class="info"><p class="label-melhor">Melhor</p><h3>Hunter x Hunter</h3></div>
-            </div>
+            <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/6/86733.jpg" alt="Made in Abyss"><div class="info"><p class="label-primeiro">Primeiro</p><h3>Made in Abyss</h3></div></div>
+            <div class="anime-card"><img src="https://m.media-amazon.com/images/M/MV5BYzYxOTlkYzctNGY2MC00MjNjLWIxOWMtY2QwYjcxZWIwMmEwXkEyXkFqcGc@._V1_QL75_UY281_CR4,0,190,281_.jpg" alt="Hunter x Hunter"><div class="info"><p class="label-melhor">Melhor</p><h3>Hunter x Hunter</h3></div></div>
         </div>
 
         <h2>🪄 Fantasia</h2>
         <div class="anime-grid">
-            <div class="anime-card">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh0d6nrqTELJlLk7NW_0QIp-y2OBmHcx86sQ&sg" alt="Dragon Ball">
-                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Dragon Ball</h3></div>
-            </div>
-            <div class="anime-card">
-                <img src="https://cdn.myanimelist.net/images/anime/1223/96541.jpg" alt="Fullmetal Alchemist Brotherhood">
-                <div class="info"><p class="label-melhor">Melhor</p><h3>Fullmetal Alchemist: Brotherhood</h3></div>
-            </div>
+            <div class="anime-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh0d6nrqTELJlLk7NW_0QIp-y2OBmHcx86sQ&sg" alt="Dragon Ball"><div class="info"><p class="label-primeiro">Primeiro</p><h3>Dragon Ball</h3></div></div>
+            <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/1223/96541.jpg" alt="Fullmetal Alchemist Brotherhood"><div class="info"><p class="label-melhor">Melhor</p><h3>Fullmetal Alchemist: Brotherhood</h3></div></div>
         </div>
 
         <h2>🚀 Sci-Fi</h2>
         <div class="anime-grid">
-            <div class="anime-card">
-                <img src="https://m.media-amazon.com/images/M/MV5BM2I5OGRiZWMtYjk1NS00ZGZiLWJiYTktMGJjMGRiNDhlNzI3XkEyXkFqcGc@._V1_.jpg" alt="Date A Live">
-                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Date A Live</h3></div>
-            </div>
-            <div class="anime-card">
-                <img src="https://m.media-amazon.com/images/M/MV5BZjI1YjZiMDUtZTI3MC00YTA5LWIzMmMtZmQ0NTZiYWM4NTYwXkEyXkFqcGc@._V1_QL75_UX190_CR0,2,190,281_.jpg" alt="Steins;Gate">
-                <div class="info"><p class="label-melhor">Melhor</p><h3>Steins;Gate</h3></div>
-            </div>
+            <div class="anime-card"><img src="https://m.media-amazon.com/images/M/MV5BM2I5OGRiZWMtYjk1NS00ZGZiLWJiYTktMGJjMGRiNDhlNzI3XkEyXkFqcGc@._V1_.jpg" alt="Date A Live"><div class="info"><p class="label-primeiro">Primeiro</p><h3>Date A Live</h3></div></div>
+            <div class="anime-card"><img src="https://m.media-amazon.com/images/M/MV5BZjI1YjZiMDUtZTI3MC00YTA5LWIzMmMtZmQ0NTZiYWM4NTYwXkEyXkFqcGc@._V1_QL75_UX190_CR0,2,190,281_.jpg" alt="Steins;Gate"><div class="info"><p class="label-melhor">Melhor</p><h3>Steins;Gate</h3></div></div>
         </div>
 
         <h2>🔍 Mistério</h2>
         <div class="anime-grid">
-            <div class="anime-card">
-                <img src="https://m.media-amazon.com/images/M/MV5BYTkyYWViY2UtYTgzOS00MWM0LTg2NzUtZmQ5ODQzMDJkNjZkXkEyXkFqcGc@._V1_.jpg" alt="Kakegurui">
-                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Kakegurui</h3></div>
-            </div>
-            <div class="anime-card">
-                <img src="https://m.media-amazon.com/images/M/MV5BNjhmN2RmYjgtN2ZlNC00YTdkLWFlMTYtMTdkNzkxMDA0ZjJmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Summertime Rendering">
-                <div class="info"><p class="label-melhor">Melhor</p><h3>Summertime Rendering</h3></div>
-            </div>
+            <div class="anime-card"><img src="https://m.media-amazon.com/images/M/MV5BYTkyYWViY2UtYTgzOS00MWM0LTg2NzUtZmQ5ODQzMDJkNjZkXkEyXkFqcGc@._V1_.jpg" alt="Kakegurui"><div class="info"><p class="label-primeiro">Primeiro</p><h3>Kakegurui</h3></div></div>
+            <div class="anime-card"><img src="https://m.media-amazon.com/images/M/MV5BNjhmN2RmYjgtN2ZlNC00YTdkLWFlMTYtMTdkNzkxMDA0ZjJmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Summertime Rendering"><div class="info"><p class="label-melhor">Melhor</p><h3>Summertime Rendering</h3></div></div>
         </div>
 
         <h2>⚽ Esporte</h2>
         <div class="anime-grid">
-            <div class="anime-card">
-                <img src="https://m.media-amazon.com/images/M/MV5BZTAwNDJjMGMtZGExNy00ZDZlLTlmYTMtZWNlNDc5MDRlZGVhXkEyXkFqcGc@._V1_.jpg" alt="Ao Ashi">
-                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Ao Ashi</h3></div>
-            </div>
-            <div class="anime-card">
-                <img src="https://cdn.myanimelist.net/images/anime/7/76014.jpg" alt="Haikyuu!!">
-                <div class="info"><p class="label-melhor">Melhor</p><h3>Haikyuu!!</h3></div>
-            </div>
+            <div class="anime-card"><img src="https://m.media-amazon.com/images/M/MV5BZTAwNDJjMGMtZGExNy00ZDZlLTlmYTMtZWNlNDc5MDRlZGVhXkEyXkFqcGc@._V1_.jpg" alt="Ao Ashi"><div class="info"><p class="label-primeiro">Primeiro</p><h3>Ao Ashi</h3></div></div>
+            <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/7/76014.jpg" alt="Haikyuu!!"><div class="info"><p class="label-melhor">Melhor</p><h3>Haikyuu!!</h3></div></div>
         </div>
 
         <h2>🎎 Harem</h2>
         <div class="anime-grid">
-            <div class="anime-card">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7P6Nq_1t_ivdnCoguh1RP6DuFFNSLzZMAOw&s" alt="To LOVE-Ru">
-                <div class="info"><p class="label-primeiro">Primeiro</p><h3>To LOVE-Ru</h3></div>
-            </div>
-            <div class="anime-card">
-                <img src="https://m.media-amazon.com/images/M/MV5BM2I5OGRiZWMtYjk1NS00ZGZiLWJiYTktMGJjMGRiNDhlNzI3XkEyXkFqcGc@._V1_.jpg" alt="Date A Live">
-                <div class="info"><p class="label-melhor">Melhor</p><h3>Date A Live</h3></div>
-            </div>
+            <div class="anime-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7P6Nq_1t_ivdnCoguh1RP6DuFFNSLzZMAOw&s" alt="To LOVE-Ru"><div class="info"><p class="label-primeiro">Primeiro</p><h3>To LOVE-Ru</h3></div></div>
+            <div class="anime-card"><img src="https://m.media-amazon.com/images/M/MV5BM2I5OGRiZWMtYjk1NS00ZGZiLWJiYTktMGJjMGRiNDhlNzI3XkEyXkFqcGc@._V1_.jpg" alt="Date A Live"><div class="info"><p class="label-melhor">Melhor</p><h3>Date A Live</h3></div></div>
         </div>
 
         <h2>🤖 Mecha</h2>
         <div class="anime-grid">
-            <div class="anime-card">
-                <img src="https://m.media-amazon.com/images/M/MV5BYWNlYzk1NGQtNTZkNi00YzJiLWJkMWUtZTYzNjI3YTc5ZDRhXkEyXkFqcGc@._V1_QL75_UX190_CR0,2,190,281_.jpg" alt="Darling in the FranXX">
-                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Darling in the FranXX</h3></div>
-            </div>
-            <div class="anime-card">
-                <img src="https://m.media-amazon.com/images/M/MV5BMGJlODA2ZmItOTRiZS00NWM5LWJlNTQtYzI5MTNiZjA2MGFjXkEyXkFqcGc@._V1_.jpg" alt="Gurren Lagann">
-                <div class="info"><p class="label-melhor">Melhor</p><h3>Tengen Toppa Gurren Lagann</h3></div>
-            </div>
+            <div class="anime-card"><img src="https://m.media-amazon.com/images/M/MV5BYWNlYzk1NGQtNTZkNi00YzJiLWJkMWUtZTYzNjI3YTc5ZDRhXkEyXkFqcGc@._V1_QL75_UX190_CR0,2,190,281_.jpg" alt="Darling in the FranXX"><div class="info"><p class="label-primeiro">Primeiro</p><h3>Darling in the FranXX</h3></div></div>
+            <div class="anime-card"><img src="https://m.media-amazon.com/images/M/MV5BMGJlODA2ZmItOTRiZS00NWM5LWJlNTQtYzI5MTNiZjA2MGFjXkEyXkFqcGc@._V1_.jpg" alt="Gurren Lagann"><div class="info"><p class="label-melhor">Melhor</p><h3>Tengen Toppa Gurren Lagann</h3></div></div>
         </div>
 
         <h2>👻 Sobrenatural</h2>
         <div class="anime-grid">
-            <div class="anime-card">
-                <img src="https://m.media-amazon.com/images/M/MV5BYTgyZDhmMTEtZDFhNi00MTc4LTg3NjUtYWJlNGE5Mzk2NzMxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Death Note">
-                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Death Note</h3></div>
-            </div>
-            <div class="anime-card">
-                <img src="https://m.media-amazon.com/images/M/MV5BYzU3NDM4ZjgtY2UyMi00YTczLTgyNDEtMjBiMDJlOGUxNjcxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Mob Psycho 100">
-                <div class="info"><p class="label-melhor">Melhor</p><h3>Mob Psycho 100</h3></div>
-            </div>
+            <div class="anime-card"><img src="https://m.media-amazon.com/images/M/MV5BYTgyZDhmMTEtZDFhNi00MTc4LTg3NjUtYWJlNGE5Mzk2NzMxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Death Note"><div class="info"><p class="label-primeiro">Primeiro</p><h3>Death Note</h3></div></div>
+            <div class="anime-card"><img src="https://m.media-amazon.com/images/M/MV5BYzU3NDM4ZjgtY2UyMi00YTczLTgyNDEtMjBiMDJlOGUxNjcxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Mob Psycho 100"><div class="info"><p class="label-melhor">Melhor</p><h3>Mob Psycho 100</h3></div></div>
         </div>
 
         <h2>🎸 Musical</h2>
         <div class="anime-grid">
-            <div class="anime-card">
-                <img src="https://cdn.myanimelist.net/images/anime/10/22061.jpg" alt="Angel Beats!">
-                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Angel Beats!</h3></div>
-            </div>
-            <div class="anime-card">
-                <img src="https://m.media-amazon.com/images/I/81ScRXWN6DL._AC_UF1000,1000_QL80_.jpg" alt="Bocchi the Rock!">
-                <div class="info"><p class="label-melhor">Melhor</p><h3>Bocchi the Rock!</h3></div>
-            </div>
+            <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/10/22061.jpg" alt="Angel Beats!"><div class="info"><p class="label-primeiro">Primeiro</p><h3>Angel Beats!</h3></div></div>
+            <div class="anime-card"><img src="https://m.media-amazon.com/images/I/81ScRXWN6DL._AC_UF1000,1000_QL80_.jpg" alt="Bocchi the Rock!"><div class="info"><p class="label-melhor">Melhor</p><h3>Bocchi the Rock!</h3></div></div>
         </div>
 
         <h2>🏫 Escolar</h2>
         <div class="anime-grid">
-            <div class="anime-card">
-                <img src="https://m.media-amazon.com/images/M/MV5BMDg3MGVhNWUtYTQ2NS00ZDdiLTg5MTMtZmM5MjUzN2IxN2I4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Classroom of the Elite">
-                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Classroom of the Elite</h3></div>
-            </div>
-            <div class="anime-card">
-                <img src="https://static.wikia.nocookie.net/dublagem/images/9/90/Assassination_Classroom.jpg/revision/latest/scale-to-width-down/1200?cb=20201224044556&path-prefix=pt-br" alt="Assassination Classroom">
-                <div class="info"><p class="label-melhor">Melhor</p><h3>Assassination Classroom</h3></div>
-            </div>
+            <div class="anime-card"><img src="https://m.media-amazon.com/images/M/MV5BMDg3MGVhNWUtYTQ2NS00ZDdiLTg5MTMtZmM5MjUzN2IxN2I4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Classroom of the Elite"><div class="info"><p class="label-primeiro">Primeiro</p><h3>Classroom of the Elite</h3></div></div>
+            <div class="anime-card"><img src="https://static.wikia.nocookie.net/dublagem/images/9/90/Assassination_Classroom.jpg/revision/latest/scale-to-width-down/1200?cb=20201224044556&path-prefix=pt-br" alt="Assassination Classroom"><div class="info"><p class="label-melhor">Melhor</p><h3>Assassination Classroom</h3></div></div>
         </div>
 
         <h2>🔞 Ecchi</h2>
         <div class="anime-grid">
-            <div class="anime-card">
-                <img src="https://m.media-amazon.com/images/M/MV5BNzNmMjA5YjctZDRmZi00ZTNiLTlhOTUtMzE2ZjdmNTU3OTI2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Peter Grill">
-                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Peter Grill and the Philosopher's Time</h3></div>
-            </div>
-            <div class="anime-card">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrXXfQhbhCD54y662apvfkkbWpTBN5MxiniA&s" alt="Kill la Kill">
-                <div class="info"><p class="label-melhor">Melhor</p><h3>Kill la Kill</h3></div>
-            </div>
+            <div class="anime-card"><img src="https://m.media-amazon.com/images/M/MV5BNzNmMjA5YjctZDRmZi00ZTNiLTlhOTUtMzE2ZjdmNTU3OTI2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Peter Grill"><div class="info"><p class="label-primeiro">Primeiro</p><h3>Peter Grill and the Philosopher's Time</h3></div></div>
+            <div class="anime-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrXXfQhbhCD54y662apvfkkbWpTBN5MxiniA&s" alt="Kill la Kill"><div class="info"><p class="label-melhor">Melhor</p><h3>Kill la Kill</h3></div></div>
         </div>
 
     </div><!-- end generos -->
@@ -311,96 +185,61 @@
 
         <h3 class="sub">🧸 Kodomo</h3>
         <div class="anime-grid">
-            <div class="anime-card">
-                <img src="https://upload.wikimedia.org/wikipedia/pt/e/e2/Ponyo_p%C3%B4ster.png" alt="Ponyo">
-                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Ponyo</h3></div>
-            </div>
+            <div class="anime-card"><img src="https://upload.wikimedia.org/wikipedia/pt/e/e2/Ponyo_p%C3%B4ster.png" alt="Ponyo"><div class="info"><p class="label-primeiro">Primeiro</p><h3>Ponyo</h3></div></div>
         </div>
 
         <h3 class="sub">👊 Shounen</h3>
         <div class="anime-grid">
-            <div class="anime-card">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh0d6nrqTELJlLk7NW_0QIp-y2OBmHcx86sQ&sg" alt="Dragon Ball">
-                <div class="info"><p class="label-primeiro">Primeiro</p><h3>Dragon Ball</h3></div>
-            </div>
-            <div class="anime-card">
-                <img src="https://m.media-amazon.com/images/M/MV5BYzk2ODAyZjctNjExNS00ZDk0LWE1ZDMtZmIyNzI2NjNjNjllXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Dororo">
-                <div class="info"><p class="label-melhor">Melhor</p><h3>Dororo</h3></div>
-            </div>
+            <div class="anime-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh0d6nrqTELJlLk7NW_0QIp-y2OBmHcx86sQ&sg" alt="Dragon Ball"><div class="info"><p class="label-primeiro">Primeiro</p><h3>Dragon Ball</h3></div></div>
+            <div class="anime-card"><img src="https://m.media-amazon.com/images/M/MV5BYzk2ODAyZjctNjExNS00ZDk0LWE1ZDMtZmIyNzI2NjNjNjllXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Dororo"><div class="info"><p class="label-melhor">Melhor</p><h3>Dororo</h3></div></div>
         </div>
 
         <h3 class="sub">🌸 Shoujo</h3>
         <div class="anime-grid">
-            <div class="anime-card">
-                <img src="https://m.media-amazon.com/images/M/MV5BZjg3ZWU5MzEtZDcwZi00ODE1LWFlNWQtZDdhMmE4ZTQ2ZGYyXkEyXkFqcGc@._V1_QL75_UX190_CR0,2,190,281_.jpg" alt="I'm the Villainess">
-                <div class="info"><p class="label-primeiro">Primeiro</p><h3>I'm the Villainess, So I'm Taming the Final Boss</h3></div>
-            </div>
+            <div class="anime-card"><img src="https://m.media-amazon.com/images/M/MV5BZjg3ZWU5MzEtZDcwZi00ODE1LWFlNWQtZDdhMmE4ZTQ2ZGYyXkEyXkFqcGc@._V1_QL75_UX190_CR0,2,190,281_.jpg" alt="I'm the Villainess"><div class="info"><p class="label-primeiro">Primeiro</p><h3>I'm the Villainess, So I'm Taming the Final Boss</h3></div></div>
         </div>
 
         <h3 class="sub">🍷 Seinen</h3>
         <div class="anime-grid">
-            <div class="anime-card">
-                <img src="https://cdn.myanimelist.net/images/anime/12/76049.jpg" alt="One Punch Man">
-                <div class="info"><p class="label-primeiro">Primeiro</p><h3>One Punch Man</h3></div>
-            </div>
-            <div class="anime-card">
-                <img src="https://cdn.myanimelist.net/images/anime/1500/103005.jpg" alt="Vinland Saga">
-                <div class="info"><p class="label-melhor">Melhor</p><h3>Vinland Saga</h3></div>
-            </div>
+            <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/12/76049.jpg" alt="One Punch Man"><div class="info"><p class="label-primeiro">Primeiro</p><h3>One Punch Man</h3></div></div>
+            <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/1500/103005.jpg" alt="Vinland Saga"><div class="info"><p class="label-melhor">Melhor</p><h3>Vinland Saga</h3></div></div>
         </div>
     </div>
-
 
     <!-- ══════════ MELHORES ══════════ -->
     <div class="chapter" id="tab-melhores">
         <h2>🌟 Meus Melhores Animes</h2>
         <p style="color:#888; margin-bottom:28px;">Os animes que mais marcaram — escolha pessoal, sem critério de gênero.</p>
-
         <div class="top3-grid">
 
             <div class="top3-card rank-1">
-                <img src="https://m.media-amazon.com/images/S/pv-target-images/acf77e7193251c237654b4ab7a3f83720d8703a416927e8d38a5c55ca0883898._SX1080_FMjpg_.jpg" alt="made in abyss">
+                <img src="https://m.media-amazon.com/images/S/pv-target-images/acf77e7193251c237654b4ab7a3f83720d8703a416927e8d38a5c55ca0883898._SX1080_FMjpg_.jpg" alt="Made in Abyss">
                 <div class="top3-rank">#1</div>
-                <div class="top3-info">
-                    <h3>made in abyss</h3>
-                    <p>adventure · Drama · fantasy</p>
-                </div>
+                <div class="top3-info"><h3>Made in Abyss</h3><p>Adventure · Drama · Fantasy</p></div>
             </div>
 
             <div class="top3-card rank-2">
-                <img src="https://m.media-amazon.com/images/M/MV5BY2NmYjk1Y2EtMjNhZi00ZDVjLTg4YzAtZDA5MGY1NGYxMDIxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="seto no hanayome">
+                <img src="https://m.media-amazon.com/images/M/MV5BY2NmYjk1Y2EtMjNhZi00ZDVjLTg4YzAtZDA5MGY1NGYxMDIxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Seto no Hanayome">
                 <div class="top3-rank">#2</div>
-                <div class="top3-info">
-                    <h3>seto no hanayome</h3>
-                    <p>comedy · parody · romance</p>
-                </div>
+                <div class="top3-info"><h3>Seto no Hanayome</h3><p>Comedy · Parody · Romance</p></div>
             </div>
 
             <div class="top3-card rank-3">
-                <img src="https://m.media-amazon.com/images/M/MV5BNDA3MGNmZTEtMzFiMy00ZmViLThhNmQtMjQ4ZDc5MDEyN2U1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" >
+                <img src="https://m.media-amazon.com/images/M/MV5BNDA3MGNmZTEtMzFiMy00ZmViLThhNmQtMjQ4ZDc5MDEyN2U1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Vinland Saga">
                 <div class="top3-rank">#3</div>
-                <div class="top3-info">
-                    <h3>vinland saga</h3>
-                    <p>drama · seinen · action</p>
-                </div>
+                <div class="top3-info"><h3>Vinland Saga</h3><p>Drama · Seinen · Action</p></div>
             </div>
 
             <div class="top3-card rank-3">
-                <img src="https://m.media-amazon.com/images/M/MV5BN2NlOWI5OTMtODRhZi00NjY3LTljZTUtYTQwZTMxOTBjNzE5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg">
+                <img src="https://m.media-amazon.com/images/M/MV5BN2NlOWI5OTMtODRhZi00NjY3LTljZTUtYTQwZTMxOTBjNzE5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Angel Beats">
                 <div class="top3-rank">#4</div>
-                <div class="top3-info">
-                    <h3>angel beats</h3>
-                    <p>drama · fantasy · school</p>
-                </div>
+                <div class="top3-info"><h3>Angel Beats!</h3><p>Drama · Fantasy · School</p></div>
             </div>
 
             <div class="top3-card rank-3">
-                <img src="https://m.media-amazon.com/images/I/81R8HeREVwL._AC_UF894,1000_QL80_.jpg" >
+                <img src="https://m.media-amazon.com/images/I/81R8HeREVwL._AC_UF894,1000_QL80_.jpg" alt="Clannad After Story">
                 <div class="top3-rank">#5</div>
-                <div class="top3-info">
-                    <h3>clannad after story</h3>
-                    <p>drama · romance</p>
-                </div>
+                <div class="top3-info"><h3>Clannad: After Story</h3><p>Drama · Romance</p></div>
             </div>
 
         </div>
@@ -409,164 +248,145 @@
     <!-- ══════════ FAVORITOS ══════════ -->
     <div class="chapter" id="tab-favoritos">
 
-        <h2>💙 Personagem Masculino Favorito</h2>
-        <div class="fav-section">
+        <h2>💙 Personagens Masculinos Favoritos</h2>
+        <div class="fav-row">
             <div class="fav-card male">
                 <div class="fav-badge">♂ Favorito</div>
-                <img src="https://i.pinimg.com/474x/80/d7/58/80d7586c842b53f343f00991178110a7.jpg">
-                <div class="fav-info">
-                    <h3>Thorfinn</h3>
-                    <p>vinland saga</p>
-                </div>
+                <img src="https://i.pinimg.com/474x/80/d7/58/80d7586c842b53f343f00991178110a7.jpg" alt="Thorfinn">
+                <div class="fav-info"><h3>Thorfinn</h3><p>Vinland Saga</p></div>
+            </div>
+            <div class="fav-card male">
+                <div class="fav-badge">♂ Favorito</div>
+                <img src="https://i.redd.it/zbxwqtes5z911.png" alt="Okabe">
+                <div class="fav-info"><h3>Okabe Rintarou</h3><p>Steins;Gate</p></div>
+            </div>
+            <div class="fav-card male">
+                <div class="fav-badge">♂ Favorito</div>
+                <img src="https://preview.redd.it/tomoya-is-real-v0-y992gciceabe1.jpeg?auto=webp&s=7aa16df88b4d8674c77eaf98d5dde991780d8729" alt="Tomoya">
+                <div class="fav-info"><h3>Tomoya Okazaki</h3><p>Clannad</p></div>
+            </div>
+            <div class="fav-card male">
+                <div class="fav-badge">♂ Favorito</div>
+                <img src="https://static.wikia.nocookie.net/gurennlagann/images/5/56/Simon_stepping_out_og_Gurren_Lagann.jpg/revision/latest/scale-to-width-down/985?cb=20180302005345" alt="Simon">
+                <div class="fav-info"><h3>Simon</h3><p>Gurren Lagann</p></div>
             </div>
         </div>
 
-        <div class="fav-section">
-            <div class="fav-card male">
-                <div class="fav-badge">♂ Favorito</div>
-                <img src="https://i.redd.it/zbxwqtes5z911.png">
-                <div class="fav-info">
-                    <h3></h3>
-                    <p>steins;gate</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="fav-section">
-            <div class="fav-card male">
-                <div class="fav-badge">♂ Favorito</div>
-                <img src="https://preview.redd.it/tomoya-is-real-v0-y992gciceabe1.jpeg?auto=webp&s=7aa16df88b4d8674c77eaf98d5dde991780d8729">
-                <div class="fav-info">
-                    <h3>tomoya okazaki</h3>
-                    <p>clannad</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="fav-section">
-            <div class="fav-card male">
-                <div class="fav-badge">♂ Favorito</div>
-                <img src="https://static.wikia.nocookie.net/gurennlagann/images/5/56/Simon_stepping_out_og_Gurren_Lagann.jpg/revision/latest/scale-to-width-down/985?cb=20180302005345">
-                <div class="fav-info">
-                    <h3>simon </h3>
-                    <p>gurren lagann</p>
-                </div>
-            </div>
-        </div>
-
-
-        <h2>💖 Personagem Feminino Favorito</h2>
-        <div class="fav-section">
+        <h2>💖 Personagens Femininas Favoritas</h2>
+        <div class="fav-row">
             <div class="fav-card female">
                 <div class="fav-badge">♀ Favorita</div>
                 <img src="https://www.animeunited.com.br/oomtumtu/2017/12/rem-re-zero.jpg" alt="Rem">
-                <div class="fav-info">
-                    <h3>Rem</h3>
-                    <p>Re:Zero − Starting Life in Another World</p>
-                </div>
+                <div class="fav-info"><h3>Rem</h3><p>Re:Zero</p></div>
             </div>
-        </div>
-
-        <div class="fav-section">
             <div class="fav-card female">
                 <div class="fav-badge">♀ Favorita</div>
-                <img src="https://i.ytimg.com/vi/KpBYd26Cgl0/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCWcuLWqMUeK_WqwCqKHy49woPRgQ">
-                <div class="fav-info">
-                    <h3>oguri cap</h3>
-                    <p>cinderella gray</p>
-                </div>
+                <img src="https://i.ytimg.com/vi/KpBYd26Cgl0/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCWcuLWqMUeK_WqwCqKHy49woPRgQ" alt="Oguri Cap">
+                <div class="fav-info"><h3>Oguri Cap</h3><p>Cinderella Gray</p></div>
             </div>
-        </div>
-
-        <div class="fav-section">
             <div class="fav-card female">
                 <div class="fav-badge">♀ Favorita</div>
-                <img src="https://static.wikia.nocookie.net/mrfz/images/4/4b/Talulah_Attacks.png/revision/latest?cb=20210221123837">
-                <div class="fav-info">
-                    <h3>talulah </h3>
-                    <p>arknights </p>
-                </div>
+                <img src="https://static.wikia.nocookie.net/mrfz/images/4/4b/Talulah_Attacks.png/revision/latest?cb=20210221123837" alt="Talulah">
+                <div class="fav-info"><h3>Talulah</h3><p>Arknights</p></div>
             </div>
-        </div>
-
-        <div class="fav-section">
             <div class="fav-card female">
                 <div class="fav-badge">♀ Favorita</div>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoBXi1UM8j1JUhCw_b4qDCBlRc_h5IL4NSsQ&s">
-                <div class="fav-info">
-                    <h3>arcueid brunestud</h3>
-                    <p>tsukishime</p>
-                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoBXi1UM8j1JUhCw_b4qDCBlRc_h5IL4NSsQ&s" alt="Arcueid">
+                <div class="fav-info"><h3>Arcueid Brunestud</h3><p>Tsukihime</p></div>
             </div>
         </div>
 
-        <h2>🎵 Melhor Opening</h2>
-        <a href="https://youtu.be/MM8RufZr5lw?list=RDMM8RufZr5lw" target="_blank" style="text-decoration: none;">
-            <div class="opening-card">
-                <img src="https://preview.redd.it/o-que-voc%C3%AAs-acham-de-serial-experiments-lain-eu-descobri-v0-8ve0j2p2q0rb1.jpg?auto=webp&s=d521561db248665ce10bf8ea64e7992431e0d70a">
-                <div class="opening-info">
-                    <div class="op-tag">🎵 Opening 1</div>
-                    <h3>Duvet</h3>
-                    <p>Serial Experiments Lain</p>
-                    <p class="op-artist">Jasmine Rodgers</p>
-                </div>
-                <div class="opening-note">🎶</div>
+        <h2>🎵 Melhores Openings</h2>
+
+        <a href="https://youtu.be/MM8RufZr5lw?list=RDMM8RufZr5lw" target="_blank" class="opening-card">
+            <img src="https://preview.redd.it/o-que-voc%C3%AAs-acham-de-serial-experiments-lain-eu-descobri-v0-8ve0j2p2q0rb1.jpg?auto=webp&s=d521561db248665ce10bf8ea64e7992431e0d70a" alt="Lain">
+            <div class="opening-info">
+                <span class="op-tag">🎵 Opening 1</span>
+                <h3>Duvet</h3>
+                <p>Serial Experiments Lain</p>
+                <p class="op-artist">Jasmine Rodgers</p>
             </div>
+            <div class="opening-note">🎶</div>
         </a>
 
-        <a href="https://youtu.be/nU21rCWkuJw?list=RDnU21rCWkuJw&t=16" target="_blank" style="text-decoration: none;">
-            <div class="opening-card">
-                <img src="https://img.odcdn.com.br/wp-content/uploads/2023/06/Neon-Genesis-Evangelion-Wall.jpg">
-                <div class="opening-info">
-                    <div class="op-tag">🎵 Opening 1</div>
-                    <h3>Cruel Angels' Thesis</h3>
-                    <p>evangelion </p>
-                    <p class="op-artist">Yoko Takahashi</p>
-                </div>
-                <div class="opening-note">🎶</div>
+        <a href="https://youtu.be/nU21rCWkuJw?list=RDnU21rCWkuJw&t=16" target="_blank" class="opening-card">
+            <img src="https://img.odcdn.com.br/wp-content/uploads/2023/06/Neon-Genesis-Evangelion-Wall.jpg" alt="Evangelion">
+            <div class="opening-info">
+                <span class="op-tag">🎵 Opening 1</span>
+                <h3>Cruel Angels' Thesis</h3>
+                <p>Neon Genesis Evangelion</p>
+                <p class="op-artist">Yoko Takahashi</p>
             </div>
+            <div class="opening-note">🎶</div>
         </a>
 
-        <a href="https://youtu.be/wMybECC5j30?list=RDwMybECC5j30" target="_blank" style="text-decoration: none;">
-            <div class="opening-card">
-                <img src="https://i1.sndcdn.com/artworks-000162237820-or18pk-t500x500.jpg">
-                <div class="opening-info">
-                    <div class="op-tag">🎵 Opening 2</div>
-                    <h3>Brave Shine</h3>
-                    <p>Fate Stay Night UBW</p>
-                    <p class="op-artist">Aimer</p>
-                </div>
-                <div class="opening-note">🎶</div>
+        <a href="https://youtu.be/wMybECC5j30?list=RDwMybECC5j30" target="_blank" class="opening-card">
+            <img src="https://i1.sndcdn.com/artworks-000162237820-or18pk-t500x500.jpg" alt="UBW">
+            <div class="opening-info">
+                <span class="op-tag">🎵 Opening 2</span>
+                <h3>Brave Shine</h3>
+                <p>Fate/Stay Night: Unlimited Blade Works</p>
+                <p class="op-artist">Aimer</p>
             </div>
+            <div class="opening-note">🎶</div>
         </a>
 
-        <a href="https://youtu.be/0Vwwr3VGsYg?list=RD0Vwwr3VGsYg" target="_blank" style="text-decoration: none;">
-            <div class="opening-card">
-                <img src="https://cdn.myanimelist.net/images/anime/11/79410.jpg" alt="Re:Zero">
-                <div class="opening-info">
-                    <div class="op-tag">🎵 Opening 1</div>
-                    <h3>Redo</h3>
-                    <p>Re:Zero − Starting Life in Another World</p>
-                    <p class="op-artist">Konomi Suzuki</p>
-                </div>
-                <div class="opening-note">🎶</div>
+        <a href="https://youtu.be/0Vwwr3VGsYg?list=RD0Vwwr3VGsYg" target="_blank" class="opening-card">
+            <img src="https://cdn.myanimelist.net/images/anime/11/79410.jpg" alt="Re:Zero">
+            <div class="opening-info">
+                <span class="op-tag">🎵 Opening 1</span>
+                <h3>Redo</h3>
+                <p>Re:Zero − Starting Life in Another World</p>
+                <p class="op-artist">Konomi Suzuki</p>
             </div>
+            <div class="opening-note">🎶</div>
         </a>
 
-        <a href="https://youtu.be/JBqxVX_LXvk" target="_blank" style="text-decoration: none;">
-            <div class="opening-card">
-                <img src="https://i.ytimg.com/vi/MRVajvqdy_Y/maxresdefault.jpg">
-                <div class="opening-info">
-                    <div class="op-tag">🎵 Opening 1</div>
-                    <h3>Inferno</h3>
-                    <p>Fire Force</p>
-                    <p class="op-artist">Mrs. GREEN APPLE</p>
-                </div>
-                <div class="opening-note">🎶</div>
+        <a href="https://youtu.be/JBqxVX_LXvk" target="_blank" class="opening-card">
+            <img src="https://i.ytimg.com/vi/MRVajvqdy_Y/maxresdefault.jpg" alt="Fire Force">
+            <div class="opening-info">
+                <span class="op-tag">🎵 Opening 1</span>
+                <h3>Inferno</h3>
+                <p>Fire Force</p>
+                <p class="op-artist">Mrs. GREEN APPLE</p>
             </div>
+            <div class="opening-note">🎶</div>
         </a>
 
     </div><!-- end favoritos -->
+
+    <!-- ══════════ MARCOS ══════════ -->
+    <div class="chapter" id="tab-marcos">
+        <h2>🏆 Marcos da Jornada</h2>
+        <p style="color:#888; margin-bottom:25px;">Os animes que marcaram cada 100 da lista.</p>
+        <div class="marco-grid">
+
+            <div class="marco-card">
+                <img src="https://upload.wikimedia.org/wikipedia/pt/e/e2/Ponyo_p%C3%B4ster.png" alt="Ponyo">
+                <div class="marco-num">#1</div>
+                <div class="marco-info"><h3>Ponyo</h3><p>O começo de tudo</p></div>
+            </div>
+
+            <div class="marco-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BMzcxMjBiNWMtNDBmYi00NmFlLWFlOTctZjlkMzExMWU0YTI5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Nisekoi">
+                <div class="marco-num">#100</div>
+                <div class="marco-info"><h3>Nisekoi</h3><p>Data: xx/xx/2020</p></div>
+            </div>
+
+            <div class="marco-card">
+                <img src="https://m.media-amazon.com/images/I/91XjS5O83yL._AC_UF894,1000_QL80_.jpg" alt="Shuffle!">
+                <div class="marco-num">#200</div>
+                <div class="marco-info"><h3>Shuffle!</h3><p>Data: 10/xx/2022</p></div>
+            </div>
+
+            <div class="marco-card">
+                <img src="https://cdn.myanimelist.net/images/anime/1223/96541.jpg" alt="Fullmetal Alchemist">
+                <div class="marco-num">#300</div>
+                <div class="marco-info"><h3>Fullmetal Alchemist</h3><p>Data: 08/06/2024</p></div>
+            </div>
+
+        </div>
+    </div><!-- end marcos -->
 
     <!-- ══════════ ESTÚDIOS ══════════ -->
     <div class="chapter" id="tab-estudios">
@@ -575,102 +395,48 @@
         <div class="studio-grid">
 
             <div class="studio-card">
-                <div class="studio-banner">
-                    <img src="https://cdn.myanimelist.net/images/anime/1223/96541.jpg" alt="Bones">
-                    <div class="studio-name"><span class="studio-logo">🦴</span><h3>BONES</h3><span class="studio-founded">Fundado em 1998</span></div>
-                </div>
-                <div class="studio-body">
-                    <img src="https://cdn.myanimelist.net/images/anime/1223/96541.jpg" alt="FMA Brotherhood">
-                    <div class="studio-anime-info"><span class="label-studio">✦ Melhor Anime</span><h4>Fullmetal Alchemist: Brotherhood</h4></div>
-                </div>
+                <div class="studio-banner"><img src="https://cdn.myanimelist.net/images/anime/1223/96541.jpg" alt="Bones"><div class="studio-name"><span class="studio-logo">🦴</span><h3>BONES</h3><span class="studio-founded">Fundado em 1998</span></div></div>
+                <div class="studio-body"><img src="https://cdn.myanimelist.net/images/anime/1223/96541.jpg" alt="FMA Brotherhood"><div class="studio-anime-info"><span class="label-studio">✦ Melhor Anime</span><h4>Fullmetal Alchemist: Brotherhood</h4></div></div>
             </div>
 
             <div class="studio-card">
-                <div class="studio-banner">
-                    <img src="https://cdn.myanimelist.net/images/anime/10/47347.jpg" alt="WIT Studio">
-                    <div class="studio-name"><span class="studio-logo">⚔️</span><h3>WIT STUDIO</h3><span class="studio-founded">Fundado em 2012</span></div>
-                </div>
-                <div class="studio-body">
-                    <img src="https://cdn.myanimelist.net/images/anime/10/47347.jpg" alt="Attack on Titan">
-                    <div class="studio-anime-info"><span class="label-studio">✦ Melhor Anime</span><h4>Attack on Titan (S1–S3)</h4></div>
-                </div>
+                <div class="studio-banner"><img src="https://cdn.myanimelist.net/images/anime/10/47347.jpg" alt="WIT Studio"><div class="studio-name"><span class="studio-logo">⚔️</span><h3>WIT STUDIO</h3><span class="studio-founded">Fundado em 2012</span></div></div>
+                <div class="studio-body"><img src="https://cdn.myanimelist.net/images/anime/10/47347.jpg" alt="Attack on Titan"><div class="studio-anime-info"><span class="label-studio">✦ Melhor Anime</span><h4>Attack on Titan (S1–S3)</h4></div></div>
             </div>
 
             <div class="studio-card">
-                <div class="studio-banner">
-                    <img src="https://m.media-amazon.com/images/M/MV5BZjI1YjZiMDUtZTI3MC00YTA5LWIzMmMtZmQ0NTZiYWM4NTYwXkEyXkFqcGc@._V1_QL75_UX190_CR0,2,190,281_.jpg" alt="White Fox">
-                    <div class="studio-name"><span class="studio-logo">🦊</span><h3>WHITE FOX</h3><span class="studio-founded">Fundado em 2007</span></div>
-                </div>
-                <div class="studio-body">
-                    <img src="https://m.media-amazon.com/images/M/MV5BZjI1YjZiMDUtZTI3MC00YTA5LWIzMmMtZmQ0NTZiYWM4NTYwXkEyXkFqcGc@._V1_QL75_UX190_CR0,2,190,281_.jpg" alt="Steins;Gate">
-                    <div class="studio-anime-info"><span class="label-studio">✦ Melhor Anime</span><h4>Steins;Gate</h4></div>
-                </div>
+                <div class="studio-banner"><img src="https://m.media-amazon.com/images/M/MV5BZjI1YjZiMDUtZTI3MC00YTA5LWIzMmMtZmQ0NTZiYWM4NTYwXkEyXkFqcGc@._V1_QL75_UX190_CR0,2,190,281_.jpg" alt="White Fox"><div class="studio-name"><span class="studio-logo">🦊</span><h3>WHITE FOX</h3><span class="studio-founded">Fundado em 2007</span></div></div>
+                <div class="studio-body"><img src="https://m.media-amazon.com/images/M/MV5BZjI1YjZiMDUtZTI3MC00YTA5LWIzMmMtZmQ0NTZiYWM4NTYwXkEyXkFqcGc@._V1_QL75_UX190_CR0,2,190,281_.jpg" alt="Steins;Gate"><div class="studio-anime-info"><span class="label-studio">✦ Melhor Anime</span><h4>Steins;Gate</h4></div></div>
             </div>
 
             <div class="studio-card">
-                <div class="studio-banner">
-                    <img src="https://m.media-amazon.com/images/M/MV5BMGJlODA2ZmItOTRiZS00NWM5LWJlNTQtYzI5MTNiZjA2MGFjXkEyXkFqcGc@._V1_.jpg" alt="Gainax">
-                    <div class="studio-name"><span class="studio-logo">🔥</span><h3>GAINAX</h3><span class="studio-founded">Fundado em 1984</span></div>
-                </div>
-                <div class="studio-body">
-                    <img src="https://m.media-amazon.com/images/M/MV5BMGJlODA2ZmItOTRiZS00NWM5LWJlNTQtYzI5MTNiZjA2MGFjXkEyXkFqcGc@._V1_.jpg" alt="Gurren Lagann">
-                    <div class="studio-anime-info"><span class="label-studio">✦ Melhor Anime</span><h4>Tengen Toppa Gurren Lagann</h4></div>
-                </div>
+                <div class="studio-banner"><img src="https://m.media-amazon.com/images/M/MV5BMGJlODA2ZmItOTRiZS00NWM5LWJlNTQtYzI5MTNiZjA2MGFjXkEyXkFqcGc@._V1_.jpg" alt="Gainax"><div class="studio-name"><span class="studio-logo">🔥</span><h3>GAINAX</h3><span class="studio-founded">Fundado em 1984</span></div></div>
+                <div class="studio-body"><img src="https://m.media-amazon.com/images/M/MV5BMGJlODA2ZmItOTRiZS00NWM5LWJlNTQtYzI5MTNiZjA2MGFjXkEyXkFqcGc@._V1_.jpg" alt="Gurren Lagann"><div class="studio-anime-info"><span class="label-studio">✦ Melhor Anime</span><h4>Tengen Toppa Gurren Lagann</h4></div></div>
             </div>
 
             <div class="studio-card">
-                <div class="studio-banner">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvie5TU70Eomp54ZgOMLGTzCDjd-Eg8fBoew&s">
-                    <div class="studio-name"><span class="studio-logo">🃏</span><h3>MADHOUSE</h3><span class="studio-founded">Fundado em 1972</span></div>
-                </div>
-                <div class="studio-body">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvie5TU70Eomp54ZgOMLGTzCDjd-Eg8fBoew&s">
-                    <div class="studio-anime-info"><span class="label-studio">✦ Melhor Anime</span><h4>frieren</h4></div>
-                </div>
+                <div class="studio-banner"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvie5TU70Eomp54ZgOMLGTzCDjd-Eg8fBoew&s" alt="Madhouse"><div class="studio-name"><span class="studio-logo">🃏</span><h3>MADHOUSE</h3><span class="studio-founded">Fundado em 1972</span></div></div>
+                <div class="studio-body"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvie5TU70Eomp54ZgOMLGTzCDjd-Eg8fBoew&s" alt="Frieren"><div class="studio-anime-info"><span class="label-studio">✦ Melhor Anime</span><h4>Frieren: Beyond Journey's End</h4></div></div>
             </div>
 
             <div class="studio-card">
-                <div class="studio-banner">
-                    <img src="https://cdn.myanimelist.net/images/anime/1500/103005.jpg" alt="MAPPA">
-                    <div class="studio-name"><span class="studio-logo">🗡️</span><h3>MAPPA</h3><span class="studio-founded">Fundado em 2011</span></div>
-                </div>
-                <div class="studio-body">
-                    <img src="https://cdn.myanimelist.net/images/anime/1500/103005.jpg" alt="Vinland Saga S2">
-                    <div class="studio-anime-info"><span class="label-studio">✦ Melhor Anime</span><h4>Vinland Saga (S2)</h4></div>
-                </div>
+                <div class="studio-banner"><img src="https://cdn.myanimelist.net/images/anime/1500/103005.jpg" alt="MAPPA"><div class="studio-name"><span class="studio-logo">🗡️</span><h3>MAPPA</h3><span class="studio-founded">Fundado em 2011</span></div></div>
+                <div class="studio-body"><img src="https://cdn.myanimelist.net/images/anime/1500/103005.jpg" alt="Vinland Saga S2"><div class="studio-anime-info"><span class="label-studio">✦ Melhor Anime</span><h4>Vinland Saga (S2)</h4></div></div>
             </div>
 
             <div class="studio-card">
-                <div class="studio-banner">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSxF_nHNH0B7Z2fIp1od5lVjobHznutgi0bQ&s">
-                    <div class="studio-name"><span class="studio-logo">⚡</span><h3>STUDIO TRIGGER</h3><span class="studio-founded">Fundado em 2011</span></div>
-                </div>
-                <div class="studio-body">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSxF_nHNH0B7Z2fIp1od5lVjobHznutgi0bQ&s">
-                    <div class="studio-anime-info"><span class="label-studio">✦ Melhor Anime</span><h4>kill la kill</h4></div>
-                </div>
+                <div class="studio-banner"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSxF_nHNH0B7Z2fIp1od5lVjobHznutgi0bQ&s" alt="Trigger"><div class="studio-name"><span class="studio-logo">⚡</span><h3>STUDIO TRIGGER</h3><span class="studio-founded">Fundado em 2011</span></div></div>
+                <div class="studio-body"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSxF_nHNH0B7Z2fIp1od5lVjobHznutgi0bQ&s" alt="Kill la Kill"><div class="studio-anime-info"><span class="label-studio">✦ Melhor Anime</span><h4>Kill la Kill</h4></div></div>
             </div>
 
             <div class="studio-card">
-                <div class="studio-banner">
-                    <img src="https://m.media-amazon.com/images/I/81ScRXWN6DL._AC_UF1000,1000_QL80_.jpg" alt="CloverWorks">
-                    <div class="studio-name"><span class="studio-logo">🍀</span><h3>CLOVERWORKS</h3><span class="studio-founded">Fundado em 2018</span></div>
-                </div>
-                <div class="studio-body">
-                    <img src="https://m.media-amazon.com/images/I/81ScRXWN6DL._AC_UF1000,1000_QL80_.jpg" alt="Bocchi the Rock!">
-                    <div class="studio-anime-info"><span class="label-studio">✦ Melhor Anime</span><h4>Bocchi the Rock!</h4></div>
-                </div>
+                <div class="studio-banner"><img src="https://m.media-amazon.com/images/I/81ScRXWN6DL._AC_UF1000,1000_QL80_.jpg" alt="CloverWorks"><div class="studio-name"><span class="studio-logo">🍀</span><h3>CLOVERWORKS</h3><span class="studio-founded">Fundado em 2018</span></div></div>
+                <div class="studio-body"><img src="https://m.media-amazon.com/images/I/81ScRXWN6DL._AC_UF1000,1000_QL80_.jpg" alt="Bocchi the Rock!"><div class="studio-anime-info"><span class="label-studio">✦ Melhor Anime</span><h4>Bocchi the Rock!</h4></div></div>
             </div>
 
             <div class="studio-card">
-                <div class="studio-banner">
-                    <img src="https://m.media-amazon.com/images/M/MV5BYzU3NDM4ZjgtY2UyMi00YTczLTgyNDEtMjBiMDJlOGUxNjcxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Bones Mob">
-                    <div class="studio-name"><span class="studio-logo">🌀</span><h3>BONES</h3><span class="studio-founded">Mob Psycho 100</span></div>
-                </div>
-                <div class="studio-body">
-                    <img src="https://m.media-amazon.com/images/M/MV5BYzU3NDM4ZjgtY2UyMi00YTczLTgyNDEtMjBiMDJlOGUxNjcxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Mob Psycho 100">
-                    <div class="studio-anime-info"><span class="label-studio">✦ Destaque</span><h4>Mob Psycho 100</h4></div>
-                </div>
+                <div class="studio-banner"><img src="https://m.media-amazon.com/images/M/MV5BYzU3NDM4ZjgtY2UyMi00YTczLTgyNDEtMjBiMDJlOGUxNjcxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Bones Mob"><div class="studio-name"><span class="studio-logo">🌀</span><h3>BONES</h3><span class="studio-founded">Mob Psycho 100</span></div></div>
+                <div class="studio-body"><img src="https://m.media-amazon.com/images/M/MV5BYzU3NDM4ZjgtY2UyMi00YTczLTgyNDEtMjBiMDJlOGUxNjcxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Mob Psycho 100"><div class="studio-anime-info"><span class="label-studio">✦ Destaque</span><h4>Mob Psycho 100</h4></div></div>
             </div>
 
         </div>
@@ -682,7 +448,15 @@
     <p>© 2026 — Classificação de Animes &nbsp;|&nbsp; <span>Toddy</span></p>
 </footer>
 
-<script src="script.js"></script>
+<script>
+    function showTab(name, el) {
+        document.querySelectorAll('.chapter').forEach(c => c.classList.remove('active'));
+        document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+        document.getElementById('tab-' + name).classList.add('active');
+        el.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
 
 </body>
 </html>

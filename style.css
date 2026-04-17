@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&display=swap');
 
 * { box-sizing: border-box; }
@@ -17,8 +16,8 @@ body::before {
     position: fixed;
     inset: 0;
     background-image:
-        linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
+    linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
     background-size: 40px 40px;
     pointer-events: none;
     z-index: 0;
@@ -189,14 +188,13 @@ h3.sub::before {
 .demo-card h4 { margin: 0 0 6px; color: #facc15; font-family: 'Orbitron', sans-serif; font-size: 0.9em; letter-spacing: 1px; }
 .demo-card p { margin: 0; font-size: 0.78em; color: #777; }
 
-/* ── MELHORES — top 3 pessoal ── */
+/* MELHORES — top pessoal */
 .top3-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 28px;
     margin-top: 20px;
 }
-
 .top3-card {
     background: #1a1a2e;
     border-radius: 20px;
@@ -213,9 +211,7 @@ h3.sub::before {
 .top3-card.rank-1 { border-color: #facc15; box-shadow: 0 6px 30px rgba(250,204,21,0.2); }
 .top3-card.rank-2 { border-color: #94a3b8; }
 .top3-card.rank-3 { border-color: #cd7c3a; }
-
 .top3-card img { width: 100%; height: 320px; object-fit: cover; }
-
 .top3-rank {
     position: absolute;
     top: 14px; left: 14px;
@@ -229,16 +225,56 @@ h3.sub::before {
 .rank-1 .top3-rank { background: rgba(250,204,21,0.2); color: #facc15; border: 1px solid #facc15; }
 .rank-2 .top3-rank { background: rgba(148,163,184,0.2); color: #94a3b8; border: 1px solid #94a3b8; }
 .rank-3 .top3-rank { background: rgba(205,124,58,0.2); color: #cd7c3a; border: 1px solid #cd7c3a; }
-
 .top3-info { padding: 16px 18px 20px; }
 .top3-info h3 { margin: 0 0 6px; font-size: 1.1em; color: #fff; font-weight: 700; }
 .top3-info p { margin: 0; font-size: 0.82em; color: #888; }
 
-/* ── FAVORITOS ── */
-.fav-section {
+/* ── MARCOS ── */
+.marco-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 28px;
+    margin-top: 20px;
+}
+.marco-card {
+    background: #1a1a2e;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid #252545;
+    transition: all 0.4s ease;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    text-align: center;
+}
+.marco-card:hover {
+    transform: translateY(-12px);
+    border-color: #facc15;
+    box-shadow: 0 20px 40px rgba(250,204,21,0.2);
+}
+.marco-card img { width: 100%; height: 300px; object-fit: cover; }
+.marco-num {
+    position: absolute;
+    top: 14px; left: 14px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.3em;
+    font-weight: 900;
+    padding: 5px 14px;
+    border-radius: 999px;
+    backdrop-filter: blur(8px);
+    background: rgba(250,204,21,0.15);
+    color: #facc15;
+    border: 1px solid #facc15;
+    text-shadow: 0 0 10px rgba(250,204,21,0.5);
+}
+.marco-info { padding: 14px 14px 18px; }
+.marco-info h3 { margin: 0 0 4px; font-size: 1em; color: #fff; font-weight: 700; }
+.marco-info p { margin: 0; font-size: 0.8em; color: #666; }
+
+/* ── FAVORITOS — lado a lado ── */
+.fav-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 24px;
     margin-top: 20px;
 }
 
@@ -259,10 +295,10 @@ h3.sub::before {
 
 .fav-badge {
     position: absolute;
-    top: 14px; left: 14px;
-    padding: 5px 14px;
+    top: 12px; left: 12px;
+    padding: 4px 12px;
     border-radius: 999px;
-    font-size: 0.75em;
+    font-size: 0.72em;
     font-weight: bold;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -271,23 +307,25 @@ h3.sub::before {
 .fav-card.male .fav-badge   { background: rgba(96,170,255,0.2); color: #60aaff; border: 1px solid #60aaff; }
 .fav-card.female .fav-badge { background: rgba(255,102,170,0.2); color: #ff66aa; border: 1px solid #ff66aa; }
 
-.fav-card img { width: 100%; height: 320px; object-fit: cover; object-position: top; }
-.fav-info { padding: 18px 16px 22px; }
-.fav-info h3 { margin: 0 0 6px; font-size: 1.2em; color: #fff; font-weight: 700; }
-.fav-info p { margin: 0; font-size: 0.85em; color: #888; }
+.fav-card img { width: 100%; height: 300px; object-fit: cover; object-position: top; }
+.fav-info { padding: 14px 14px 18px; }
+.fav-info h3 { margin: 0 0 4px; font-size: 1.05em; color: #fff; font-weight: 700; }
+.fav-info p { margin: 0; font-size: 0.82em; color: #888; }
 
-/* ── OPENING CARD ── */
+/* OPENING CARD */
 .opening-card {
     background: linear-gradient(135deg, #1a1a2e, #0f0f2a);
     border: 2px solid #7c3aed;
     border-radius: 20px;
-    padding: 30px 28px;
+    padding: 24px 22px;
     display: flex;
     align-items: center;
-    gap: 28px;
+    gap: 24px;
     margin-top: 20px;
     transition: all 0.4s ease;
     box-shadow: 0 6px 30px rgba(124,58,237,0.2);
+    text-decoration: none;
+    color: inherit;
 }
 .opening-card:hover {
     transform: translateY(-6px);
@@ -295,7 +333,7 @@ h3.sub::before {
     border-color: #a855f7;
 }
 .opening-card img {
-    width: 120px; height: 160px;
+    width: 110px; height: 150px;
     object-fit: cover;
     border-radius: 12px;
     flex-shrink: 0;
@@ -303,33 +341,24 @@ h3.sub::before {
 }
 .opening-info { flex: 1; }
 .opening-info .op-tag {
-    font-size: 0.75em;
+    font-size: 0.72em;
     color: #a855f7;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: bold;
     margin-bottom: 8px;
+    display: block;
 }
 .opening-info h3 {
-    margin: 0 0 6px;
+    margin: 0 0 5px;
     font-family: 'Orbitron', sans-serif;
-    font-size: 1.2em;
+    font-size: 1.1em;
     color: #fff;
     text-shadow: 0 0 12px rgba(168,85,247,0.4);
 }
-.opening-info p {
-    margin: 0 0 4px;
-    font-size: 0.88em;
-    color: #aaa;
-}
-.opening-info .op-artist {
-    font-size: 0.82em;
-    color: #666;
-}
-.opening-note {
-    font-size: 1.8em;
-    flex-shrink: 0;
-}
+.opening-info p { margin: 0 0 3px; font-size: 0.86em; color: #aaa; }
+.opening-info .op-artist { font-size: 0.8em; color: #666; }
+.opening-note { font-size: 1.8em; flex-shrink: 0; }
 
 /* ESTÚDIOS */
 .studio-grid {
@@ -350,11 +379,7 @@ h3.sub::before {
     box-shadow: 0 14px 32px rgba(192,132,252,0.25);
     transform: translateY(-8px);
 }
-.studio-banner {
-    position: relative;
-    height: 160px;
-    overflow: hidden;
-}
+.studio-banner { position: relative; height: 160px; overflow: hidden; }
 .studio-banner img {
     width: 100%; height: 100%;
     object-fit: cover;
@@ -363,31 +388,21 @@ h3.sub::before {
 }
 .studio-card:hover .studio-banner img { filter: brightness(0.6); }
 .studio-banner .studio-name {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 12px;
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    text-align: center; padding: 12px;
 }
 .studio-banner .studio-logo { font-size: 2em; margin-bottom: 6px; }
 .studio-banner h3 {
     margin: 0;
     font-family: 'Orbitron', sans-serif;
-    font-size: 0.95em;
-    color: #c084fc;
+    font-size: 0.95em; color: #c084fc;
     letter-spacing: 1px;
     text-shadow: 0 0 12px rgba(192,132,252,0.6);
 }
 .studio-banner .studio-founded { font-size: 0.75em; color: #aaa; margin-top: 4px; }
-.studio-body {
-    padding: 14px 16px 18px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-}
+.studio-body { padding: 14px 16px 18px; display: flex; align-items: center; gap: 14px; }
 .studio-body img { width: 55px; height: 75px; object-fit: cover; border-radius: 8px; border: 1px solid #333; flex-shrink: 0; }
 .studio-body .studio-anime-info { flex: 1; }
 .studio-body .label-studio { display: block; font-size: 0.72em; margin-bottom: 4px; }
