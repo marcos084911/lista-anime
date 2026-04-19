@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&display=swap');
 * { box-sizing: border-box; }
 body { font-family: 'Noto Sans JP','Segoe UI',sans-serif; background:#0f0f1a; color:#eee; margin:0; padding:20px; line-height:1.6; }
@@ -133,3 +132,190 @@ h3.sub::before { content:''; display:inline-block; width:4px; height:16px; backg
 
 footer { text-align:center; margin-top:110px; padding:50px 20px; color:#444; font-size:0.9em; border-top:1px solid #252545; position:relative; z-index:1; }
 footer span { color:#ff66aa; }
+#tab-inicio { padding: 0; }
+.inicio-hero {
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 40px 20px;
+}
+.inicio-bg {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 30% 40%, rgba(255,102,170,0.12) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 60%, rgba(0,212,255,0.10) 0%, transparent 60%),
+                radial-gradient(ellipse at 50% 90%, rgba(124,58,237,0.08) 0%, transparent 50%);
+    z-index: 0;
+}
+.inicio-content { position: relative; z-index: 1; max-width: 700px; }
+.inicio-avatar {
+    width: 110px; height: 110px;
+    border-radius: 50%;
+    border: 3px solid #ff66aa;
+    box-shadow: 0 0 24px rgba(255,102,170,0.5);
+    margin-bottom: 22px;
+    object-fit: cover;
+}
+.inicio-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.6em;
+    font-weight: 900;
+    color: #ff66aa;
+    text-shadow: 0 0 20px rgba(255,102,170,0.5);
+    margin: 0 0 6px;
+    letter-spacing: 2px;
+}
+.inicio-tag {
+    font-size: 0.9em;
+    color: #00d4ff;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+.inicio-desc {
+    font-size: 1em;
+    color: #999;
+    line-height: 1.8;
+    margin-bottom: 32px;
+}
+.inicio-stats {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 36px;
+}
+.inicio-stat {
+    background: #1a1a2e;
+    border: 1px solid #252545;
+    border-radius: 14px;
+    padding: 16px 24px;
+    min-width: 100px;
+    transition: all 0.3s;
+}
+.inicio-stat:hover { border-color: #ff66aa; transform: translateY(-4px); }
+.inicio-stat span {
+    display: block;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8em;
+    font-weight: 900;
+    color: #facc15;
+}
+.inicio-stat p { margin: 4px 0 0; font-size: 0.72em; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+.inicio-btns { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+.btn-primary {
+    background: linear-gradient(135deg, #ff66aa, #c0398a);
+    border: none; border-radius: 999px;
+    color: #fff; font-weight: bold;
+    padding: 12px 28px; cursor: pointer;
+    font-size: 0.9em; letter-spacing: 1px;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+.btn-primary:hover { transform: scale(1.05); box-shadow: 0 8px 24px rgba(255,102,170,0.4); }
+.btn-secondary {
+    background: transparent;
+    border: 2px solid #00d4ff; border-radius: 999px;
+    color: #00d4ff; font-weight: bold;
+    padding: 12px 28px; cursor: pointer;
+    font-size: 0.9em; letter-spacing: 1px;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+.btn-secondary:hover { background: rgba(0,212,255,0.1); transform: scale(1.05); }
+
+/* ── MAL ── */
+#mal-stats-bar { display:flex; gap:14px; margin-bottom:28px; flex-wrap:wrap; }
+.mal-stat { background:#1a1a2e; border:1px solid #252545; border-radius:14px; padding:16px 20px; text-align:center; flex:1; min-width:90px; transition:all 0.3s; }
+.mal-stat:hover { border-color:#00d4ff; }
+.mal-stat span { display:block; font-family:'Orbitron',sans-serif; font-size:2em; font-weight:900; color:#facc15; text-shadow:0 0 12px rgba(250,204,21,0.4); }
+.mal-stat p { margin:4px 0 0; font-size:0.75em; color:#888; text-transform:uppercase; letter-spacing:1px; }
+.mal-card-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(155px,1fr)); gap:16px; margin-top:12px; margin-bottom:30px; }
+.mal-card { background:#1a1a2e; border-radius:14px; overflow:hidden; border:1px solid #2a2a45; transition:all 0.35s ease; text-decoration:none; color:inherit; display:block; position:relative; }
+.mal-card:hover { transform:translateY(-10px); border-color:#ff66aa; box-shadow:0 14px 28px rgba(255,102,170,0.25); }
+.mal-card img { width:100%; height:220px; object-fit:cover; display:block; }
+.mal-card-info { padding:10px 10px 12px; }
+.mal-card-info h3 { margin:0 0 6px; font-size:0.84em; color:#fff; font-weight:700; line-height:1.3; }
+.mal-badge { display:inline-block; padding:3px 9px; border-radius:999px; font-size:0.68em; font-weight:bold; text-transform:uppercase; letter-spacing:0.5px; }
+.badge-completed { background:rgba(68,255,170,0.15); color:#44ffaa; border:1px solid #44ffaa; }
+.badge-watching  { background:rgba(0,212,255,0.15);  color:#00d4ff; border:1px solid #00d4ff; }
+.badge-on_hold   { background:rgba(250,204,21,0.15); color:#facc15; border:1px solid #facc15; }
+.badge-dropped   { background:rgba(255,80,80,0.15);  color:#ff5050; border:1px solid #ff5050; }
+.mal-score { position:absolute; top:8px; right:8px; background:rgba(0,0,0,0.8); border-radius:8px; padding:3px 8px; font-size:0.78em; font-weight:bold; color:#facc15; }
+.mal-ep { font-size:0.7em; color:#666; margin-top:3px; display:block; }
+
+/* ── FILMES ── */
+.film-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:24px; margin-top:20px; }
+.film-card { background:#1a1a2e; border-radius:16px; overflow:hidden; border:1px solid #2a2a45; transition:all 0.4s ease; position:relative; }
+.film-card:hover { transform:translateY(-12px); border-color:#facc15; box-shadow:0 16px 32px rgba(250,204,21,0.2); }
+.film-card img { width:100%; height:310px; object-fit:cover; }
+.film-badge { position:absolute; top:10px; left:10px; background:rgba(250,204,21,0.2); color:#facc15; border:1px solid #facc15; border-radius:999px; padding:4px 12px; font-size:0.72em; font-weight:bold; text-transform:uppercase; letter-spacing:1px; backdrop-filter:blur(6px); }
+.film-info { padding:14px 14px 18px; }
+.film-info h3 { margin:0 0 5px; font-size:0.98em; color:#fff; font-weight:700; }
+.film-info p { margin:0; font-size:0.78em; color:#888; }
+
+/* ── MÚSICAS ── */
+.music-section-label { font-family:'Orbitron',sans-serif; font-size:0.8em; color:#888; text-transform:uppercase; letter-spacing:2px; margin:30px 0 14px; display:flex; align-items:center; gap:10px; }
+.music-section-label::before { content:''; flex:1; height:1px; background:#252545; }
+.music-section-label::after  { content:''; flex:1; height:1px; background:#252545; }
+.music-card {
+    background: linear-gradient(135deg, #1a1a2e, #0f0f2a);
+    border: 1px solid #252545;
+    border-radius: 16px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 14px;
+    transition: all 0.35s ease;
+    text-decoration: none;
+    color: inherit;
+}
+.music-card:hover { transform: translateX(6px); border-color: #ff66aa; box-shadow: 0 8px 24px rgba(255,102,170,0.2); }
+.music-card.op-card  { border-left: 3px solid #a855f7; }
+.music-card.ed-card  { border-left: 3px solid #ff66aa; }
+.music-card.ost-card { border-left: 3px solid #00d4ff; }
+.music-card img { width: 72px; height: 72px; object-fit: cover; border-radius: 10px; flex-shrink: 0; }
+.music-info { flex: 1; }
+.music-type { font-size: 0.68em; text-transform: uppercase; letter-spacing: 2px; font-weight: bold; margin-bottom: 4px; display: block; }
+.op-card  .music-type { color: #a855f7; }
+.ed-card  .music-type { color: #ff66aa; }
+.ost-card .music-type { color: #00d4ff; }
+.music-info h3 { margin: 0 0 3px; font-family:'Orbitron',sans-serif; font-size:0.95em; color:#fff; }
+.music-info .anime-name { font-size: 0.8em; color:#aaa; margin:0 0 2px; }
+.music-info .artist { font-size: 0.75em; color:#666; margin:0; }
+.music-note { font-size: 1.5em; flex-shrink:0; }
+
+/* ── MANGÁS ── */
+.manga-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(185px,1fr)); gap:22px; margin-top:20px; }
+.manga-card { background:#1a1a2e; border-radius:16px; overflow:hidden; border:1px solid #2a2a45; transition:all 0.4s ease; position:relative; }
+.manga-card:hover { transform:translateY(-12px); border-color:#c084fc; box-shadow:0 16px 32px rgba(192,132,252,0.25); }
+.manga-card img { width:100%; height:260px; object-fit:cover; }
+.manga-vol { position:absolute; top:10px; right:10px; background:rgba(0,0,0,0.8); color:#c084fc; border:1px solid #c084fc; border-radius:8px; padding:3px 10px; font-size:0.72em; font-weight:bold; backdrop-filter:blur(4px); }
+.manga-info { padding:12px 13px 16px; }
+.manga-info h3 { margin:0 0 4px; font-size:0.92em; color:#fff; font-weight:700; }
+.manga-info .manga-author { font-size:0.75em; color:#888; margin:0 0 6px; }
+.manga-status { display:inline-block; padding:3px 9px; border-radius:999px; font-size:0.68em; font-weight:bold; text-transform:uppercase; }
+.manga-ongoing  { background:rgba(0,212,255,0.15); color:#00d4ff; border:1px solid #00d4ff; }
+.manga-finished { background:rgba(68,255,170,0.15); color:#44ffaa; border:1px solid #44ffaa; }
+
+/* ── FLOATING COUNTER ── */
+#mal-counter { position:fixed; bottom:24px; right:24px; background:linear-gradient(135deg,#1a1a2e,#16213e); border:2px solid #00d4ff; border-radius:20px; width:192px; box-shadow:0 8px 32px rgba(0,212,255,0.25); z-index:9999; overflow:hidden; transition:all 0.3s ease; font-family:'Noto Sans JP',sans-serif; }
+#counter-header { background:rgba(0,212,255,0.1); padding:10px 14px; display:flex; justify-content:space-between; align-items:center; font-size:0.8em; color:#00d4ff; font-weight:bold; }
+#counter-header button { background:none; border:none; color:#00d4ff; cursor:pointer; font-size:0.9em; padding:0; transition:transform 0.3s; }
+#counter-body { padding:12px 14px 14px; text-align:center; }
+#mal-number { font-family:'Orbitron',sans-serif; font-size:2.6em; font-weight:900; color:#facc15; text-shadow:0 0 16px rgba(250,204,21,0.5); cursor:pointer; line-height:1; margin-bottom:4px; user-select:none; transition:all 0.2s; }
+#mal-number:hover { transform:scale(1.08); color:#ffe566; }
+.counter-label { margin:0 0 10px; font-size:0.68em; color:#888; text-transform:uppercase; letter-spacing:1px; }
+#mal-edit { display:none; margin-bottom:10px; gap:6px; }
+#mal-edit input { flex:1; background:#0f0f1a; border:1px solid #00d4ff; border-radius:8px; color:#fff; padding:6px 8px; font-size:0.88em; width:0; outline:none; }
+#mal-edit button { background:#00d4ff; border:none; border-radius:8px; color:#0f0f1a; font-weight:bold; padding:6px 10px; cursor:pointer; }
+.btn-mal-link { background:linear-gradient(135deg,#2e51a2,#1a3280); border:1px solid #2e51a2; border-radius:10px; color:#fff; padding:7px 10px; cursor:pointer; font-size:0.75em; width:100%; transition:all 0.3s; display:block; text-align:center; text-decoration:none; }
+.btn-mal-link:hover { background:linear-gradient(135deg,#3d6bc7,#2e51a2); }
+.mal-collapsed #counter-body { display:none; }
+.mal-collapsed { border-radius:12px; }
+.mal-collapsed #counter-header button { transform:rotate(180deg); }

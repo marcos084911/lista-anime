@@ -10,21 +10,43 @@
 <div class="section">
 
     <h1>📺 Classificação de Animes</h1>
-    <p class="subtitle">Gêneros · Tipos · Demografia · Melhores · Favoritos · Marcos · Estúdios · Gacha &nbsp;—&nbsp; Toddy</p>
+    <p class="subtitle">Gêneros · Tipos · Demografia · Melhores · Favoritos · Marcos · Estúdios · Gacha · MAL &nbsp;—&nbsp; Toddy</p>
 
     <div class="nav-tabs">
-        <div class="nav-tab active" onclick="showTab('generos',this)">🎭 Gêneros</div>
-        <div class="nav-tab" onclick="showTab('tipos',this)">📀 Tipos</div>
+        <div class="nav-tab active" onclick="showTab('inicio',this)">🏠 Início</div>
+        <div class="nav-tab" onclick="showTab('generos',this)">🎭 Gêneros</div>
         <div class="nav-tab" onclick="showTab('demografia',this)">👥 Demografia</div>
         <div class="nav-tab" onclick="showTab('melhores',this)">🌟 Melhores</div>
         <div class="nav-tab" onclick="showTab('favoritos',this)">❤️ Favoritos</div>
+        <div class="nav-tab" onclick="showTab('musicas',this)">🎵 Músicas</div>
         <div class="nav-tab" onclick="showTab('marcos',this)">🏆 Marcos</div>
-        <div class="nav-tab" onclick="showTab('estudios',this)">🏢 Estúdios</div>
         <div class="nav-tab" onclick="showTab('gacha',this)">🎮 Gacha</div>
     </div>
 
+    <!-- ══════════ INÍCIO ══════════ -->
+    <div class="chapter active" id="tab-inicio">
+        <div class="inicio-hero">
+            
+            <div class="inicio-bg"></div>
+            <div class="inicio-content">
+                <img class="inicio-avatar" src="https://cdn.myanimelist.net/images/anime/11/79410.jpg" alt="Avatar">
+                <h1 class="inicio-name">Toddy</h1>
+                <p class="inicio-tag">XxT0DDyxX &nbsp;·&nbsp; MyAnimeList</p>
+                <p class="inicio-desc">
+                    Bem-vindo ao meu espaço de animes!<br>
+                    Aqui você encontra minha classificação pessoal por gêneros, meus favoritos,<br>
+                    filmes, mangás, músicas e tudo mais sobre minha jornada no mundo otaku.
+                </p>
+                <div class="inicio-btns">
+                    <a class="btn-primary" href="https://myanimelist.net/profile/XxT0DDyxX" target="_blank">🔗 Ver Perfil MAL</a>
+                    <button class="btn-secondary" onclick="showTab('melhores', document.querySelector('[onclick*=melhores]'))">🌟 Meus Melhores</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- ══════════ GÊNEROS ══════════ -->
-    <div class="chapter active" id="tab-generos">
+    <div class="chapter" id="tab-generos">
         <h2>🎭 Drama</h2>
         <div class="anime-grid">
             <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/10/22061.jpg"><div class="info"><p class="label-primeiro">Primeiro</p><h3>Angel Beats!</h3></div></div>
@@ -132,22 +154,6 @@
         </div>
     </div><!-- end generos -->
 
-    <!-- ══════════ TIPOS ══════════ -->
-    <div class="chapter" id="tab-tipos">
-        <h2>📀 Tipos de Anime</h2>
-        <p style="color:#888;margin-bottom:20px;">Formato de distribuição e exibição de cada obra.</p>
-        <div class="pill-grid">
-            <div class="pill">📺 TV — Série exibida na televisão, geralmente 12–26 eps por temporada</div>
-            <div class="pill">🌐 ONA — Lançado originalmente em plataformas online</div>
-            <div class="pill">💿 OVA — Lançado direto em formato físico/digital, sem exibição TV</div>
-            <div class="pill">🎬 Filme — Longa-metragem animado</div>
-            <div class="pill">⭐ Especial — Episódio extra ou especial de temporada</div>
-            <div class="pill">⚡ Curta — Episódios muito curtos, geralmente 2–5 min</div>
-            <div class="pill">📣 PV / CM — Vídeo promocional ou comercial publicitário</div>
-            <div class="pill">🎵 Music Video — Clipe musical animado</div>
-        </div>
-    </div>
-
     <!-- ══════════ DEMOGRAFIA ══════════ -->
     <div class="chapter" id="tab-demografia">
         <h2>👥 Demografia</h2>
@@ -178,6 +184,11 @@
             <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/12/76049.jpg"><div class="info"><p class="label-primeiro">Primeiro</p><h3>One Punch Man</h3></div></div>
             <div class="anime-card"><img src="https://cdn.myanimelist.net/images/anime/1500/103005.jpg"><div class="info"><p class="label-melhor">Melhor</p><h3>Vinland Saga</h3></div></div>
         </div>
+        <h3 class="sub">🌹 Josei</h3>
+        <div class="anime-grid">
+            <div class="anime-card"><img src="https://m.media-amazon.com/images/I/81R8HeREVwL._AC_UF894,1000_QL80_.jpg"><div class="info"><p class="label-primeiro">Primeiro</p><h3>Clannad: After Story</h3></div></div>
+            <div class="anime-card"><img src="https://media.fstatic.com/Mw25F8CpC59SFxaNANhW3zzCHDw=/350x525/smart/filters:format(webp)/media/movies/covers/2014/11/shigatsu-wa-kimi-no-uso_t106389.jpg"><div class="info"><p class="label-melhor">Melhor</p><h3>Your Lie in April</h3></div></div>
+        </div>
     </div>
 
     <!-- ══════════ MELHORES ══════════ -->
@@ -206,21 +217,20 @@
             <div class="top3-card rank-3"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ40BWPVZWNVWlImslQim_JTlwKG9TV9Nhphw&s"><div class="top3-rank">#19</div><div class="top3-info"><h3>Uma Musume: Cinderella Gray</h3><p>Drama · Romance</p></div></div>
             <div class="top3-card rank-3"><img src="https://static.wikia.nocookie.net/sleepy-princess/images/3/3b/Anime_Key_Visual.png/revision/latest/smart/width/250/height/250?cb=20200903041445"><div class="top3-rank">#20</div><div class="top3-info"><h3>Maoujou de Oyasumi</h3><p>Comedy · Fantasy</p></div></div>
             <div class="top3-card rank-3"><img src="https://cdn.myanimelist.net/images/anime/1223/96541.jpg"><div class="top3-rank">#21</div><div class="top3-info"><h3>Fullmetal Alchemist: Brotherhood</h3><p>Action · Fantasy · Adventure</p></div></div>
-            <div class="top3-card rank-3"><img src="https://m.media-amazon.com/images/M/MV5BMGI5NzcyYmItNjI1ZS00YWU4LWE1ODYtYmZhN2E1YmU1MTk4XkEyXkFqcGc@._V1_.jpg"><div class="top3-rank">#22</div><div class="top3-info"><h3>somali to mori no kamisama</h3><p>adventue · drama · fantasy</p></div></div>
+            <div class="top3-card rank-3"><img src="https://m.media-amazon.com/images/M/MV5BMGI5NzcyYmItNjI1ZS00YWU4LWE1ODYtYmZhN2E1YmU1MTk4XkEyXkFqcGc@._V1_.jpg"><div class="top3-rank">#22</div><div class="top3-info"><h3>Somali to Mori no Kamisama</h3><p>Adventure · Drama · Fantasy</p></div></div>
             <div class="top3-card rank-3"><img src="https://m.media-amazon.com/images/M/MV5BMGJlODA2ZmItOTRiZS00NWM5LWJlNTQtYzI5MTNiZjA2MGFjXkEyXkFqcGc@._V1_.jpg"><div class="top3-rank">#23</div><div class="top3-info"><h3>Tengen Toppa Gurren Lagann</h3><p>Action · Mecha · Adventure</p></div></div>
-            <div class="top3-card rank-3"><img src="https://pbs.twimg.com/media/Gz8weNYW8AAgoKc.jpg"><div class="top3-rank">#24</div><div class="top3-info"><h3>fumetsu no anata</h3><p>adventure · Drama</p></div></div>
-            <div class="top3-card rank-3"><img src="https://a.storyblok.com/f/178900/2935x4096/2de6cf3b8d/arknights_rise_from_ember_key_art.jpg/m/filters:quality(95)format(webp)"><div class="top3-rank">#25</div><div class="top3-info"><h3>arknights </h3><p>action · fantasy</p></div></div>
+            <div class="top3-card rank-3"><img src="https://pbs.twimg.com/media/Gz8weNYW8AAgoKc.jpg"><div class="top3-rank">#24</div><div class="top3-info"><h3>Fumetsu no Anata e</h3><p>Adventure · Drama</p></div></div>
+            <div class="top3-card rank-3"><img src="https://a.storyblok.com/f/178900/2935x4096/2de6cf3b8d/arknights_rise_from_ember_key_art.jpg/m/filters:quality(95)format(webp)"><div class="top3-rank">#25</div><div class="top3-info"><h3>Arknights: Perish in Frost</h3><p>Action · Fantasy</p></div></div>
             <div class="top3-card rank-3"><img src="https://m.media-amazon.com/images/M/MV5BOWNmY2IzOGItMmQyNy00ZTM0LThiNjItODM3YzdkYjRlNWU1XkEyXkFqcGc@._V1_.jpg"><div class="top3-rank">#26</div><div class="top3-info"><h3>86 -Eighty Six-</h3><p>Military · Drama · Sci-Fi</p></div></div>
-            <div class="top3-card rank-3"><img src="https://m.media-amazon.com/images/M/MV5BMzUxMzAxYTMtMmYzOS00YzYyLWE2ZDUtYmQxZDhiNWIxNDNiXkEyXkFqcGc@._V1_.jpg"><div class="top3-rank">#27</div><div class="top3-info"><h3>bna</h3><p>anthropomorphic · Action · fantasy</p></div></div>
-            <div class="top3-card rank-3"><img src="https://m.media-amazon.com/images/M/MV5BODM2ZWRhNDktNmI1MC00NWM2LWE4NDYtYmY3ZTQwMDFlZTlkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"><div class="top3-rank">#28</div><div class="top3-info"><h3>engage kiss</h3><p>action · comedy · romance</p></div></div>
-            <div class="top3-card rank-3"><img src="https://m.media-amazon.com/images/M/MV5BMmUyNzNmMDEtNjYzYi00ZDcwLTg4NTQtZTUzYzBiZTYwNzYyXkEyXkFqcGc@._V1_.jpg"><div class="top3-rank">#29</div><div class="top3-info"><h3>grimgar</h3><p>action · drama · isekai · fantasy</p></div></div>
-            <div class="top3-card rank-3"><img src="https://m.media-amazon.com/images/M/MV5BYzA5YmZlNzMtYjdlZC00ZDg0LTgyMjEtNTZhYTFmYzJkNTg1XkEyXkFqcGc@._V1_.jpg"><div class="top3-rank">#30</div><div class="top3-info"><h3>akiba meido sensou</h3><p>action · comedy · organized crime</p></div></div>
+            <div class="top3-card rank-3"><img src="https://m.media-amazon.com/images/M/MV5BMzUxMzAxYTMtMmYzOS00YzYyLWE2ZDUtYmQxZDhiNWIxNDNiXkEyXkFqcGc@._V1_.jpg"><div class="top3-rank">#27</div><div class="top3-info"><h3>BNA: Brand New Animal</h3><p>Anthropomorphic · Action · Fantasy</p></div></div>
+            <div class="top3-card rank-3"><img src="https://m.media-amazon.com/images/M/MV5BODM2ZWRhNDktNmI1MC00NWM2LWE4NDYtYmY3ZTQwMDFlZTlkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"><div class="top3-rank">#28</div><div class="top3-info"><h3>Engage Kiss</h3><p>Action · Comedy · Romance</p></div></div>
+            <div class="top3-card rank-3"><img src="https://m.media-amazon.com/images/M/MV5BMmUyNzNmMDEtNjYzYi00ZDcwLTg4NTQtZTUzYzBiZTYwNzYyXkEyXkFqcGc@._V1_.jpg"><div class="top3-rank">#29</div><div class="top3-info"><h3>Grimgar of Fantasy and Ash</h3><p>Action · Drama · Isekai · Fantasy</p></div></div>
+            <div class="top3-card rank-3"><img src="https://m.media-amazon.com/images/M/MV5BYzA5YmZlNzMtYjdlZC00ZDg0LTgyMjEtNTZhYTFmYzJkNTg1XkEyXkFqcGc@._V1_.jpg"><div class="top3-rank">#30</div><div class="top3-info"><h3>Akiba Meido Sensou</h3><p>Action · Comedy · Organized Crime</p></div></div>
         </div>
-    </div><!-- end melhores -->
+    </div>
 
     <!-- ══════════ FAVORITOS ══════════ -->
     <div class="chapter" id="tab-favoritos">
-
         <h2>💙 Personagens Masculinos Favoritos</h2>
         <div class="fav-row">
             <div class="fav-card male"><div class="fav-badge">♂</div><img src="https://i.pinimg.com/474x/80/d7/58/80d7586c842b53f343f00991178110a7.jpg"><div class="fav-info"><h3>Thorfinn</h3><p>Vinland Saga</p></div></div>
@@ -228,11 +238,11 @@
             <div class="fav-card male"><div class="fav-badge">♂</div><img src="https://preview.redd.it/tomoya-is-real-v0-y992gciceabe1.jpeg?auto=webp&s=7aa16df88b4d8674c77eaf98d5dde991780d8729"><div class="fav-info"><h3>Tomoya Okazaki</h3><p>Clannad</p></div></div>
             <div class="fav-card male"><div class="fav-badge">♂</div><img src="https://static.wikia.nocookie.net/gurennlagann/images/5/56/Simon_stepping_out_og_Gurren_Lagann.jpg/revision/latest/scale-to-width-down/985?cb=20180302005345"><div class="fav-info"><h3>Simon</h3><p>Gurren Lagann</p></div></div>
             <div class="fav-card male"><div class="fav-badge">♂</div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShfjGoSQXB8EPSPr0Yp9EU0pw0EIXcaJMlqQ&s"><div class="fav-info"><h3>Edward Elric</h3><p>Fullmetal Alchemist</p></div></div>
-            <div class="fav-card male"><div class="fav-badge">♂</div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkdU2AVfjALZmkr4BFVjSdec5YUBZHJZuhFA&s"><div class="fav-info"><h3>emiya shirou</h3><p>fate stay night</p></div></div>
-            <div class="fav-card male"><div class="fav-badge">♂</div><img src="https://preview.redd.it/hyakkimaru-dororo-episode-4-v0-rmgm0bfj2uz21.jpg?width=640&crop=smart&auto=webp&s=c6ddad98631b28f6fdfe963d0927c030c1395283"><div class="fav-info"><h3>hyakkimaru</h3><p>dororo</p></div></div>
-            <div class="fav-card male"><div class="fav-badge">♂</div><img src="https://static.wikia.nocookie.net/magi/images/f/f6/Sinbad_anime.png/revision/latest/scale-to-width/360?cb=20160225221449"><div class="fav-info"><h3>sinbad</h3><p>magi adventure of sinbad</p></div></div>
-            <div class="fav-card male"><div class="fav-badge">♂</div><img src="https://static.wikia.nocookie.net/studio-ghibli/images/4/49/Ashitaka.jpg/revision/latest/thumbnail/width/360/height/450?cb=20220118140313"><div class="fav-info"><h3>ashitaka</h3><p>mononoke hime</p></div></div>
-            <div class="fav-card male"><div class="fav-badge">♂</div><img src="https://static.wikia.nocookie.net/madeinabyss/images/e/ea/Bondrewd_Manga_Square.jpg/revision/latest/scale-to-width/360?cb=20250605234245"><div class="fav-info"><h3>bondrewd </h3><p>Made in Abyss</p></div></div>
+            <div class="fav-card male"><div class="fav-badge">♂</div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkdU2AVfjALZmkr4BFVjSdec5YUBZHJZuhFA&s"><div class="fav-info"><h3>Emiya Shirou</h3><p>Fate/Stay Night</p></div></div>
+            <div class="fav-card male"><div class="fav-badge">♂</div><img src="https://preview.redd.it/hyakkimaru-dororo-episode-4-v0-rmgm0bfj2uz21.jpg?width=640&crop=smart&auto=webp&s=c6ddad98631b28f6fdfe963d0927c030c1395283"><div class="fav-info"><h3>Hyakkimaru</h3><p>Dororo</p></div></div>
+            <div class="fav-card male"><div class="fav-badge">♂</div><img src="https://static.wikia.nocookie.net/magi/images/f/f6/Sinbad_anime.png/revision/latest/scale-to-width/360?cb=20160225221449"><div class="fav-info"><h3>Sinbad</h3><p>Magi: Adventure of Sinbad</p></div></div>
+            <div class="fav-card male"><div class="fav-badge">♂</div><img src="https://static.wikia.nocookie.net/studio-ghibli/images/4/49/Ashitaka.jpg/revision/latest/thumbnail/width/360/height/450?cb=20220118140313"><div class="fav-info"><h3>Ashitaka</h3><p>Mononoke Hime</p></div></div>
+            <div class="fav-card male"><div class="fav-badge">♂</div><img src="https://static.wikia.nocookie.net/madeinabyss/images/e/ea/Bondrewd_Manga_Square.jpg/revision/latest/scale-to-width/360?cb=20250605234245"><div class="fav-info"><h3>Bondrewd</h3><p>Made in Abyss</p></div></div>
         </div>
 
         <h2>💖 Personagens Femininas Favoritas</h2>
@@ -241,41 +251,37 @@
             <div class="fav-card female"><div class="fav-badge">♀</div><img src="https://i.ytimg.com/vi/KpBYd26Cgl0/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCWcuLWqMUeK_WqwCqKHy49woPRgQ"><div class="fav-info"><h3>Oguri Cap</h3><p>Cinderella Gray</p></div></div>
             <div class="fav-card female"><div class="fav-badge">♀</div><img src="https://static.wikia.nocookie.net/mrfz/images/4/4b/Talulah_Attacks.png/revision/latest?cb=20210221123837"><div class="fav-info"><h3>Talulah</h3><p>Arknights</p></div></div>
             <div class="fav-card female"><div class="fav-badge">♀</div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoBXi1UM8j1JUhCw_b4qDCBlRc_h5IL4NSsQ&s"><div class="fav-info"><h3>Arcueid Brunestud</h3><p>Tsukihime</p></div></div>
-            <div class="fav-card female"><div class="fav-badge">♀</div><img src="https://static.wikia.nocookie.net/kokoroconnect/images/9/99/Himeko_New.png/revision/latest?cb=20200113081015"><div class="fav-info"><h3>inaba himeko</h3><p>kokoro connect</p></div></div>
-            <div class="fav-card female"><div class="fav-badge">♀</div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTehMlf9eZyfvZSGFczj-5Dzte0sJ84N0cyrQ&s"><div class="fav-info"><h3>tomoyo sakagami</h3><p>clannad</p></div></div>
-            <div class="fav-card female"><div class="fav-badge">♀</div><img src="https://a.storyblok.com/f/178900/960x540/fd414156a5/yona-of-the-dawn.jpg/m/filters:quality(95)format(webp)"><div class="fav-info"><h3>yona</h3><p>akatsuki no yona</p></div></div>
+            <div class="fav-card female"><div class="fav-badge">♀</div><img src="https://static.wikia.nocookie.net/kokoroconnect/images/9/99/Himeko_New.png/revision/latest?cb=20200113081015"><div class="fav-info"><h3>Inaba Himeko</h3><p>Kokoro Connect</p></div></div>
+            <div class="fav-card female"><div class="fav-badge">♀</div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTehMlf9eZyfvZSGFczj-5Dzte0sJ84N0cyrQ&s"><div class="fav-info"><h3>Tomoyo Sakagami</h3><p>Clannad</p></div></div>
+            <div class="fav-card female"><div class="fav-badge">♀</div><img src="https://practicaltyping.com/wp-content/uploads/2019/11/shikiryougi1.jpg"><div class="fav-info"><h3>shiki</h3><p>kara no kyoukai</p></div></div>
             <div class="fav-card female"><div class="fav-badge">♀</div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZLv3ttzxPGyTh4B29weBWVVO2pInW5g-k3Q&s"><div class="fav-info"><h3>Bocchi (Hitori Gotoh)</h3><p>Bocchi the Rock!</p></div></div>
             <div class="fav-card female"><div class="fav-badge">♀</div><img src="https://static.wikia.nocookie.net/steins-gate/images/9/9b/Kurisuanimee.jpg/revision/latest?cb=20230627090726"><div class="fav-info"><h3>Kurisu Makise</h3><p>Steins;Gate</p></div></div>
-            <div class="fav-card female"><div class="fav-badge">♀</div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSjzut2m-vGmoQj3F0TFYqbm4cuTcuICIQWA&s"><div class="fav-info"><h3>seto sun</h3><p>seto no hanayome</p></div></div>
+            <div class="fav-card female"><div class="fav-badge">♀</div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSjzut2m-vGmoQj3F0TFYqbm4cuTcuICIQWA&s"><div class="fav-info"><h3>Seto Sun</h3><p>Seto no Hanayome</p></div></div>
         </div>
+    </div>
 
-        <h2>🎵 Melhores Openings</h2>
-        <a href="https://youtu.be/MM8RufZr5lw" target="_blank" class="opening-card">
-            <img src="https://preview.redd.it/o-que-voc%C3%AAs-acham-de-serial-experiments-lain-eu-descobri-v0-8ve0j2p2q0rb1.jpg?auto=webp&s=d521561db248665ce10bf8ea64e7992431e0d70a">
-            <div class="opening-info"><span class="op-tag">🎵 Opening 1</span><h3>Duvet</h3><p>Serial Experiments Lain</p><p class="op-artist">Jasmine Rodgers</p></div>
-            <div class="opening-note">🎶</div>
-        </a>
-        <a href="https://youtu.be/nU21rCWkuJw" target="_blank" class="opening-card">
-            <img src="https://img.odcdn.com.br/wp-content/uploads/2023/06/Neon-Genesis-Evangelion-Wall.jpg">
-            <div class="opening-info"><span class="op-tag">🎵 Opening 1</span><h3>Cruel Angels' Thesis</h3><p>Neon Genesis Evangelion</p><p class="op-artist">Yoko Takahashi</p></div>
-            <div class="opening-note">🎶</div>
-        </a>
-        <a href="https://youtu.be/wMybECC5j30" target="_blank" class="opening-card">
-            <img src="https://i1.sndcdn.com/artworks-000162237820-or18pk-t500x500.jpg">
-            <div class="opening-info"><span class="op-tag">🎵 Opening 2</span><h3>Brave Shine</h3><p>Fate/Stay Night: Unlimited Blade Works</p><p class="op-artist">Aimer</p></div>
-            <div class="opening-note">🎶</div>
-        </a>
-        <a href="https://youtu.be/0Vwwr3VGsYg" target="_blank" class="opening-card">
-            <img src="https://cdn.myanimelist.net/images/anime/11/79410.jpg">
-            <div class="opening-info"><span class="op-tag">🎵 Opening 1</span><h3>Redo</h3><p>Re:Zero − Starting Life in Another World</p><p class="op-artist">Konomi Suzuki</p></div>
-            <div class="opening-note">🎶</div>
-        </a>
-        <a href="https://youtu.be/JBqxVX_LXvk" target="_blank" class="opening-card">
-            <img src="https://i.ytimg.com/vi/MRVajvqdy_Y/maxresdefault.jpg">
-            <div class="opening-info"><span class="op-tag">🎵 Opening 1</span><h3>Inferno</h3><p>Fire Force</p><p class="op-artist">Mrs. GREEN APPLE</p></div>
-            <div class="opening-note">🎶</div>
-        </a>
-    </div><!-- end favoritos -->
+    <!-- ══════════ MÚSICAS ══════════ -->
+    <div class="chapter" id="tab-musicas">
+        <h2>🎵 Músicas Favoritas de Anime</h2>
+        <p style="color:#888;margin-bottom:24px;">Openings, Endings e OSTs que ficaram na memória.</p>
+
+        <div class="music-section-label">Openings</div>
+        <a href="https://youtu.be/MM8RufZr5lw" target="_blank" class="music-card op-card"><img src="https://preview.redd.it/o-que-voc%C3%AAs-acham-de-serial-experiments-lain-eu-descobri-v0-8ve0j2p2q0rb1.jpg?auto=webp&s=d521561db248665ce10bf8ea64e7992431e0d70a"><div class="music-info"><span class="music-type">OP 1</span><h3>Duvet</h3><p class="anime-name">Serial Experiments Lain</p><p class="artist">Jasmine Rodgers</p></div><div class="music-note">🎶</div></a>
+        <a href="https://youtu.be/nU21rCWkuJw" target="_blank" class="music-card op-card"><img src="https://img.odcdn.com.br/wp-content/uploads/2023/06/Neon-Genesis-Evangelion-Wall.jpg"><div class="music-info"><span class="music-type">OP 1</span><h3>Cruel Angels' Thesis</h3><p class="anime-name">Neon Genesis Evangelion</p><p class="artist">Yoko Takahashi</p></div><div class="music-note">🎶</div></a>
+        <a href="https://youtu.be/wMybECC5j30" target="_blank" class="music-card op-card"><img src="https://i1.sndcdn.com/artworks-000162237820-or18pk-t500x500.jpg"><div class="music-info"><span class="music-type">OP 2</span><h3>Brave Shine</h3><p class="anime-name">Fate/Stay Night: UBW</p><p class="artist">Aimer</p></div><div class="music-note">🎶</div></a>
+        <a href="https://youtu.be/0Vwwr3VGsYg" target="_blank" class="music-card op-card"><img src="https://cdn.myanimelist.net/images/anime/11/79410.jpg"><div class="music-info"><span class="music-type">OP 1</span><h3>Redo</h3><p class="anime-name">Re:Zero</p><p class="artist">Konomi Suzuki</p></div><div class="music-note">🎶</div></a>
+        <a href="https://youtu.be/yHm1MZUAqJY?t=21" target="_blank" class="music-card op-card"><img src="https://m.media-amazon.com/images/M/MV5BZTA4MDZlOTEtYWY2Zi00YjczLTg5NzEtNzYxYzdjM2FiZTY5XkEyXkFqcGc@._V1_QL75_UY281_CR5,0,190,281_.jpg"><div class="music-info"><span class="music-type">OP 1</span><h3>PERISH IN FROST</h3><p class="anime-name">Arknights </p><p class="artist">ReoNa</p></div><div class="music-note">🎶</div></a>
+
+        <div class="music-section-label">Endings</div>
+        <a href="https://youtu.be/u0CqY27IFyo?list=RDu0CqY27IFyo&t=4" target="_blank" class="music-card ed-card"><img src="https://i.ytimg.com/vi/u0CqY27IFyo/maxresdefault.jpg"><div class="music-info"><span class="music-type">ED 1</span><h3>Avid</h3><p class="anime-name">86 EIGHTY-SIX</p><p class="artist">mizuki</p></div><div class="music-note">🎶</div></a>
+        <a href="https://youtu.be/uNi2ceeUuRM?t=4" target="_blank" class="music-card ed-card"><img src="https://i.ytimg.com/vi/uNi2ceeUuRM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBYFKyuBh1B0S9nf8sQtOiCiYWUnA"><div class="music-info"><span class="music-type">ED 3</span><h3>Memento</h3><p class="anime-name">Re:Zero</p><p class="artist">nonoc</p></div><div class="music-note">🎶</div></a>
+        <a href="https://youtu.be/zmrAjNVxp94?list=RDzmrAjNVxp94&t=60" target="_blank" class="music-card ed-card"><img src="https://m.media-amazon.com/images/M/MV5BYmRiMGEzMzAtNmEzOC00ODBjLThkZDUtMTE4NmFlN2JjZTE3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"><div class="music-info"><span class="music-type">ED 1</span><h3>Gravity</h3><p class="anime-name">Wolf's Rain</p><p class="artist">Maaya Sakamoto</p></div><div class="music-note">🎶</div></a>
+
+        <div class="music-section-label">OSTs Favoritas</div>
+        <a href="https://youtu.be/JfRo9G4rPHA?t=2" target="_blank" class="music-card ost-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMRQ2OyNlH7Sa1a40TxNIfeOIz0Ei4WmWPwQ&s"><div class="music-info"><span class="music-type">OST</span><h3>in the garden of sinners</h3><p class="anime-name">kara no kyoukai</p><p class="artist"> Kalafina e Hanae Tomaru</p></div><div class="music-note">🎶</div></a>
+        <a href="https://youtu.be/8LO1uy7SRRI" target="_blank" class="music-card ost-card"><img src="https://i.sstatic.net/dO5Sg.jpg"><div class="music-info"><span class="music-type">OST</span><h3>Gate of Steiner</h3><p class="anime-name">Steins;Gate</p><p class="artist">Takeshi Abo</p></div><div class="music-note">🎶</div></a>
+        <a href="https://youtu.be/dShlWKg7Ffg?list=RDdShlWKg7Ffg" target="_blank" class="music-card ost-card"><img src="https://i.ytimg.com/vi/sFzDQ2OjFko/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGHIgTSg5MA8=&rs=AOn4CLDQPE-mcjaaQGkVkMebklzLiPvR0w"><div class="music-info"><span class="music-type">OST</span><h3>Trisha's Lullaby</h3><p class="anime-name">Fullmetal Alchemist: Brotherhood</p><p class="artist">Sven Blix</p></div><div class="music-note">🎶</div></a>
+    </div>
 
     <!-- ══════════ MARCOS ══════════ -->
     <div class="chapter" id="tab-marcos">
@@ -289,101 +295,150 @@
         </div>
     </div>
 
-    <!-- ══════════ ESTÚDIOS ══════════ -->
-    <div class="chapter" id="tab-estudios">
-        <h2>🏢 Estúdios de Anime</h2>
-        <p style="color:#888;margin-bottom:25px;">Os principais estúdios e o melhor anime que já produziram.</p>
-        <div class="studio-grid">
-            <div class="studio-card"><div class="studio-banner"><img src="https://cdn.myanimelist.net/images/anime/1223/96541.jpg"><div class="studio-name"><span class="studio-logo">🦴</span><h3>BONES</h3><span class="studio-founded">Fundado em 1998</span></div></div><div class="studio-body"><img src="https://cdn.myanimelist.net/images/anime/1223/96541.jpg"><div class="studio-anime-info"><span class="label-studio">✦ Melhor Anime</span><h4>Fullmetal Alchemist: Brotherhood</h4></div></div></div>
-            <div class="studio-card"><div class="studio-banner"><img src="https://cdn.myanimelist.net/images/anime/10/47347.jpg"><div class="studio-name"><span class="studio-logo">⚔️</span><h3>WIT STUDIO</h3><span class="studio-founded">Fundado em 2012</span></div></div><div class="studio-body"><img src="https://cdn.myanimelist.net/images/anime/10/47347.jpg"><div class="studio-anime-info"><span class="label-studio">✦ Melhor Anime</span><h4>Attack on Titan (S1–S3)</h4></div></div></div>
-            <div class="studio-card"><div class="studio-banner"><img src="https://m.media-amazon.com/images/M/MV5BZjI1YjZiMDUtZTI3MC00YTA5LWIzMmMtZmQ0NTZiYWM4NTYwXkEyXkFqcGc@._V1_QL75_UX190_CR0,2,190,281_.jpg"><div class="studio-name"><span class="studio-logo">🦊</span><h3>WHITE FOX</h3><span class="studio-founded">Fundado em 2007</span></div></div><div class="studio-body"><img src="https://m.media-amazon.com/images/M/MV5BZjI1YjZiMDUtZTI3MC00YTA5LWIzMmMtZmQ0NTZiYWM4NTYwXkEyXkFqcGc@._V1_QL75_UX190_CR0,2,190,281_.jpg"><div class="studio-anime-info"><span class="label-studio">✦ Melhor Anime</span><h4>Steins;Gate</h4></div></div></div>
-            <div class="studio-card"><div class="studio-banner"><img src="https://m.media-amazon.com/images/M/MV5BMGJlODA2ZmItOTRiZS00NWM5LWJlNTQtYzI5MTNiZjA2MGFjXkEyXkFqcGc@._V1_.jpg"><div class="studio-name"><span class="studio-logo">🔥</span><h3>GAINAX</h3><span class="studio-founded">Fundado em 1984</span></div></div><div class="studio-body"><img src="https://m.media-amazon.com/images/M/MV5BMGJlODA2ZmItOTRiZS00NWM5LWJlNTQtYzI5MTNiZjA2MGFjXkEyXkFqcGc@._V1_.jpg"><div class="studio-anime-info"><span class="label-studio">✦ Melhor Anime</span><h4>Tengen Toppa Gurren Lagann</h4></div></div></div>
-            <div class="studio-card"><div class="studio-banner"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvie5TU70Eomp54ZgOMLGTzCDjd-Eg8fBoew&s"><div class="studio-name"><span class="studio-logo">🃏</span><h3>MADHOUSE</h3><span class="studio-founded">Fundado em 1972</span></div></div><div class="studio-body"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvie5TU70Eomp54ZgOMLGTzCDjd-Eg8fBoew&s"><div class="studio-anime-info"><span class="label-studio">✦ Melhor Anime</span><h4>Frieren: Beyond Journey's End</h4></div></div></div>
-            <div class="studio-card"><div class="studio-banner"><img src="https://cdn.myanimelist.net/images/anime/1500/103005.jpg"><div class="studio-name"><span class="studio-logo">🗡️</span><h3>MAPPA</h3><span class="studio-founded">Fundado em 2011</span></div></div><div class="studio-body"><img src="https://cdn.myanimelist.net/images/anime/1500/103005.jpg"><div class="studio-anime-info"><span class="label-studio">✦ Melhor Anime</span><h4>Vinland Saga (S2)</h4></div></div></div>
-            <div class="studio-card"><div class="studio-banner"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSxF_nHNH0B7Z2fIp1od5lVjobHznutgi0bQ&s"><div class="studio-name"><span class="studio-logo">⚡</span><h3>STUDIO TRIGGER</h3><span class="studio-founded">Fundado em 2011</span></div></div><div class="studio-body"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSxF_nHNH0B7Z2fIp1od5lVjobHznutgi0bQ&s"><div class="studio-anime-info"><span class="label-studio">✦ Melhor Anime</span><h4>Kill la Kill</h4></div></div></div>
-            <div class="studio-card"><div class="studio-banner"><img src="https://m.media-amazon.com/images/I/81ScRXWN6DL._AC_UF1000,1000_QL80_.jpg"><div class="studio-name"><span class="studio-logo">🍀</span><h3>CLOVERWORKS</h3><span class="studio-founded">Fundado em 2018</span></div></div><div class="studio-body"><img src="https://m.media-amazon.com/images/I/81ScRXWN6DL._AC_UF1000,1000_QL80_.jpg"><div class="studio-anime-info"><span class="label-studio">✦ Melhor Anime</span><h4>Bocchi the Rock!</h4></div></div></div>
-            <div class="studio-card"><div class="studio-banner"><img src="https://m.media-amazon.com/images/M/MV5BYzU3NDM4ZjgtY2UyMi00YTczLTgyNDEtMjBiMDJlOGUxNjcxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"><div class="studio-name"><span class="studio-logo">🌀</span><h3>BONES</h3><span class="studio-founded">Mob Psycho 100</span></div></div><div class="studio-body"><img src="https://m.media-amazon.com/images/M/MV5BYzU3NDM4ZjgtY2UyMi00YTczLTgyNDEtMjBiMDJlOGUxNjcxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"><div class="studio-anime-info"><span class="label-studio">✦ Destaque</span><h4>Mob Psycho 100</h4></div></div></div>
-        </div>
-    </div>
-
     <!-- ══════════ GACHA ══════════ -->
-<div class="chapter" id="tab-gacha">
+    <div class="chapter" id="tab-gacha">
         <h2>🎮 Jogos Gacha Favoritos</h2>
         <p style="color:#888;margin-bottom:25px;">Os melhores jogos gacha — personagens, história e gameplay.</p>
         <div class="gacha-grid">
-
-            <div class="gacha-card">
-                <div class="gacha-banner">
-                    <img src="https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000041655/2c8e04df5b0a67cadda0b78f4848ee28d901ee581028bcaea5c2adf861b7b145" style="object-fit:cover;">
-                    <div class="gacha-title"><span class="gacha-icon">🛡️</span><h3>GUARDIAN TALES</h3><span class="gacha-genre">Action RPG · Adventure</span></div>
-                </div>
-                <div class="gacha-body">
-                    <p>Uma aventura nostálgica em pixel art repleta de quebra-cabeças, humor e referências à cultura pop, com uma história surpreendentemente emocionante.</p>
-                    <div class="gacha-tags"><span class="gacha-tag">Pixel Art</span><span class="gacha-tag">Adventure</span><span class="gacha-tag">Kong Studios</span><span class="gacha-tag">Retro</span></div>
-                </div>
-            </div>
-
-            <div class="gacha-card">
-                <div class="gacha-banner">
-                    <img src="https://m.media-amazon.com/images/M/MV5BYjRkNTZjMWEtNzk4Ni00MDQ3LTgzYmMtOWVlODRkZWYzNmVhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg">
-                    <div class="gacha-title"><span class="gacha-icon">🐺</span><h3>ARKNIGHTS</h3><span class="gacha-genre">Tower Defense · RPG</span></div>
-                </div>
-                <div class="gacha-body">
-                    <p>Jogo de tower defense com narrativa rica e personagens profundos. Ambientado em um mundo pós-apocalíptico com mecânicas estratégicas únicas.</p>
-                    <div class="gacha-tags"><span class="gacha-tag">Tower Defense</span><span class="gacha-tag">Dark Story</span><span class="gacha-tag">Strategy</span><span class="gacha-tag">Hypergryph</span></div>
-                </div>
-            </div>
-
-            <div class="gacha-card">
-                <div class="gacha-banner">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmPMEP1y2VJCRc3mK5Wz0Bqc6VupjjphgD5g&s" style="object-fit:contain;background:#030816;">
-                    <div class="gacha-title"><span class="gacha-icon">☄️</span><h3>HONKAI: STAR RAIL</h3><span class="gacha-genre">Turn-based · Space Fantasy</span></div>
-                </div>
-                <div class="gacha-body">
-                    <p>Uma jornada épica a bordo do Astral Express. Combate por turnos estratégico, visuais cinematográficos e uma exploração espacial inesquecível.</p>
-                    <div class="gacha-tags"><span class="gacha-tag">Turn-based</span><span class="gacha-tag">Sci-Fi</span><span class="gacha-tag">HoYoverse</span><span class="gacha-tag">Cinematic</span></div>
-                </div>
-            </div>
-
-            <div class="gacha-card">
-                <div class="gacha-banner">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/3/31/Umamusume_Pretty_Derby_game_cover.jpg">
-                    <div class="gacha-title"><span class="gacha-icon">🐎</span><h3>UMA MUSUME</h3><span class="gacha-genre">Horse Racing · RPG</span></div>
-                </div>
-                <div class="gacha-body">
-                    <p>Treine garotas inspiradas em cavalos reais de corrida. Jogo de gestão e corrida com narrativas emocionantes baseadas na história real do hipismo japonês.</p>
-                    <div class="gacha-tags"><span class="gacha-tag">Racing</span><span class="gacha-tag">Training Sim</span><span class="gacha-tag">Cygames</span><span class="gacha-tag">Drama</span></div>
-                </div>
-            </div>
-
-            <div class="gacha-card">
-                <div class="gacha-banner">
-                    <img src="https://xboxwire.thesourcemediaassets.com/sites/8/2025/04/Zenless-Hero-7dc4191eeb64027fa781.jpg" style="object-fit:contain;background:#101010;">
-                    <div class="gacha-title"><span class="gacha-icon">📼</span><h3>ZENLESS ZONE ZERO</h3><span class="gacha-genre">Urban · Action RPG</span></div>
-                </div>
-                <div class="gacha-body">
-                    <p>Ação frenética e estilizada na metrópole de New Eridu. Combate focado em combos, estética urbana vibrante e uma trilha sonora contagiante.</p>
-                    <div class="gacha-tags"><span class="gacha-tag">Action</span><span class="gacha-tag">Urban Fantasy</span><span class="gacha-tag">HoYoverse</span><span class="gacha-tag">Hack 'n Slash</span></div>
-                </div>
-            </div>
-
+            <div class="gacha-card"><div class="gacha-banner"><img src="https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000041655/2c8e04df5b0a67cadda0b78f4848ee28d901ee581028bcaea5c2adf861b7b145" style="object-fit:cover;"><div class="gacha-title"><span class="gacha-icon">🛡️</span><h3>GUARDIAN TALES</h3><span class="gacha-genre">Action RPG · Adventure</span></div></div><div class="gacha-body"><p>Uma aventura nostálgica em pixel art repleta de quebra-cabeças, humor e referências à cultura pop, com uma história surpreendentemente emocionante.</p><div class="gacha-tags"><span class="gacha-tag">Pixel Art</span><span class="gacha-tag">Adventure</span><span class="gacha-tag">Kong Studios</span><span class="gacha-tag">Retro</span></div></div></div>
+            <div class="gacha-card"><div class="gacha-banner"><img src="https://m.media-amazon.com/images/M/MV5BYjRkNTZjMWEtNzk4Ni00MDQ3LTgzYmMtOWVlODRkZWYzNmVhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"><div class="gacha-title"><span class="gacha-icon">🐺</span><h3>ARKNIGHTS</h3><span class="gacha-genre">Tower Defense · RPG</span></div></div><div class="gacha-body"><p>Jogo de tower defense com narrativa rica e personagens profundos. Ambientado em um mundo pós-apocalíptico com mecânicas estratégicas únicas.</p><div class="gacha-tags"><span class="gacha-tag">Tower Defense</span><span class="gacha-tag">Dark Story</span><span class="gacha-tag">Strategy</span><span class="gacha-tag">Hypergryph</span></div></div></div>
+            <div class="gacha-card"><div class="gacha-banner"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmPMEP1y2VJCRc3mK5Wz0Bqc6VupjjphgD5g&s" style="object-fit:contain;background:#030816;"><div class="gacha-title"><span class="gacha-icon">☄️</span><h3>HONKAI: STAR RAIL</h3><span class="gacha-genre">Turn-based · Space Fantasy</span></div></div><div class="gacha-body"><p>Uma jornada épica a bordo do Astral Express. Combate por turnos estratégico, visuais cinematográficos e uma exploração espacial inesquecível.</p><div class="gacha-tags"><span class="gacha-tag">Turn-based</span><span class="gacha-tag">Sci-Fi</span><span class="gacha-tag">HoYoverse</span><span class="gacha-tag">Cinematic</span></div></div></div>
+            <div class="gacha-card"><div class="gacha-banner"><img src="https://upload.wikimedia.org/wikipedia/en/3/31/Umamusume_Pretty_Derby_game_cover.jpg"><div class="gacha-title"><span class="gacha-icon">🐎</span><h3>UMA MUSUME</h3><span class="gacha-genre">Horse Racing · RPG</span></div></div><div class="gacha-body"><p>Treine garotas inspiradas em cavalos reais de corrida. Jogo de gestão e corrida com narrativas emocionantes baseadas na história real do hipismo japonês.</p><div class="gacha-tags"><span class="gacha-tag">Racing</span><span class="gacha-tag">Training Sim</span><span class="gacha-tag">Cygames</span><span class="gacha-tag">Drama</span></div></div></div>
+            <div class="gacha-card"><div class="gacha-banner"><img src="https://xboxwire.thesourcemediaassets.com/sites/8/2025/04/Zenless-Hero-7dc4191eeb64027fa781.jpg" style="object-fit:contain;background:#101010;"><div class="gacha-title"><span class="gacha-icon">📼</span><h3>ZENLESS ZONE ZERO</h3><span class="gacha-genre">Urban · Action RPG</span></div></div><div class="gacha-body"><p>Ação frenética e estilizada na metrópole de New Eridu. Combate focado em combos, estética urbana vibrante e uma trilha sonora contagiante.</p><div class="gacha-tags"><span class="gacha-tag">Action</span><span class="gacha-tag">Urban Fantasy</span><span class="gacha-tag">HoYoverse</span><span class="gacha-tag">Hack 'n Slash</span></div></div></div>
         </div>
     </div>
 
 </div><!-- end section -->
 
 <footer>
-    <p>© 2026 — Classificação de Animes &nbsp;|&nbsp; <span>Toddy</span></p>
+    <p>© 2026 — Classificação de Animes &nbsp;|&nbsp; <span>Toddy</span> &nbsp;|&nbsp;
+    <a href="https://myanimelist.net/profile/XxT0DDyxX" target="_blank" style="color:#00d4ff;text-decoration:none;">MAL: XxT0DDyxX</a></p>
 </footer>
 
 <script>
-    function showTab(name, el) {
-        document.querySelectorAll('.chapter').forEach(c => c.classList.remove('active'));
-        document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-        document.getElementById('tab-' + name).classList.add('active');
-        el.classList.add('active');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+const MAL_USER = 'XxT0DDyxX';
+let malLoaded = false;
+
+function showTab(name, el) {
+    document.querySelectorAll('.chapter').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('tab-' + name).classList.add('active');
+    if (el) el.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (name === 'mal' && !malLoaded) fetchMAL();
+}
+
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+async function safeFetch(url, retries = 3) {
+    for (let i = 0; i < retries; i++) {
+        try {
+            const r = await fetch(url);
+            if (r.status === 429) { await sleep(2500 * (i + 1)); continue; }
+            if (!r.ok) throw new Error('HTTP ' + r.status);
+            return await r.json();
+        } catch(e) {
+            if (i === retries - 1) throw e;
+            await sleep(1200 * (i + 1));
+        }
     }
+}
+
+function statusInfo(s) {
+    return { 1: {label:'Assistindo',cls:'badge-watching'}, 2: {label:'Completo',cls:'badge-completed'}, 3: {label:'On Hold',cls:'badge-on_hold'}, 4: {label:'Dropped',cls:'badge-dropped'}, 6: {label:'Planejo',cls:'badge-watching'} }[s] || {label:'—',cls:''};
+}
+
+function buildCard(item) {
+    const anime = item.anime, st = statusInfo(item.watching_status);
+    const img = anime.images.jpg.large_image_url || anime.images.jpg.image_url;
+    const a = document.createElement('a');
+    a.className = 'mal-card';
+    a.href = `https://myanimelist.net/anime/${anime.mal_id}`;
+    a.target = '_blank';
+    a.innerHTML = `<img src="${img}" alt="${anime.title}" loading="lazy">
+        ${item.score > 0 ? `<div class="mal-score">⭐ ${item.score}</div>` : ''}
+        <div class="mal-card-info">
+            <h3>${anime.title}</h3>
+            <span class="mal-badge ${st.cls}">${st.label}</span>
+            <span class="mal-ep">Ep ${item.episodes_watched} / ${anime.episodes || '?'}</span>
+        </div>`;
+    return a;
+}
+
+async function fetchMAL() {
+    malLoaded = true;
+    ['mal-watching-section','mal-recent-section'].forEach(id => document.getElementById(id).style.display = 'none');
+    ['mal-watching-grid','mal-recent-grid'].forEach(id => document.getElementById(id).innerHTML = '');
+    document.getElementById('mal-loading').style.display = 'block';
+    document.getElementById('mal-error').style.display = 'none';
+    try {
+        const stats = await safeFetch(`https://api.jikan.moe/v4/users/${MAL_USER}/statistics`);
+        const a = stats.data.anime;
+        document.getElementById('stat-completed').textContent = a.completed.toLocaleString('pt-BR');
+        document.getElementById('stat-watching').textContent  = a.watching.toLocaleString('pt-BR');
+        document.getElementById('stat-total').textContent     = a.total_entries.toLocaleString('pt-BR');
+        document.getElementById('mal-display').textContent    = a.completed.toLocaleString('pt-BR');
+        document.getElementById('home-completed').textContent = a.completed.toLocaleString('pt-BR');
+        document.getElementById('home-watching').textContent  = a.watching.toLocaleString('pt-BR');
+        await sleep(700);
+        const wData = await safeFetch(`https://api.jikan.moe/v4/users/${MAL_USER}/animelist?status=1&order_by=last_updated&sort=desc&limit=12`);
+        await sleep(700);
+        const cData = await safeFetch(`https://api.jikan.moe/v4/users/${MAL_USER}/animelist?status=2&order_by=last_updated&sort=desc&limit=24`);
+        document.getElementById('mal-loading').style.display = 'none';
+        const watching = wData.data || [], completed = cData.data || [];
+        if (watching.length > 0) {
+            const g = document.getElementById('mal-watching-grid');
+            watching.forEach(i => g.appendChild(buildCard(i)));
+            document.getElementById('mal-watching-section').style.display = 'block';
+        }
+        if (completed.length > 0) {
+            const g = document.getElementById('mal-recent-grid');
+            completed.forEach(i => g.appendChild(buildCard(i)));
+            document.getElementById('mal-recent-section').style.display = 'block';
+        }
+        if (!watching.length && !completed.length) {
+            document.getElementById('mal-loading').textContent = 'Perfil pode ser privado ou sem animes.';
+            document.getElementById('mal-loading').style.display = 'block';
+        }
+    } catch(e) {
+        document.getElementById('mal-loading').style.display = 'none';
+        document.getElementById('mal-error').style.display = 'block';
+        malLoaded = false;
+    }
+}
+
+function startEdit() {
+    document.getElementById('mal-input').value = document.getElementById('mal-display').textContent.replace(/\D/g,'') || '0';
+    document.getElementById('mal-edit').style.display = 'flex';
+    document.getElementById('mal-input').focus();
+}
+function saveCount() {
+    const val = parseInt(document.getElementById('mal-input').value) || 0;
+    document.getElementById('mal-display').textContent = val.toLocaleString('pt-BR');
+    document.getElementById('mal-edit').style.display = 'none';
+    const el = document.getElementById('mal-number');
+    el.style.color = '#44ffaa';
+    setTimeout(() => el.style.color = '#facc15', 600);
+}
+function toggleCounter() { document.getElementById('mal-counter').classList.toggle('mal-collapsed'); }
+
+document.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && document.getElementById('mal-edit').style.display !== 'none') saveCount();
+});
+
+// Load stats on page open silently
+window.addEventListener('load', async () => {
+    try {
+        const stats = await safeFetch(`https://api.jikan.moe/v4/users/${MAL_USER}/statistics`);
+        const a = stats.data.anime;
+        document.getElementById('mal-display').textContent     = a.completed.toLocaleString('pt-BR');
+        document.getElementById('home-completed').textContent  = a.completed.toLocaleString('pt-BR');
+        document.getElementById('home-watching').textContent   = a.watching.toLocaleString('pt-BR');
+        document.getElementById('stat-completed').textContent  = a.completed.toLocaleString('pt-BR');
+        document.getElementById('stat-watching').textContent   = a.watching.toLocaleString('pt-BR');
+        document.getElementById('stat-total').textContent      = a.total_entries.toLocaleString('pt-BR');
+    } catch(e) {}
+});
 </script>
 </body>
 </html>
