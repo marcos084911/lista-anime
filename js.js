@@ -109,3 +109,386 @@ function applyFilter(txt,genre){
     document.getElementById('hw').textContent=d.data.anime.watching.toLocaleString('pt-BR');
   }catch(e){}
 })();
+
+// ── ASSISTINDO ──
+let watchData=[];
+let watchLoaded=false;
+
+const MAL_USER = 'XxT0DDyxX';
+
+const PROXIES = [
+  u => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
+  u => `https://corsproxy.io/?url=${encodeURIComponent(u)}`,
+  u => `https://proxy.cors.sh/${u}`,
+];
+let workingProxy = null; // guarda o proxy que funcionou
+
+async function tryFetch(url){
+  // Se já temos um proxy funcionando, tenta ele primeiro
+  const ordered = workingProxy
+    ? [workingProxy, ...PROXIES.filter(p=>p!==workingProxy)]
+    : PROXIES;
+
+  for(const proxy of ordered){
+    try{
+      const ctrl = new AbortController();
+      const tid  = setTimeout(()=>ctrl.abort(), 12000);
+      const r = await fetch(proxy(url), { signal: ctrl.signal });
+      clearTimeout(tid);
+      if(r.ok){
+        const text = await r.text();
+        const trimmed = text.trim();
+        if(trimmed.startsWith('{') || trimmed.startsWith('[')){
+          workingProxy = proxy; // salva o que funcionou
+          return JSON.parse(trimmed);
+        }
+      }
+    }catch(e){ /* tenta próximo */ }
+    await new Promise(res=>setTimeout(res,400));
+  }
+  throw new Error('Todos os proxies falharam');
+}
+
+async function fetchAllWatching(){
+  let all=[];
+
+  // Tenta Jikan primeiro (pagina de 25 em 25)
+  try{
+    let page=1, hasNext=true;
+    while(hasNext){
+      const d = await tryFetch(
+        `https://api.jikan.moe/v4/users/${MAL_USER}/animelist?status=watching&page=${page}`
+      );
+      if(!d || !Array.isArray(d.data)) throw new Error('formato inválido');
+      all = all.concat(d.data);
+      hasNext = !!(d.pagination?.has_next_page);
+      page++;
+      if(hasNext) await new Promise(res=>setTimeout(res,600));
+    }
+    if(all.length) return all;
+  }catch(e){ all=[]; workingProxy=null; }
+
+  // Fallback: endpoint público do MAL (pagina de 300 em 300)
+  let offset=0, hasNext=true;
+  while(hasNext){
+    const d = await tryFetch(
+      `https://myanimelist.net/animelist/${MAL_USER}/load.json?status=1&offset=${offset}`
+    );
+    const items = Array.isArray(d) ? d : [];
+    all = all.concat(items.map(x=>({
+      anime:{
+        mal_id:       x.anime_id,
+        title:        x.anime_title,
+        num_episodes: x.anime_num_episodes,
+        type:         x.anime_media_type_string,
+        images:{ jpg:{ image_url: x.anime_image_path } }
+      },
+      list_status:{
+        score:                x.score,
+        num_episodes_watched: x.num_watched_episodes,
+        is_rewatching:        !!x.is_rewatching,
+        updated_at:           x.last_updated ? new Date(x.last_updated*1000).toISOString() : null
+      }
+    })));
+    hasNext = items.length === 300;
+    offset += 300;
+    if(hasNext) await new Promise(res=>setTimeout(res,500));
+  }
+  return all;
+}
+
+async function loadMalOverview(){
+  const ovEl   = document.getElementById('mal-overview');
+  const ovLoad = document.getElementById('mal-ov-loading');
+  try{
+    // Busca perfil e stats em paralelo (endpoints separados no Jikan v4)
+    const [profileData, statsData] = await Promise.all([
+      tryFetch(`https://api.jikan.moe/v4/users/${MAL_USER}`),
+      tryFetch(`https://api.jikan.moe/v4/users/${MAL_USER}/statistics`)
+    ]);
+
+    const u     = profileData.data || profileData;
+    const stats = (statsData.data || statsData)?.anime || {};
+
+    // Avatar e info
+    const avatar = u.images?.jpg?.image_url || u.images?.webp?.image_url || '';
+    if(avatar) document.getElementById('mal-avatar').src = avatar;
+    if(u.joined){
+      const joined = new Date(u.joined).toLocaleDateString('pt-BR',{month:'long',year:'numeric'});
+      document.getElementById('mal-joined').textContent = 'No MAL desde ' + joined;
+    }
+
+    // Cards de stats — campos corretos da API Jikan v4 /statistics
+    const watching   = stats.watching    || 0;
+    const completed  = stats.completed   || 0;
+    const on_hold    = stats.on_hold     || 0;
+    const dropped    = stats.dropped     || 0;
+    const ptw        = stats.plan_to_watch || 0;
+    const mean_score = stats.mean_score  || 0;
+    const episodes   = stats.episodes_watched || 0;
+    const days       = stats.days_watched || 0;
+
+    document.getElementById('ov-watching').textContent  = watching.toLocaleString('pt-BR');
+    document.getElementById('ov-completed').textContent = completed.toLocaleString('pt-BR');
+    document.getElementById('ov-hold').textContent      = on_hold.toLocaleString('pt-BR');
+    document.getElementById('ov-dropped').textContent   = dropped.toLocaleString('pt-BR');
+    document.getElementById('ov-ptw').textContent       = ptw.toLocaleString('pt-BR');
+    document.getElementById('ov-score').textContent     = mean_score.toFixed(2);
+    document.getElementById('ov-eps').textContent       = episodes.toLocaleString('pt-BR');
+    document.getElementById('ov-days').textContent      = days.toFixed(1);
+
+    // Barra proporcional
+    const total = watching + completed + on_hold + dropped + ptw;
+    if(total > 0){
+      const bar = document.getElementById('ov-bar');
+      bar.innerHTML = [
+        ['#4caf50',               watching],
+        ['#2196f3',               completed],
+        ['var(--gold)',            on_hold],
+        ['#f44336',               dropped],
+        ['rgba(255,255,255,.2)',   ptw],
+      ].map(([c,v])=>`<div style="width:${(v/total*100).toFixed(2)}%;background:${c}"></div>`).join('');
+    }
+
+    ovLoad.style.display = 'none';
+    ovEl.style.display   = 'block';
+  }catch(e){
+    console.error('Overview error:', e);
+    ovLoad.style.display = 'none';
+  }
+}
+
+async function loadWatching(force=false){
+  if(!force&&watchLoaded) return;
+  const loading=document.getElementById('w-loading');
+  const error=document.getElementById('w-error');
+  const wrap=document.getElementById('w-table-wrap');
+  const stats=document.getElementById('w-stats');
+  loading.style.display='block';
+  error.style.display='none';
+  wrap.style.display='none';
+  stats.style.display='none';
+
+  // Carrega overview e lista em paralelo
+  loadMalOverview();
+
+  try{
+    watchData=await fetchAllWatching();
+    watchLoaded=true;
+    renderWatchTable(watchData);
+    updateWatchStats(watchData);
+    loading.style.display='none';
+    wrap.style.display='block';
+    stats.style.display='flex';
+  }catch(e){
+    console.error('Watch error:',e);
+    loading.style.display='none';
+    error.style.display='block';
+  }
+}
+
+function updateWatchStats(data){
+  const total  = data.length;
+  // Jikan v4: list_status.num_episodes_watched
+  const eps    = data.reduce((s,a)=>s+(a.list_status?.num_episodes_watched||0),0);
+  const scored = data.filter(a=>(a.list_status?.score||0)>0);
+  const avg    = scored.length
+    ? (scored.reduce((s,a)=>s+a.list_status.score,0)/scored.length).toFixed(1)
+    : '—';
+  document.getElementById('ws-total').textContent = total;
+  document.getElementById('ws-eps').textContent   = eps.toLocaleString('pt-BR');
+  document.getElementById('ws-avg').textContent   = avg;
+}
+
+function renderWatchTable(data){
+  const tbody = document.getElementById('w-tbody');
+  tbody.innerHTML = '';
+  if(!data.length){
+    document.getElementById('w-empty').style.display='block';
+    document.getElementById('w-table-wrap').style.display='none';
+    return;
+  }
+  document.getElementById('w-empty').style.display='none';
+  document.getElementById('w-table-wrap').style.display='block';
+
+  data.forEach((a,i)=>{
+    // Jikan v4 animelist: { anime:{mal_id,title,images,num_episodes,type}, list_status:{score,num_episodes_watched,...} }
+    const anime   = a.anime || {};
+    const ls      = a.list_status || {};
+    const title   = anime.title || '—';
+    const malId   = anime.mal_id || '';
+    const img     = anime.images?.jpg?.image_url || anime.images?.webp?.image_url || '';
+    const url     = malId ? `https://myanimelist.net/anime/${malId}` : '#';
+    const watched = ls.num_episodes_watched || 0;
+    const totalEp = anime.num_episodes || 0;
+    const pct     = totalEp > 0 ? Math.round((watched/totalEp)*100) : 0;
+    const score   = ls.score || 0;
+    const type    = anime.type || '—';
+    const scoreClass = score>=8?'s-high':score>=6?'s-mid':score>0?'s-low':'s-none';
+    const scoreDisp  = score > 0 ? score : '—';
+
+    const tr = document.createElement('tr');
+    tr.dataset.title   = title.toLowerCase();
+    tr.dataset.updated = ls.updated_at || '';
+    tr.innerHTML = `
+      <td class="wt-num">${i+1}</td>
+      <td class="wt-img"><a href="${url}" target="_blank"><img src="${img}" alt="${title}" loading="lazy" onerror="this.style.opacity='.15'"></a></td>
+      <td class="wt-name">
+        <a href="${url}" target="_blank">${title}</a>
+        ${ls.is_rewatching?'<small>🔁 Reassistindo</small>':''}
+      </td>
+      <td class="wt-prog">
+        <span class="prog-txt">${watched} / ${totalEp||'?'} ep</span>
+        <div class="prog-bar"><div class="prog-fill" style="width:${pct}%"></div></div>
+      </td>
+      <td class="wt-score ${scoreClass}">${scoreDisp}</td>
+      <td><span class="wt-type">${type}</span></td>`;
+    tbody.appendChild(tr);
+  });
+
+  renderRecent(data);
+}
+
+function renderRecent(data){
+  const wrap = document.getElementById('w-recent');
+  if(!wrap) return;
+  const sorted = [...data]
+    .filter(a=>a.list_status?.updated_at)
+    .sort((a,b)=>new Date(b.list_status.updated_at)-new Date(a.list_status.updated_at))
+    .slice(0,5);
+  if(!sorted.length){ wrap.style.display='none'; return; }
+  wrap.style.display='block';
+  document.getElementById('w-recent-cards').innerHTML = sorted.map(a=>{
+    const anime   = a.anime || {};
+    const ls      = a.list_status || {};
+    const img     = anime.images?.jpg?.image_url || '';
+    const url     = `https://myanimelist.net/anime/${anime.mal_id}`;
+    const watched = ls.num_episodes_watched||0;
+    const totalEp = anime.num_episodes||0;
+    const pct     = totalEp>0?Math.round((watched/totalEp)*100):0;
+    const date    = ls.updated_at
+      ? new Date(ls.updated_at).toLocaleDateString('pt-BR',{day:'2-digit',month:'short'})
+      : '';
+    const score   = ls.score>0
+      ? `<span class="rc-score ${ls.score>=8?'s-high':ls.score>=6?'s-mid':'s-low'}">${ls.score}</span>`
+      : '';
+    return `<div class="rc-card">
+      <a href="${url}" target="_blank">
+        <img src="${img}" alt="${anime.title}" onerror="this.style.opacity='.15'">
+        <div class="rc-info">
+          <div class="rc-title">${anime.title}</div>
+          <div class="rc-meta">${watched}/${totalEp||'?'} ep · ${date} ${score}</div>
+          <div class="prog-bar" style="margin-top:6px"><div class="prog-fill" style="width:${pct}%"></div></div>
+        </div>
+      </a>
+    </div>`;
+  }).join('');
+}
+
+function filterWatch(v){
+  v=v.toLowerCase().trim();
+  let visible=0;
+  document.querySelectorAll('#w-tbody tr').forEach(tr=>{
+    const match=!v||tr.dataset.title.includes(v);
+    tr.style.display=match?'':'none';
+    if(match)visible++;
+  });
+  document.getElementById('w-empty').style.display=visible?'none':'block';
+}
+
+function sortWatch(by){
+  if(!watchData.length) return;
+  const sorted=[...watchData];
+  if(by==='alpha')       sorted.sort((a,b)=>(a.anime?.title||'').localeCompare(b.anime?.title||''));
+  else if(by==='score')  sorted.sort((a,b)=>(b.list_status?.score||0)-(a.list_status?.score||0));
+  else if(by==='ep')     sorted.sort((a,b)=>(b.list_status?.num_episodes_watched||0)-(a.list_status?.num_episodes_watched||0));
+  else if(by==='recent') sorted.sort((a,b)=>new Date(b.list_status?.updated_at||0)-new Date(a.list_status?.updated_at||0));
+  renderWatchTable(sorted);
+  const v=document.getElementById('w-srch').value;
+  if(v) filterWatch(v);
+}
+
+// ── TOP SCORES ──
+let topData     = [];
+let topLoaded   = false;
+let topShowing  = 12;
+
+async function loadTopScores(){
+  if(topLoaded) return;
+  const tl = document.getElementById('top-loading');
+  const tw = document.getElementById('top-scores-wrap');
+  tl.style.display = 'block';
+  try{
+    let all=[], offset=0, hasNext=true;
+    // Busca lista completa (completed) via MAL load.json — mais rápido e sem paginação do Jikan
+    while(hasNext){
+      const d = await tryFetch(
+        `https://myanimelist.net/animelist/${MAL_USER}/load.json?status=2&order=4&sort=desc&offset=${offset}`
+      );
+      const items = Array.isArray(d) ? d : [];
+      all = all.concat(items.map(x=>({
+        id:    x.anime_id,
+        title: x.anime_title,
+        img:   x.anime_image_path,
+        score: x.score,
+        type:  x.anime_media_type_string,
+        eps:   x.anime_num_episodes,
+        year:  x.anime_start_date_string ? x.anime_start_date_string.slice(-4) : ''
+      })));
+      hasNext = items.length === 300;
+      offset += 300;
+      if(hasNext) await new Promise(res=>setTimeout(res,400));
+    }
+    // Ordena por score desc, filtra só com score > 0
+    topData = all
+      .filter(a=>a.score>0)
+      .sort((a,b)=>b.score-a.score);
+    topLoaded = true;
+    tl.style.display = 'none';
+    tw.style.display = 'block';
+    renderTopGrid();
+  }catch(e){
+    tl.style.display = 'none';
+    console.error('Top scores error:', e);
+  }
+}
+
+function scoreClass(s){
+  if(s===10) return 's10';
+  if(s>=9)   return 's9';
+  if(s>=8)   return 's8';
+  if(s>=7)   return 's7';
+  return 's6';
+}
+
+function renderTopGrid(){
+  const grid = document.getElementById('top-scores-grid');
+  const btn  = document.getElementById('top-show-more');
+  const slice = topData.slice(0, topShowing);
+  grid.innerHTML = slice.map((a,i)=>`
+    <a class="top-card" href="https://myanimelist.net/anime/${a.id}" target="_blank">
+      <img src="${a.img}" alt="${a.title}" loading="lazy" onerror="this.style.opacity='.1'">
+      <div class="top-card-rank">${i+1}</div>
+      <div class="top-card-score ${scoreClass(a.score)}">${a.score}</div>
+      <div class="top-card-body">
+        <div class="top-card-title">${a.title}</div>
+        <div class="top-card-meta">${a.type||''}${a.year?' · '+a.year:''}</div>
+      </div>
+    </a>`).join('');
+  btn.style.display = topShowing >= topData.length ? 'none' : 'inline-block';
+}
+
+function topShowMore(){
+  topShowing += 12;
+  renderTopGrid();
+}
+
+// Carrega quando a aba for aberta pela primeira vez
+const _origShow=show;
+window.show=function(id,el){
+  _origShow(id,el);
+  if(id==='assistindo'){
+    if(!watchLoaded) loadWatching();
+    if(!topLoaded)   loadTopScores();
+  }
+};

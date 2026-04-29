@@ -27,6 +27,7 @@
     <button class="ntab"     onclick="show('musicas',this)">🎵 Músicas</button>
     <button class="ntab"     onclick="show('marcos',this)">🏆 Marcos</button>
     <button class="ntab"     onclick="show('gacha',this)">🎮 Gacha</button>
+    <button class="ntab"     onclick="show('assistindo',this)">▶️ Assistindo</button>
   </nav>
 </header>
 
@@ -224,8 +225,8 @@
     <div class="gblock-title">🌑 Dark Fantasy</div>
     <div class="ag">
       <div class="ac" data-name="made in abyss dark" data-tags="dark fantasia aventura drama"><img src="https://m.media-amazon.com/images/S/pv-target-images/acf77e7193251c237654b4ab7a3f83720d8703a416927e8d38a5c55ca0883898._SX1080_FMjpg_.jpg" loading="lazy"><div class="ac-info"><p class="ac-tag tag-best">Melhor</p><p class="ac-name">Made in Abyss</p></div></div>
-      <div class="ac" data-name="arknights perish frost dark" data-tags="dark acao fantasia"><img src="https://cdn.myanimelist.net/images/anime/6/86733.jpg" loading="lazy"><div class="ac-info"><p class="ac-tag tag-top">Top</p><p class="ac-name">Arknights: PiF</p></div></div>
       <div class="ac" data-name="dororo dark samurai" data-tags="dark acao historico"><img src="https://m.media-amazon.com/images/M/MV5BYzk2ODAyZjctNjExNS00ZDk0LWE1ZDMtZmIyNzI2NjNjNjllXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" loading="lazy"><div class="ac-info"><p class="ac-tag tag-top">Top</p><p class="ac-name">Dororo</p></div></div>
+      <div class="ac" data-name="" data-tags="dark acao"><img src="https://myanimelist.net/images/anime/1719/95621.jpg" loading="lazy"><div class="ac-info"><p class="ac-tag tag-top">Top</p><p class="ac-name">Goblin Slayer</p></div></div>
       <div class="ac" data-name="arknights" data-tags="dark mahou psicologico drama"><img src="https://m.media-amazon.com/images/M/MV5BNTRkZDIyMjktZjc0Ni00Y2FjLTkyNTgtZWFhOWExNTgzYmUzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" loading="lazy"><div class="ac-info"><p class="ac-tag tag-top">Top</p><p class="ac-name">arknights</p></div></div>
     </div>
   </div>
@@ -394,6 +395,142 @@
     <div class="fc f"><div class="fc-badge">♀</div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7XgsRTr1vVYGQn1Fjoxd5GqK8AxdMU_FZJg&s" loading="lazy" onerror="this.src='https://i.pinimg.com/736x/an/by/zz/anby_zzz_placeholder.jpg'"><div class="fc-info"><p class="fc-name">Anby</p><p class="fc-from">Zenless Zone Zero</p></div></div>
   </div>
 
+</div>
+</div>
+
+<!-- ══ ASSISTINDO ══ -->
+<div class="tab" id="tab-assistindo">
+<div class="sec">
+  <div class="sec-hd"><div class="sec-n">08</div><div><div class="sec-eye">MyAnimeList · Em andamento</div><h2 class="sec-ttl">Assistindo Agora</h2></div><div class="sec-line"></div></div>
+
+  <!-- Resumo geral MAL -->
+  <div id="mal-overview" class="mal-overview" style="display:none">
+    <div class="mal-ov-header">
+      <img id="mal-avatar" src="" alt="avatar" class="mal-avatar">
+      <div>
+        <div class="mal-username">XxT0DDyxX</div>
+        <div class="mal-joined" id="mal-joined"></div>
+      </div>
+      <a href="https://myanimelist.net/profile/XxT0DDyxX" target="_blank" class="mal-link">Ver perfil ↗</a>
+    </div>
+    <div class="mal-ov-grid">
+      <div class="mal-ov-card green">
+        <span id="ov-watching">—</span>
+        <small>Assistindo</small>
+      </div>
+      <div class="mal-ov-card blue">
+        <span id="ov-completed">—</span>
+        <small>Completos</small>
+      </div>
+      <div class="mal-ov-card yellow">
+        <span id="ov-hold">—</span>
+        <small>Em espera</small>
+      </div>
+      <div class="mal-ov-card red">
+        <span id="ov-dropped">—</span>
+        <small>Dropados</small>
+      </div>
+      <div class="mal-ov-card gray">
+        <span id="ov-ptw">—</span>
+        <small>Planejo ver</small>
+      </div>
+      <div class="mal-ov-card gold">
+        <span id="ov-score">—</span>
+        <small>Score médio</small>
+      </div>
+      <div class="mal-ov-card cyan">
+        <span id="ov-eps">—</span>
+        <small>Eps totais</small>
+      </div>
+      <div class="mal-ov-card purple">
+        <span id="ov-days">—</span>
+        <small>Dias assistidos</small>
+      </div>
+    </div>
+    <div class="mal-ov-bar-wrap">
+      <div class="mal-ov-bar" id="ov-bar"></div>
+      <div class="mal-ov-bar-legend">
+        <span class="bl-dot green"></span>Assistindo
+        <span class="bl-dot blue"></span>Completo
+        <span class="bl-dot yellow"></span>Em espera
+        <span class="bl-dot red"></span>Dropado
+        <span class="bl-dot gray"></span>Planejo ver
+      </div>
+    </div>
+  </div>
+  <div id="mal-ov-loading" class="watch-loading" style="padding:32px 0">
+    <div class="wl-spinner"></div>
+    <p>Carregando perfil MAL…</p>
+  </div>
+
+  <div class="mal-section-label">▶ Em andamento agora</div>
+
+  <div class="watch-toolbar">
+    <div class="search-bar" style="flex:1;margin-bottom:0">
+      <span class="search-ico">🔍</span>
+      <input id="w-srch" type="text" placeholder="Buscar na lista..." oninput="filterWatch(this.value)">
+      <button class="search-clr" onclick="document.getElementById('w-srch').value='';filterWatch('')">✕</button>
+    </div>
+    <select id="w-sort" class="w-select" onchange="sortWatch(this.value)">
+      <option value="default">Ordem MAL</option>
+      <option value="recent">Mais Recente</option>
+      <option value="score">Maior Score</option>
+      <option value="alpha">A → Z</option>
+      <option value="ep">Mais Eps</option>
+    </select>
+    <button class="btn-cy watch-refresh" onclick="loadWatching(true)">↺ Atualizar</button>
+  </div>
+
+  <div id="w-stats" class="watch-stats" style="display:none">
+    <div class="ws-item"><span id="ws-total">—</span><small>Assistindo</small></div>
+    <div class="ws-item"><span id="ws-eps">—</span><small>Eps vistos</small></div>
+    <div class="ws-item"><span id="ws-avg">—</span><small>Score médio</small></div>
+  </div>
+
+  <!-- Últimos assistidos -->
+  <div id="w-recent" style="display:none;margin-bottom:32px">
+    <div class="rc-label">🕐 Últimos assistidos</div>
+    <div id="w-recent-cards" class="rc-wrap"></div>
+  </div>
+
+  <div id="w-loading" class="watch-loading">
+    <div class="wl-spinner"></div>
+    <p>Buscando lista no MyAnimeList…</p>
+  </div>
+  <div id="w-error" class="watch-error" style="display:none">
+    <p>⚠️ Não foi possível carregar a lista.</p>
+    <button class="btn-cy" onclick="loadWatching(true)" style="margin-top:10px;padding:8px 18px">Tentar novamente</button>
+  </div>
+
+  <div id="w-table-wrap" style="display:none">
+    <table class="wtable" id="w-table">
+      <thead>
+        <tr>
+          <th style="width:40px">#</th>
+          <th style="width:58px"></th>
+          <th>Anime</th>
+          <th style="width:120px">Progresso</th>
+          <th style="width:68px">Score</th>
+          <th style="width:88px">Tipo</th>
+        </tr>
+      </thead>
+      <tbody id="w-tbody"></tbody>
+    </table>
+  </div>
+  <div id="w-empty" class="no-results" style="display:none">Nenhum anime encontrado 🔍</div>
+
+  <!-- ── TOP SCORES ── -->
+  <div id="top-scores-wrap" style="display:none;margin-top:48px">
+    <div class="mal-section-label">🏆 Seus melhores avaliados</div>
+    <div id="top-scores-grid" class="top-grid"></div>
+    <div style="text-align:center;margin-top:18px">
+      <button class="btn-cy" id="top-show-more" onclick="topShowMore()" style="padding:10px 28px;font-size:.58rem;letter-spacing:2px">Ver mais</button>
+    </div>
+  </div>
+  <div id="top-loading" class="watch-loading" style="padding:32px 0;display:none">
+    <div class="wl-spinner"></div>
+    <p>Carregando top scores…</p>
+  </div>
 </div>
 </div>
 
