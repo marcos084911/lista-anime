@@ -1,3 +1,30 @@
+// ── MENU HAMBURGUER ──
+function toggleMenu(){
+  const btn = document.getElementById('hmb-btn');
+  const nav = document.getElementById('hmb-nav');
+  const ov  = document.getElementById('hmb-overlay');
+  btn.classList.toggle('open');
+  nav.classList.toggle('open');
+  ov.classList.toggle('open');
+  document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
+}
+
+function closeMenu(){
+  document.getElementById('hmb-btn').classList.remove('open');
+  document.getElementById('hmb-nav').classList.remove('open');
+  document.getElementById('hmb-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function navTo(id, el){
+  // Atualiza item ativo no menu
+  document.querySelectorAll('.hmb-item').forEach(b=>b.classList.remove('on'));
+  el.classList.add('on');
+  // Mostra a aba
+  show(id, el);
+  closeMenu();
+}
+
 // ── TOP DATA ──
 const TOP=[
   {n:"Made in Abyss",g:"Aventura · Dark Fantasy",c:"#e63946",up:0,img:"https://m.media-amazon.com/images/S/pv-target-images/acf77e7193251c237654b4ab7a3f83720d8703a416927e8d38a5c55ca0883898._SX1080_FMjpg_.jpg"},
@@ -53,12 +80,22 @@ const TOP=[
 // ── TABS ──
 function show(id,el){
   document.querySelectorAll('.tab').forEach(t=>{t.classList.remove('on');t.style.display='none'});
-  document.querySelectorAll('.ntab').forEach(t=>t.classList.remove('on'));
   const t=document.getElementById('tab-'+id);
-  t.style.display=(id==='inicio')?'flex':'block';
+  if(!t) return;
+  t.style.display='block';
   requestAnimationFrame(()=>t.classList.add('on'));
-  if(el)el.classList.add('on');
   window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function navTo(id, el){
+  document.querySelectorAll('.hmb-item').forEach(b=>b.classList.remove('on'));
+  if(el) el.classList.add('on');
+  show(id, el);
+  closeMenu();
+  if(id==='assistindo'){
+    if(!watchLoaded) loadWatching();
+    if(!topLoaded)   loadTopScores();
+  }
 }
 
 // ── SEARCH & FILTER ──
@@ -447,6 +484,7 @@ async function loadTopScores(){
     tl.style.display = 'none';
     tw.style.display = 'block';
     renderTopGrid();
+    renderScoreChart(topData);
   }catch(e){
     tl.style.display = 'none';
     console.error('Top scores error:', e);
@@ -483,12 +521,140 @@ function topShowMore(){
   renderTopGrid();
 }
 
-// Carrega quando a aba for aberta pela primeira vez
-const _origShow=show;
-window.show=function(id,el){
-  _origShow(id,el);
-  if(id==='assistindo'){
-    if(!watchLoaded) loadWatching();
-    if(!topLoaded)   loadTopScores();
+// ── GRÁFICO DE SCORES ──
+function renderScoreChart(data){
+  const wrap = document.getElementById('score-chart-wrap');
+  if(!wrap || !data.length) return;
+
+  // Conta quantos animes têm cada score (1-10)
+  const counts = Array(11).fill(0); // índice 0 ignorado
+  data.forEach(a=>{ if(a.score>=1&&a.score<=10) counts[a.score]++; });
+
+  const max    = Math.max(...counts.slice(1));
+  const total  = counts.slice(1).reduce((s,v)=>s+v,0);
+  const scored = data.filter(a=>a.score>0);
+  const avg    = scored.length
+    ? (scored.reduce((s,a)=>s+a.score,0)/scored.length).toFixed(2)
+    : '—';
+  const mode   = counts.indexOf(Math.max(...counts.slice(1)));
+  const pct10  = total>0?(counts[10]/total*100).toFixed(1):'0';
+
+  // Gradiente de cor por score
+  const barColor = s => {
+    if(s<=3)  return '#f44336';
+    if(s<=5)  return '#ff9800';
+    if(s<=6)  return 'var(--muted)';
+    if(s<=7)  return 'var(--cyan)';
+    if(s<=8)  return '#4caf50';
+    if(s<=9)  return 'var(--gold)';
+    return '#ff6bcb';
+  };
+
+  const barsEl = document.getElementById('chart-bars');
+  barsEl.innerHTML = Array.from({length:10},(_,i)=>{
+    const s   = i+1;
+    const cnt = counts[s];
+    const h   = max>0 ? Math.max((cnt/max)*100,cnt>0?4:0) : 0;
+    return `<div class="chart-bar-wrap">
+      <div class="chart-bar-count">${cnt||''}</div>
+      <div class="chart-bar" style="height:${h}%;background:${barColor(s)}"
+           data-tip="Score ${s}: ${cnt} anime${cnt!==1?'s':''}"></div>
+    </div>`;
+  }).join('');
+
+  // Summary
+  document.getElementById('chart-summary').innerHTML = `
+    <div class="chart-sum-item"><span>${total.toLocaleString('pt-BR')}</span><small>Com score</small></div>
+    <div class="chart-sum-item"><span>${avg}</span><small>Média</small></div>
+    <div class="chart-sum-item"><span>${mode}</span><small>Score mais dado</small></div>
+    <div class="chart-sum-item"><span>${pct10}%</span><small>Notas 10</small></div>
+  `;
+
+  wrap.style.display = 'block';
+}
+
+// ── SURPRESA ──
+let surprisePool = []; // cache da lista completa
+
+async function surpriseMe(){
+  const btn  = document.getElementById('surprise-btn');
+  const card = document.getElementById('surprise-card');
+
+  btn.classList.add('spinning');
+  btn.disabled = true;
+
+  try{
+    // Monta pool na primeira vez (usa topData se já carregado, senão busca)
+    if(surprisePool.length === 0){
+      if(topData.length > 0){
+        surprisePool = topData;
+      } else {
+        // Busca lista completa de completados
+        let all=[], offset=0, hasNext=true;
+        while(hasNext){
+          const d = await tryFetch(
+            `https://myanimelist.net/animelist/${MAL_USER}/load.json?status=2&offset=${offset}`
+          );
+          const items = Array.isArray(d) ? d : [];
+          all = all.concat(items.map(x=>({
+            id:    x.anime_id,
+            title: x.anime_title,
+            img:   x.anime_image_path,
+            score: x.score,
+            type:  x.anime_media_type_string,
+            eps:   x.anime_num_episodes,
+            year:  x.anime_start_date_string ? x.anime_start_date_string.slice(-4) : ''
+          })));
+          hasNext = items.length === 300;
+          offset += 300;
+          if(hasNext) await new Promise(res=>setTimeout(res,400));
+        }
+        surprisePool = all;
+      }
+    }
+
+    if(!surprisePool.length) throw new Error('lista vazia');
+
+    // Sorteia aleatório
+    const pick = surprisePool[Math.floor(Math.random() * surprisePool.length)];
+
+    // Busca sinopse via Jikan
+    let synopsis = '';
+    try{
+      const det = await tryFetch(`https://api.jikan.moe/v4/anime/${pick.id}`);
+      synopsis = det.data?.synopsis || '';
+      // Remove "(Source...)" do fim
+      synopsis = synopsis.replace(/\(Source:.*?\)/gi,'').trim();
+    }catch(e){}
+
+    // Preenche card
+    document.getElementById('sp-img').src       = pick.img || '';
+    document.getElementById('sp-title').textContent = pick.title;
+    document.getElementById('sp-badge').textContent = '🎲 Sorteado da sua lista';
+    document.getElementById('sp-meta').textContent  =
+      [pick.type, pick.eps ? pick.eps+' eps' : '', pick.year].filter(Boolean).join(' · ');
+    document.getElementById('sp-link').href      = `https://myanimelist.net/anime/${pick.id}`;
+    document.getElementById('sp-synopsis').textContent = synopsis || 'Sem sinopse disponível.';
+
+    const scoreEl = document.getElementById('sp-score');
+    if(pick.score > 0){
+      scoreEl.textContent = '★ ' + pick.score;
+      scoreEl.className   = 'sp-score';
+    } else {
+      scoreEl.textContent = 'Sem score';
+      scoreEl.className   = 'sp-score none';
+    }
+
+    card.style.display = 'flex';
+
+  }catch(e){
+    console.error('Surpresa error:', e);
   }
-};
+
+  btn.classList.remove('spinning');
+  btn.disabled = false;
+}
+
+// Auto-carrega aba inicial
+loadWatching();
+loadTopScores();

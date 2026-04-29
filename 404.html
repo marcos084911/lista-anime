@@ -16,41 +16,44 @@
     <div class="logo">📺 TODDY</div>
     <div class="logo-sep"></div>
     <div class="logo-sub">Classificação de Animes · Gêneros · Favoritos · Marcos</div>
-    <a class="mal-link" href="https://myanimelist.net/profile/XxT0DDyxX" target="_blank">MAL ↗</a>
+    <div class="header-right">
+      <a class="mal-link" href="https://myanimelist.net/profile/XxT0DDyxX" target="_blank">MAL ↗</a>
+      <button class="hmb-btn" onclick="toggleMenu()" id="hmb-btn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
-  <nav class="nav">
-    <button class="ntab on"  onclick="show('inicio',this)">🏠 Início</button>
-    <button class="ntab"     onclick="show('primeiros',this)">🌱 Primeiros</button>
-    <button class="ntab"     onclick="show('generos',this)">🎭 Gêneros</button>
-    <button class="ntab"     onclick="show('top',this)">🌟 Top 30</button>
-    <button class="ntab"     onclick="show('favchars',this)">❤️ Personagens</button>
-    <button class="ntab"     onclick="show('musicas',this)">🎵 Músicas</button>
-    <button class="ntab"     onclick="show('marcos',this)">🏆 Marcos</button>
-    <button class="ntab"     onclick="show('gacha',this)">🎮 Gacha</button>
-    <button class="ntab"     onclick="show('assistindo',this)">▶️ Assistindo</button>
+
+  <!-- Menu hamburguer -->
+  <div class="hmb-overlay" id="hmb-overlay" onclick="closeMenu()"></div>
+  <nav class="hmb-nav" id="hmb-nav">
+    <div class="hmb-header">
+      <div class="hmb-logo">📺 TODDY</div>
+      <button class="hmb-close" onclick="closeMenu()">✕</button>
+    </div>
+    <div class="hmb-group">
+      <div class="hmb-group-label">MAL</div>
+      <button class="hmb-item on" onclick="navTo('assistindo',this)">▶️ Assistindo</button>
+    </div>
+    <div class="hmb-group">
+      <div class="hmb-group-label">Conteúdo</div>
+      <button class="hmb-item" onclick="navTo('primeiros',this)">🌱 Primeiros Animes</button>
+      <button class="hmb-item" onclick="navTo('generos',this)">🎭 Gêneros</button>
+      <button class="hmb-item" onclick="navTo('top',this)">🌟 Top 30</button>
+      <button class="hmb-item" onclick="navTo('favchars',this)">❤️ Personagens</button>
+      <button class="hmb-item" onclick="navTo('musicas',this)">🎵 Músicas</button>
+    </div>
+    <div class="hmb-group">
+      <div class="hmb-group-label">Extras</div>
+      <button class="hmb-item" onclick="navTo('marcos',this)">🏆 Marcos</button>
+      <button class="hmb-item" onclick="navTo('gacha',this)">🎮 Gacha</button>
+    </div>
   </nav>
 </header>
 
 <main>
 
 <!-- ══ INÍCIO ══ -->
-<div class="tab on" id="tab-inicio">
-  <div class="hero-in">
-    <div class="hero-pill">XxT0DDyxX · MyAnimeList</div>
-    <h1 class="hero-name">MEU<br><span>ANIME</span><br>WORLD</h1>
-    <p class="hero-sub">Gêneros · Favoritos · Músicas · Gacha · Marcos</p>
-    <div class="hero-stats">
-      <div><div class="hs-n" id="hc">—</div><div class="hs-l">Completos</div></div>
-      <div><div class="hs-n" id="hw">—</div><div class="hs-l">Assistindo</div></div>
-      <div><div class="hs-n">30</div><div class="hs-l">No Top</div></div>
-    </div>
-    <div class="hero-btns">
-      <a class="btn-pk" href="https://myanimelist.net/profile/XxT0DDyxX" target="_blank">🔗 Ver Perfil MAL</a>
-      <button class="btn-cy" onclick="show('top',document.querySelectorAll('.ntab')[4])">🌟 Ver Top 30</button>
-    </div>
-  </div>
-</div>
-
 <!-- ══ PRIMEIROS ══ -->
 <div class="tab" id="tab-primeiros">
 <div class="sec">
@@ -225,8 +228,8 @@
     <div class="gblock-title">🌑 Dark Fantasy</div>
     <div class="ag">
       <div class="ac" data-name="made in abyss dark" data-tags="dark fantasia aventura drama"><img src="https://m.media-amazon.com/images/S/pv-target-images/acf77e7193251c237654b4ab7a3f83720d8703a416927e8d38a5c55ca0883898._SX1080_FMjpg_.jpg" loading="lazy"><div class="ac-info"><p class="ac-tag tag-best">Melhor</p><p class="ac-name">Made in Abyss</p></div></div>
+      <div class="ac" data-name="arknights perish frost dark" data-tags="dark acao fantasia"><img src="https://cdn.myanimelist.net/images/anime/6/86733.jpg" loading="lazy"><div class="ac-info"><p class="ac-tag tag-top">Top</p><p class="ac-name">Arknights: PiF</p></div></div>
       <div class="ac" data-name="dororo dark samurai" data-tags="dark acao historico"><img src="https://m.media-amazon.com/images/M/MV5BYzk2ODAyZjctNjExNS00ZDk0LWE1ZDMtZmIyNzI2NjNjNjllXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" loading="lazy"><div class="ac-info"><p class="ac-tag tag-top">Top</p><p class="ac-name">Dororo</p></div></div>
-      <div class="ac" data-name="" data-tags="dark acao"><img src="https://myanimelist.net/images/anime/1719/95621.jpg" loading="lazy"><div class="ac-info"><p class="ac-tag tag-top">Top</p><p class="ac-name">Goblin Slayer</p></div></div>
       <div class="ac" data-name="arknights" data-tags="dark mahou psicologico drama"><img src="https://m.media-amazon.com/images/M/MV5BNTRkZDIyMjktZjc0Ni00Y2FjLTkyNTgtZWFhOWExNTgzYmUzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" loading="lazy"><div class="ac-info"><p class="ac-tag tag-top">Top</p><p class="ac-name">arknights</p></div></div>
     </div>
   </div>
@@ -399,7 +402,7 @@
 </div>
 
 <!-- ══ ASSISTINDO ══ -->
-<div class="tab" id="tab-assistindo">
+<div class="tab on" id="tab-assistindo">
 <div class="sec">
   <div class="sec-hd"><div class="sec-n">08</div><div><div class="sec-eye">MyAnimeList · Em andamento</div><h2 class="sec-ttl">Assistindo Agora</h2></div><div class="sec-line"></div></div>
 
@@ -530,6 +533,43 @@
   <div id="top-loading" class="watch-loading" style="padding:32px 0;display:none">
     <div class="wl-spinner"></div>
     <p>Carregando top scores…</p>
+  </div>
+
+  <!-- ── GRÁFICO DE SCORES ── -->
+  <div id="score-chart-wrap" style="display:none;margin-top:52px">
+    <div class="mal-section-label">📈 Distribuição dos seus scores</div>
+    <div class="chart-box">
+      <div class="chart-bars" id="chart-bars"></div>
+      <div class="chart-xaxis">
+        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+        <span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+      </div>
+      <div class="chart-summary" id="chart-summary"></div>
+    </div>
+  </div>
+
+  <!-- ── SURPRESA ── -->
+  <div style="margin-top:52px">
+    <div class="mal-section-label">🔀 Anime surpresa</div>
+    <div class="surprise-wrap">
+      <button class="surprise-btn" onclick="surpriseMe()" id="surprise-btn">
+        <span class="surprise-ico">🎲</span>
+        <span>Sortear da minha lista</span>
+      </button>
+      <div id="surprise-card" class="surprise-card" style="display:none">
+        <img id="sp-img" src="" alt="">
+        <div class="sp-body">
+          <div class="sp-badge" id="sp-badge"></div>
+          <div class="sp-title" id="sp-title"></div>
+          <div class="sp-meta" id="sp-meta"></div>
+          <div class="sp-score-row">
+            <span class="sp-score" id="sp-score"></span>
+            <a id="sp-link" href="#" target="_blank" class="sp-mal-btn">Ver no MAL ↗</a>
+          </div>
+          <div class="sp-synopsis" id="sp-synopsis"></div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 </div>
